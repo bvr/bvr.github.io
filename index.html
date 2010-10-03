@@ -3,8 +3,10 @@ layout: default
 title: bvr
 ---
 <h2>Recent posts</h2>
+    <ul>
     {% for post in site.posts offset: 0 limit: 5 %}
-    <p>{{ post.date | date_to_string }} | <a href="{{ post.id }}/">{{ post.title }}</a><br>
-    {{ post.content | strip_html | truncatewords: 35 }}
-    </p>
+    <li>{{ post.date | date_to_string }} <a href="{{ post.id }}/">{{ post.title }}</a>
     {% endfor %}
+
+    </ul>
+

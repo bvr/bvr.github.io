@@ -1,0 +1,39 @@
+[% toc = []; toc_number = [ 0, 0 ] ~%]
+[% BLOCK head %]
+[%- SWITCH level %]
+[%- CASE 1 %][% underline = '='; toc_number.0 = toc_number.0 + 1; toc_number.1 = 0 %]
+[%- CASE 2 %][% underline = '-'; toc_number.1 = toc_number.1 + 1 %]
+[%- END ~%]
+
+[% title = toc_number.first(level).join(".") _ "  " _ title; title %]
+[% underline.repeat(title.length + 1) %]
+
+[%~ toc.push({ 'level' => level, 'title' => title }) ~%]
+[% END ~%]
+
+[%~ text = BLOCK %]
+[% PROCESS head title='Introduction' level=1 %]
+
+This is overall introduction into the problem.
+
+[% PROCESS head title='Scope'        level=2 %]
+
+These instructions pertain specifically to some scope that should be covered here.
+
+[% PROCESS head title='Copyright'    level=2 %]
+
+Any copyright clausule ...
+
+[% PROCESS head title='Overview'     level=1 %]
+
+Quick summary and high level overview of the problem.
+
+[% END ~%]
+
+CONTENTS
+
+[% indent = "   " ~%]
+[% FOREACH toc_entry IN toc %]
+[%~ indent.repeat(toc_entry.level - 1) %][% toc_entry.title %]
+[% END %]
+[% text %]
