@@ -1,0 +1,37 @@
+---
+layout: default
+---
+    <div class="span-16">
+        <h2>{{ page.title }}</h2>
+        <div id="date">published <time datetime="{{ page.date }}" pubdate>{{ page.date | date_to_string }}</time></div>
+
+        {{ content }}
+
+    </div>
+    <div class="span-8 last">
+        <h3>Search</h3>
+
+        <p>Here is search box with button
+        </p>
+
+    <div class="span-4">
+        <h3>Recent</h3>
+
+        <ul>
+        {% for post in site.posts offset: 0 limit: 5 %}
+        <li>{{ post.date | date_to_string }}<br><a href="{{ post.id }}/">{{ post.title }}</a></li>
+        {% endfor %}
+        </ul>
+
+        <h3>Related</h3>
+
+
+    </div>
+    <div class="span-4 last">
+        <h3>Delicious</h3>
+
+        <ul>
+        </ul>
+
+    </div>
+    </div>
