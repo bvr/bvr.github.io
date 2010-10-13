@@ -1,3 +1,16 @@
 pre, code, tt {font:12px "Dejavu Sans Mono", Monaco, 'andale mono', 'lucida console', monospace; line-height:1.5;}
 
 p { font-family: Georgia }
+
+li.post { border-top: 1px solid #eee; padding: 0.25em; }
+
+/* Bookmarks styling */
+h2.sidebar-title { display: none }
+.delicious-posts { margin: 1em; padding: 0px;  }
+.delicious-posts ul, .delicious-posts li, .delicious-banner { margin: 0; padding: 0}
+.delicious-posts li { list-style-type: disc; }
+.delicious-post { border-top: 1px solid #eee; padding: 0.25em; }
+.delicious-banner a { font-size: 80% }
+.delicious-posts a:hover { text-decoration: underline }
+.delicious-posts a { display: block; padding: 0.3em }
+
