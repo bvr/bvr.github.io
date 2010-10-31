@@ -1,14 +1,15 @@
 ---
 layout: post
 title: Address alignment
+perex: >
+    During recent work on analysis of ELF (Executable and Linkable Format) file
+    format I needed implement proper alignment of data in sections.
 category: [C]
 tags:
   - C
   - address
   - alignment
 ---
-During recent work on analysis of ELF (Executable and Linkable Format) file
-format I needed implement proper alignment of data in sections.
 
 ### How it should look like
 

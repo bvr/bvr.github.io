@@ -1,15 +1,16 @@
 ---
 layout: post
 title: Repeated match with regex
-category:
+perex: >
+    I wrote parsing for <a href="http://www.graphviz.org">graphviz</a> dot files 
+    today and found interesting feature of perl regex engine. It can match a 
+    pattern repeatedly to sections of the string. 
+category: [perl]
+tags:
     - perl
     - regex
+    - capture
 ---
-
-I wrote parsing for [graphviz](http://www.graphviz.org) dot files today and found
-interesting feature of perl regex engine. It can match a pattern repeatedly
-to sections of the string.
-
 Small excerpt looks like this.
 
 {% highlight perl %}

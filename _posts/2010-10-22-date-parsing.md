@@ -2,6 +2,11 @@
 layout: post
 title:  Date parsing
 category: perl
+perex: >
+    Date parsing is always problematic. For most of my work I prefer canonical 
+    YYYY-MM-DD or YYMMDD format that is great for sorting and easy to parse. But
+    data comes from various sources. Recently I got data with all dates in 
+    US format: <b>Wed, Sep 17 2003</b>.
 tags:
   - perl
   - parsing
@@ -10,10 +15,6 @@ tags:
   - test
   - Test::More
 ---
-Date parsing is always problematic. For most of my work I prefer canonical 
-YYYY-MM-DD or YYMMDD format that is great for sorting and easy to parse. But
-data comes from various sources. Recently I got data with all dates in 
-US format: **Wed, Sep 17 2003**.
 
 Here is very simple perl class that implement the parsing. Initially I looked
 on [DateTime::Format::Natural][dfn] and some others, but I haven't found any 

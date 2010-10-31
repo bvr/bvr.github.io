@@ -1,12 +1,17 @@
 ---
 layout: post
 title:  Local jekyll
-category: [jekyll]
-tags: [jekyll,ruby,python,install]
+perex: >
+    Since I started using jekyll for this site, I wanted to have local instance
+    of it installed on my Windows machine for testing. Finally I made it working,
+    here are steps I did.
+category: jekyll
+tags: 
+    - jekyll
+    - ruby
+    - python
+    - install
 ---
-Since I started using jekyll for this site, I wanted to have local instance
-of it installed on my Windows machine for testing. Finally I made it working,
-here are steps I did:
 
 ### Install ruby
 

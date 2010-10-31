@@ -1,15 +1,15 @@
 ---
 layout: post
 title: Error like printf
+perex: >
+    Sometimes it is handy to have single function to quit application with an
+    error message. Even better when it accepts <code>printf</code> formatting.
 category: [C]
 tags:
     - printf
     - C
     - exit
 ---
-Sometimes it is handy to have single function to quit application with an
-error message. Even better when it accepts *printf* formatting.
-
 Fortunately it is easy to implement with *stdarg* library and *vfprintf* function
 of *stdio*.
 

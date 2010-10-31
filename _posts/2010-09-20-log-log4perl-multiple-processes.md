@@ -1,14 +1,16 @@
 ---
 layout: post
 title: Log::Log4perl in multiple processes
-category:
+perex: >
+    I am using <code>Log::Log4perl</code> to produce logs from my perl fastcgi applications.
+    There is typically several same processes writing into same log. I was wondering
+    if it is possible to lose some messages this way.
+category: perl
+tags:
     - perl
     - Log::Log4perl
+    - Log::Dispatch::File::Locked
 ---
-I am using `Log::Log4perl` to produce logs from my perl fastcgi applications.
-There is typically several same processes writing into same log. I was wondering
-if it is possible to lose some messages this way.
-
 So I made a simple test - the code went into `log_test.pl`.
 
 {% highlight perl %}

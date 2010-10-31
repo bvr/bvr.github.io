@@ -1,16 +1,17 @@
 ---
 layout: post
 title: Section numbering with Template Toolkit
-category:
+perex: >
+    Recently I was working on documentation for web-based intranet application. Every
+    page is created from templates processed by <a href="http://template-toolkit.org">Template Toolkit</a>.
+    So why not move heading definition into separate block and generate TOC automatically.
+category: perl
+tags:
     - perl
-    - Template
+    - template
+    - Template Toolkit
     - tpage
 ---
-
-Recently I was working on documentation for web-based intranet application. Every
-page is created from templates processed by [Template Toolkit](http://template-toolkit.org/).
-So why not move heading definition into separate block and generate TOC automatically.
-
 Below is the approach demonstrated, just on simple text file.
 
 The template
