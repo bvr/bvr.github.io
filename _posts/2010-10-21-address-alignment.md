@@ -1,5 +1,6 @@
 ---
 layout: post
+title: Address alignment
 category: [C]
 tags:
   - C

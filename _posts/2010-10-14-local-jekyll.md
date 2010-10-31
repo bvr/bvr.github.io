@@ -1,5 +1,6 @@
 ---
 layout: post
+title:  Local jekyll
 category: [jekyll]
 tags: [jekyll,ruby,python,install]
 ---

@@ -6,7 +6,7 @@ category:
     - regex
 ---
 
-I wrote parsing for [graphviz](www.graphviz.org) dot files today and found
+I wrote parsing for [graphviz](http://www.graphviz.org) dot files today and found
 interesting feature of perl regex engine. It can match a pattern repeatedly
 to sections of the string.
 
