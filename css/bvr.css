@@ -4,6 +4,11 @@ p { font-family: Georgia }
 
 li.post { border-top: 1px solid #eee; padding: 0.25em; }
 
+.date, .tag, .author  { display: inline }
+.perex { font-weight: bold }
+.tag   { display: inline; padding: 2px 4px; background-color: #eee; border: solid 1px #ddd }
+.tags  { padding-top: 0.5em; padding-bottom: 1em; }
+
 /* Bookmarks styling */
 h2.sidebar-title { display: none }
 .delicious-posts { margin: 1em; padding: 0px;  }

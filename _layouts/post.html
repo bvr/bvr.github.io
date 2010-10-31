@@ -2,10 +2,12 @@
 layout: default
 ---
     <div class="span-16">
-        <div id="date"><time datetime="{{ page.date }}" pubdate>{{ page.date | date_to_string }}</time></div><div class="author"> by Roman Hubacek</div>
+        <div class="date"><time datetime="{{ page.date }}" pubdate>{{ page.date | date_to_string }}</time></div><div class="author"> by Roman Hubacek</div>
+        <div class="tags">
         {% for tag in page.tags %}
         <div class="tag">{{ tag }}</div>
         {% endfor %}
+        </div>
         <h1>{{ page.title }}</h1>
         
         {% if page.perex != '' %}
