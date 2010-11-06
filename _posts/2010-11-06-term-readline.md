@@ -20,16 +20,17 @@ choice, so I took the example from SYNOPSIS and tried to add simple
 auto-completion. Traversal along the line and history worked fine, but I could 
 not make it react on **Tab** at all.
 
-Finally runned my script with [Devel::Trace]() turned on and in its lenghty output
-found this part:
+Finally runned my script with [Devel::Trace](http://search.cpan.org/perldoc?Devel%3A%3ATrace) 
+turned on and in its lenghty output I found this part:
 
 {% highlight bash %}
 >> C:/Perl/lib/Term/ReadLine/readline.pm:1536:     if ($dumb_term) {
 >> C:/Perl/lib/Term/ReadLine/readline.pm:1537: 	return readline_dumb;
 {% endhighlight %}
 
-Quick inspection of readline_dumb revealed, that apart of printing the prompt
-it simplifies its job to just calling `get_line` that look like this.
+It looks like it is using some dumb terminal for some reason. Quick inspection 
+of `readline_dumb` revealed, that apart of printing the prompt it simplifies its 
+job to just calling `get_line` that look like this.
 
 {% highlight perl %}
 sub get_line {
@@ -40,8 +41,13 @@ sub get_line {
 {% endhighlight %}
 
 I was quite surprised, but it looks all history and editing magic is just 
-feature of reading line from STDIN. And it is really so, running `perl -le "print <STDIN>"`
- allows to use up/down arrows to get history and quite good line editing features.
+feature of reading line from STDIN. And it is really so, running 
+
+{% highlight bash %}
+perl -le "print <STDIN>"
+{% endhighlight %}
+
+allows to use up/down arrows to get history and quite good line editing features.
 
 With little more inspection I found that Windows set `TERM` environment variable
 to `dumb`, which switch on this behavior. Setting it to anything else turn on
