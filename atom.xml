@@ -4,23 +4,26 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>Bvr</title>
- <link href="http://bvr.github.com/atom.xml" rel="self"/>
- <link href="http://bvr.github.com/"/>
- <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://bvr.github.com/</id>
- <author>
-   <name>Roman Hubacek</name>
- </author>
+<title>Bvr</title>
+<link href="http://bvr.github.com/atom.xml" rel="self"/>
+<link href="http://bvr.github.com/"/>
+<updated>{{ site.time | date_to_xmlschema }}</updated>
+<id>http://bvr.github.com/</id>
+<author>
+<name>Roman Hubacek</name>
+</author>
 
- {% for post in site.posts limit: 15 %}
- <entry>
-   <title>{{ post.title }}</title>
-   <link href="http://bvr.github.com{{ post.url }}"/>
-   <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://bvr.github.com{{ post.id }}</id>
-   <content type="html">{{ post.content | xml_escape }}</content>
- </entry>
- {% endfor %}
+{% for post in site.posts limit: 15 %}
+<entry>
+    <title>{{ post.title }}</title>
+    <link href="http://bvr.github.com{{ post.url }}"/>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <id>http://bvr.github.com{{ post.id }}</id>
+    <content type="html">
+        {{ "<b>" | xml_escape }} {{ post.perex | xml_escape }} {{ "</b>" | xml_escape }}
+        {{ post.content | xml_escape }}
+    </content>
+</entry>
+{% endfor %}
 
 </feed>

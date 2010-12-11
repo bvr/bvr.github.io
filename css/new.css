@@ -1,0 +1,10 @@
+
+* { font-family: Georgia, times; }
+p { 
+	font-size: 13px;
+	line-height: 130%;
+}
+pre *, code { 
+	font-family: 'Dejavu Sans Mono', 'Bitstream Vera', 'Courier New', courier, monospace;
+	font-size: 12px;
+}
