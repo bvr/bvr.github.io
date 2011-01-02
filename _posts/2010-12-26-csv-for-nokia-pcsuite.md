@@ -5,24 +5,24 @@ category: perl
 perex: >
   This christmas I finally decided to upgrade my venerable cell phone to something
   newer. Old one, Siemens ME45, served me well for eight years, but its second 
-  battery life is close to death and I got feeling that new gizmo would be nice.  
+  battery life is close to death and I got feeling new gizmo would be nice.  
 tags:
   - perl
   - Nokia PC Suite
   - unicode
   - csv
   - Text::CSV_XS
+  - BOM
 ---
-I do not need something very fancy, choosen model is 
-[Nokia 6303i](http://europe.nokia.com/find-products/devices/nokia-6303i-classic).
-Following article is about converting my addressbook.
+I ended up buying 
+[Nokia 6303i][n6303].
+This is simple script to help me convert addressbook into new device.
 
-My Siemens came with serial RS232 data cable and I have small program to backup 
-various data from phone into text file. Addressbook in particular is simple
-CSV file. First column is either '''SM''' (SIM card) or '''AD''' (Address book).  
-Second column is entry number. Remainder are properties of the contact.
-
-Here is an example:
+The old Siemens came with serial RS232 data cable and I have small program to 
+backup data from phone into text file. Addressbook in particular is simple 
+comma-separated (CSV) file. First column is either '''SM''' (SIM card) 
+or '''AD''' (Address book). Second column is entry number. Remainder are 
+properties of the contact:
 
     ....
     SM;009;+420776123456;"Sam"
@@ -31,11 +31,36 @@ Here is an example:
     AD;1;Jerry;;+420777456789;;;;;;;;;;;VIP
     ....
 
-Properties list is at the beginning of script, see `@me45_into_col` array comments.
+Nokia comes with [PC Suite][pc_suite] that allows to import utf-16 encoded
+55-column CSV. Exact format I got by exporting one hand-made entry into file.
+The `@me45_into_col` mapping array gives for each column from Siemens format 
+specific column in Nokia one.
 
+The most tricky part was to encode output file properly and add correct 
+[BOM][bom] (byte-order mark) to the start of file. These two lines do the job:
 
+{% highlight perl %}
+open my $nokia_out, ">:raw:encoding(utf-16le):utf8", $ARGV[1] or die;
+print {$nokia_out} "\x{FEFF}";
+{% endhighlight %}
 
-## Code
+First is opening file that is encoding internal perl **utf-8** into **utf-16 
+little endian**. The second line writes single letter - two bytes: `0xFE`, `0xFF` - 
+into the beginning of file to indicate encoding. All [BOM][bom]s defined are:
+
+  - `0x00 0x00 0xFE 0xFF` ... utf-32, big-endian
+  - `0xFF 0xFE 0x00 0x00` ... utf-32, little-endian
+  - `0xFE 0xFF          ` ... utf-16, big-endian
+  - `0xFF 0xFE          ` ... utf-16, little-endian
+  - `0xEF 0xBB 0xBF     ` ... utf-8
+
+Script can be called as:
+
+{% highlight bash %}
+perl convert_list.pl siemens.csv nokia.csv
+{% endhighlight %}
+
+## convert_list.pl
 
 {% highlight perl %}
 use strict;
@@ -73,8 +98,7 @@ die "error: two files expected as input\n"
 open my $me45_in,   "<", $ARGV[0] or die;
 
 # prepare output file with BOM
-open my $nokia_out, ">", $ARGV[1] or die;
-binmode $nokia_out, "raw:encoding(utf-16le):utf8";
+open my $nokia_out, ">:raw:encoding(utf-16le):utf8", $ARGV[1] or die;
 print {$nokia_out} "\x{FEFF}";
 
 # CSV header
@@ -106,3 +130,7 @@ while(<$me45_in>) {
     print {$nokia_out} $csv->string,"\n";
 }
 {% endhighlight %}
+
+[n6303]:    http://europe.nokia.com/find-products/devices/nokia-6303i-classic
+[pc_suite]: http://europe.nokia.com/support/download-software/pc-suites
+[bom]:      http://www.unicode.org/faq/utf_bom.html#BOM
