@@ -16,7 +16,7 @@ tags:
 ## SciTE
 
 I have setup an action in my primary editor [SciTE][scite] to reformat selected
-portion of text:
+portion of text with `Ctrl+4` keystroke.
 
     command.name.4.$(file.patterns.perl)=Perl Tidy
     command.4.$(file.patterns.perl)=perltidy.cmd -pro=$(SciteDefaultHome)/.perltidyrc
@@ -25,20 +25,19 @@ portion of text:
     command.is.filter.4.$(file.patterns.perl)=1
     command.mode.4.$(file.patterns.perl)=filter:yes,savebefore:yes
 
-
-
 ## Universal Indent GUI
 
 Since [perltidy][perltidy] has plenty of options, I was looking for a tool
-to fine-tune my options. The [Universal Indent GUI][uig] works quite well:
+to fine-tune my options. The [Universal Indent GUI][uig] works quite well
+and gives you checkbox with explanation for every single option available.
+Live preview make it easy to test changes.
 
 ![Universal Indent GUI](/img/uig.png)
-
 
 ## perltidy resource file
 
 I am using [perltidy][perltidy] configuration that originates from Mojo team 
-[.perltidyrc][mojo_perltidyrc]:
+[.perltidyrc][mojo_perltidyrc]
 
     -i=4     # Indent level is 4 cols
     -ci=4    # Continuation indent is 4 cols
@@ -72,6 +71,7 @@ I am using [perltidy][perltidy] configuration that originates from Mojo team
     -sbt=2 # High square bracket tightness
 
 
+[scite]:           http://www.scintilla.org/SciTE.html
 [uig]:             http://universalindent.sourceforge.net/
 [perltidy]:        http://perltidy.sourceforge.net/
 [mojo_perltidyrc]: http://github.com/kraih/mojo/blob/685a370c882b1e7f22fde88f00eb222c14cbb2c2/.perltidyrc
