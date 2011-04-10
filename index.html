@@ -3,8 +3,17 @@ layout: index
 title: bvr
 ---
 <h2>Recent posts</h2>
+{% assign last_month = ' ' %}
     {% for post in site.posts offset: 0 limit: 20 %}
+    {% capture post_month %}{{ post.date | date: "%Y-%m" }}{% endcapture %}
+    {% if  post_month != last_month %}
+        {% if last_month != ' ' %}</ul>{% endif %}
+        <h3>{{ post.date | date: "%B %Y" }}</h3>
+        <ul>
+        {% assign last_month = post_month %}
+    {% endif %}
     <li><a href="{{ post.id }}/">{{ post.title }}</a><br>{{ post.perex }}
     {% endfor %}
 
     </ul>
+
