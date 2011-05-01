@@ -12,12 +12,27 @@ tags:
    - URI
    - Encoding
 ---
-Something there is something on web that I would like to use. The following article goes how to locate and get web-pages, parse and extract data from them.
 
-The code below is real-life problem I needed to solve. There was nice web [kaloricketabulky.cz](http://www.kaloricketabulky.cz) (calorie tables in english) that I used to find out what calorie consumption I had on various activities like swimming. 
 
-First, we need an URL (uniform resource locator) address of page we want. 
+# Request data from web
 
+We can use LWP library to request file from specific url:
+
+{% highlight perl %}
+use LWP::Simple qw(get);
+my $data = get('http://www.example.com');
+{% endhighlight %}
+
+
+Something there is something on web that I would like to use. The following
+article goes how to locate and get web-pages, parse and extract data from them.
+
+The code below is real-life problem I needed to solve. There was nice
+web [kaloricketabulky.cz](http://www.kaloricketabulky.cz) (calorie tables in
+english) that I used to find out what calorie consumption I had on various
+activities like swimming.
+
+First, we need an URL (uniform resource locator) address of page we want.
 
 
 Building blocks:
@@ -34,7 +49,7 @@ use LWP::Simple qw(get);
 use HTML::TreeBuilder;
 use URI;
 
-my $start_page 
+my $start_page
   = q{http://www.kaloricketabulky.cz/tabulka-aktivit.php?pismeno=A};
 
 my $html = HTML::TreeBuilder->new_from_content(get($start_page));
@@ -45,17 +60,17 @@ $html->delete;
 
 my @items = ();
 for my $page_url (@list_page_urls) {
-     my $html = HTML::TreeBuilder->new_from_content(get($page_url));
-     my $item_table_html = $html->look_down(class => 'vypis');
+    my $html = HTML::TreeBuilder->new_from_content(get($page_url));
+    my $item_table_html = $html->look_down(class => 'vypis');
 
-     my @rows   = $item_table_html->find('tr');
-     my $header = shift @rows;
-     for my $row (@rows) {
-         my @cols = map { $_->as_text } $row->find('td');
-         push @items, [ @cols ];
-     }
+    my @rows   = $item_table_html->find('tr');
+    my $header = shift @rows;
+    for my $row (@rows) {
+        my @cols = map { $_->as_text } $row->find('td');
+        push @items, [ @cols ];
+    }
 
-     $html->delete;
+    $html->delete;
 }
 
 open(my $out,">:encoding(cp1250):utf8", "activities.txt");
