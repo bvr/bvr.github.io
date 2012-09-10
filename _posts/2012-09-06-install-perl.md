@@ -2,7 +2,6 @@
 layout: post
 title: perl installation
 category: perl
-published: no
 perex: >
   Steps I am usually taking when installing perl on new machine. 
 tags:
@@ -10,6 +9,7 @@ tags:
   - win32
   - activestate
   - install
+  - module
 ---
 
 On Windows, I was always going with ActiveState perl. It has worked for me well and I never needed to look elsewhere.
