@@ -1,7 +1,4 @@
-markdown: rdiscount
-server: true
 auto: true
 pygments: true
 permalink: /:year/:month/:title
-lsi: true
 bookmarks: true
