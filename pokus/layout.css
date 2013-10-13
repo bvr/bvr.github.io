@@ -1,0 +1,31 @@
+
+body {
+    padding: 10px 15%;
+}
+
+p { 
+    font-family: 'Segoe UI', 'Calibri', 'Open Sans', sans-serif; 
+    font-size: 11pt;
+    font-weight: normal;
+    line-height: 1.3em;
+    color: #111;
+    margin: 11pt 0;
+    text-align: justify;
+}
+
+h1, h2 {
+    font-family: 'Calibri';
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+h1 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #999;
+    font-size: 16pt;
+    margin: 5pt 0px -10pt;
+    padding: 0;
+}
