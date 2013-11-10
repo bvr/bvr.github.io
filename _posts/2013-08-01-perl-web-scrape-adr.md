@@ -1,4 +1,15 @@
+---
+layout: post
+title: Web scraping for climbers pages
+perex: >
+  ??
+published: no
+tags:
+  - perl
+  - ??
+---
 
+{% highlight perl %}
 use LWP::Simple qw(get);
 use HTML::TreeBuilder;
 use URI;
@@ -31,3 +42,4 @@ open(my $out,">:encoding(cp1250):utf8", "activities.txt");
 for my $item (@items) {
      print {$out} join("\t",@$item), "\n";
 }
+{% endhighlight %}
