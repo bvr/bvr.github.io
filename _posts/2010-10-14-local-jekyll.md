@@ -32,13 +32,17 @@ This part is necessary to run [jekyll](http://jekyllrb.com/).
 
 If you don't need syntax highlighting, you can skip this part. 
 
- - download [python 3.3.2](http://www.python.org/download/) and install it. Use version 32/64-bit version as appropriate
+ - download [python 2.7.5](http://www.python.org/download/) and install it. Use version 32/64-bit version as appropriate
  - install [setuptools](https://pypi.python.org/pypi/setuptools/1.1.6) by running downloading [ez_setup.py](https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py) and running it
- - add `C:\Python33\Scripts` to the `PATH` variable and make sure your shell gets it (reboot if you don't have an idea)
+ - add `C:\Python27\Scripts` to the `PATH` variable and make sure your shell gets it (reboot if you don't have an idea)
  - install [pygments](http://pygments.org/) with
     `easy_install Pygments`
 
+I spent few hours figuring out why the combo of ruby and python does not work together. I found
+number of articles pointing out to number of problems, finally I needed to downgrade from python
+3.3.2 to 2.7.5, which finally made it working.
+
 ### Test it
 
- - go into your site directory and run `jekyll --server --auto`
+ - go into your site directory and run `jekyll serve`
  - point browser at [localhost:4000](http://localhost:4000) and check the site is working
