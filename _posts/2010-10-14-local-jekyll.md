@@ -16,17 +16,22 @@ here are steps I did.
 
 ### ruby part
 
-This part is necessary to run [jekyll](http://jekyllrb.com/). 
+This part is necessary to run [jekyll](http://jekyllrb.com/).  For the most part
+I just followed steps [described here](http://jekyll-windows.juthilo.com/):
 
- - download [ruby 1.9.3 installer for Windows](http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-1.9.3-p448.exe?direct) and install it
- - download [DevKit-4.5.2](https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) and install it:
+ - download [Ruby 2.0.0-p634 (x64)](http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.0.0-p643-x64.exe?direct) and install it
+ - download [DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe](http://cdn.rubyinstaller.org/archives/devkits/DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe) and install it:
    - by running executable extract file into a directory
-   - run `dk init`
-   - run `dk install`
+   - run `ruby dk.rb init`
+   - run `ruby dk.rb install`
  - install [jekyll](http://jekyllrb.com/) with  
    `gem install jekyll`
  - install [rdiscount](https://github.com/rtomayko/rdiscount/)  
    `gem install rdiscount`
+
+To fix the certificate, this answer helped me:
+
+http://stackoverflow.com/questions/19150017/ssl-error-when-installing-rubygems-unable-to-pull-data-from-https-rubygems-o/27298259#27298259
 
 ### python part
 
