@@ -1,3 +1,4 @@
 pygments: true
 permalink: /:year/:month/:title
 bookmarks: true
+theme: jekyll-theme-minimal
