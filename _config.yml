@@ -2,3 +2,5 @@ pygments: true
 permalink: /:year/:month/:title
 bookmarks: true
 markdown: rdiscount
+
+theme: jekyll-theme-minimal
