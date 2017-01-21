@@ -2,6 +2,9 @@
 layout: index
 title: bvr
 ---
+<p>Are we regenerating?
+</p>
+
 <h2>Recent posts</h2>
 {% assign last_month = ' ' %}
     {% for post in site.posts offset: 0 limit: 20 %}
@@ -12,7 +15,7 @@ title: bvr
         <ul>
         {% assign last_month = post_month %}
     {% endif %}
-    <li><a href="{{ post.id }}/">{{ post.title }}</a><br>{{ post.perex }}
+    <li><a href="{{ post.id }}/">{{ post.title }}</a>
     {% endfor %}
 
     </ul>
