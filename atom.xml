@@ -5,20 +5,20 @@ layout: nil
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Bvr</title>
- <link href="http://bvr.github.com/atom.xml" rel="self"/>
- <link href="http://bvr.github.com/"/>
+ <link href="{{ site.url }}/atom.xml" rel="self"/>
+ <link href="{{ site.url }}"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://bvr.github.com/</id>
+ <id>{{ site.url }}</id>
  <author>
-   <name>Roman Hubacek</name>
+   <name>Roman Hubáček</name>
  </author>
 
  {% for post in site.posts limit: 15 %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://bvr.github.com{{ post.url }}"/>
+   <link href="{{ site.url }}{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://bvr.github.com{{ post.id }}</id>
+   <id>{{ site.url }}{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}

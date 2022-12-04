@@ -2,3 +2,4 @@ pygments: true
 permalink: pretty
 bookmarks: true
 theme: jekyll-theme-minimal
+url: https://bvr.github.io
