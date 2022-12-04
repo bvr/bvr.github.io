@@ -2,9 +2,10 @@
 layout: post
 title: Simple web scraping with perl
 category: perl
-published: no
+published: yes
 perex: >
-   ??
+  Something there is something on web that I would like to use. The following
+  article goes how to locate and get web-pages, parse and extract data from them.
 tags:
    - perl
    - LWP::Simple
@@ -13,27 +14,10 @@ tags:
    - Encoding
 ---
 
-
-# Request data from web
-
-We can use LWP library to request file from specific url:
-
-{% highlight perl %}
-use LWP::Simple qw(get);
-my $data = get('http://www.example.com');
-{% endhighlight %}
-
-
-Something there is something on web that I would like to use. The following
-article goes how to locate and get web-pages, parse and extract data from them.
-
 The code below is real-life problem I needed to solve. There was nice
 web [kaloricketabulky.cz](http://www.kaloricketabulky.cz) (calorie tables in
 english) that I used to find out what calorie consumption I had on various
 activities like swimming.
-
-First, we need an URL (uniform resource locator) address of page we want.
-
 
 Building blocks:
 
@@ -41,10 +25,40 @@ Building blocks:
  - how to parse HTML string and find specific contents
  - how to compose new URL from original and relative link
 
+## Request data from web
 
-## The script
+We can use [LWP::Simple](https://metacpan.org/pod/LWP::Simple) library to get
+a resource from specific url:
 
-{% highlight perl %}
+```perl
+use LWP::Simple qw(get);
+my $data = get('http://www.example.com');
+```
+
+## Parse contents of a web page
+
+The [HTML::TreeBuilder](https://metacpan.org/pod/HTML::TreeBuilder) provides nice interface
+for parsing of the HTML page and bunch of nice methods to extract items based on its attributes.
+
+```perl
+my $html = HTML::TreeBuilder->new_from_content($html_string);
+for my $link ($html->look_down(id => 'katalog')->find('a')) {
+  # do something with links in the "katalog" element
+  print $link->attr('href');
+}
+```
+
+## URL composition
+
+Is easy with [URI](https://metacpan.org/pod/URI) module:
+
+```perl
+my $url = URI->new_abs($link, $base_link);    # link can be either absolute or relative
+```
+
+## Put together
+
+```perl
 use LWP::Simple qw(get);
 use HTML::TreeBuilder;
 use URI;
@@ -77,4 +91,4 @@ open(my $out,">:encoding(cp1250):utf8", "activities.txt");
 for my $item (@items) {
      print {$out} join("\t",@$item), "\n";
 }
-{% endhighlight %}
+```
