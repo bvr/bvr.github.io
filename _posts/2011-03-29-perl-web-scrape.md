@@ -4,8 +4,8 @@ title: Simple web scraping with perl
 category: perl
 published: yes
 perex: >
-  Something there is something on web that I would like to use. The following
-  article goes how to locate and get web-pages, parse and extract data from them.
+  There is something on web that I would like to use. The following
+  article goes on how to locate and get web-pages, parse and extract data from it.
 tags:
    - perl
    - LWP::Simple
