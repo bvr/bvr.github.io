@@ -1,4 +1,4 @@
 pygments: true
-permalink: /:year/:month/:title
+permalink: pretty
 bookmarks: true
 theme: jekyll-theme-minimal
