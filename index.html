@@ -2,21 +2,16 @@
 layout: index
 title: bvr
 ---
-<p>Are we regenerating? Another try
-</p>
 
-<h2>Recent posts</h2>
-{% assign last_month = ' ' %}
-    {% for post in site.posts offset: 0 limit: 20 %}
-    {% capture post_month %}{{ post.date | date: "%Y-%m" }}{% endcapture %}
-    {% if  post_month != last_month %}
-        {% if last_month != ' ' %}</ul>{% endif %}
-        <h3>{{ post.date | date: "%B %Y" }}</h3>
-        <ul>
-        {% assign last_month = post_month %}
-    {% endif %}
-    <li><a href="{{ post.url }}/">{{ post.title }}</a>
-    {% endfor %}
-
+<section>
+    <ul class="post-list">
+       {% for post in site.posts %}
+          {% unless post.preview %}
+       <li>
+          [<time datetime="{{ post.date | date_to_xmlschema }}"></time>{{ post.date | date: "%Y-%m-%d" }}]
+          <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
+       </li>
+          {% endunless %}
+       {% endfor %}
     </ul>
-
+ </section>
