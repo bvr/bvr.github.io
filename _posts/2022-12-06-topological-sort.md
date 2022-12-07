@@ -8,7 +8,8 @@ tags:
   - algorithm
 ---
 I run across very useful algorithms for situation where total order of a sequence is not clear
-in [excellent article of Eric Lippert](https://blogs.msdn.microsoft.com/ericlippert/2004/03/16/im-putting-on-my-top-hat-tying-up-my-white-tie-brushing-out-my-tails-in-that-order/). It allows you to make sure some items go earlier than others, typically when we have some dependencies. I recently used it for sequential processing of interdependent sets of safety cutsets.
+in [excellent article of Eric Lippert][]. It allows you to make sure some items go earlier than others, typically when we have some dependencies. 
+I recently used it for sequential processing of interdependent sets of safety [cutsets][].
 
 In referenced article it is implemented in javascript, I basically rewrote it into perl:
 
@@ -62,3 +63,6 @@ sub visit {
     push @$list, $dependency;
 }
 ```
+
+[excellent article of Eric Lippert]: https://blogs.msdn.microsoft.com/ericlippert/2004/03/16/im-putting-on-my-top-hat-tying-up-my-white-tie-brushing-out-my-tails-in-that-order/
+[cutsets]: https://en.wikipedia.org/wiki/Cut_(graph_theory)
