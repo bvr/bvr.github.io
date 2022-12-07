@@ -7,8 +7,7 @@ tags:
     - python
     - install
 ---
-''Update:'' I walked through list below for another installation on my new 
-laptop, so bunch of versions had been updated. 
+''Update 2022-12-07:'' Tried the steps and updated paths and versions where needed.
 
 Since I started using jekyll for this site, I wanted to have local instance
 of it installed on my Windows machine for testing. Finally I made it working,
@@ -16,22 +15,25 @@ here are steps I did.
 
 ### ruby part
 
-This part is necessary to run [jekyll](http://jekyllrb.com/).  For the most part
-I just followed steps [described here](http://jekyll-windows.juthilo.com/):
+This part is necessary to run [jekyll][2].  For the most part I just followed instructions on their page.
 
- - download [Ruby 2.0.0-p634 (x64)](http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.0.0-p643-x64.exe?direct) and install it
- - download [DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe](http://cdn.rubyinstaller.org/archives/devkits/DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe) and install it:
-   - by running executable extract file into a directory
-   - run `ruby dk.rb init`
-   - run `ruby dk.rb install`
- - install [jekyll](http://jekyllrb.com/) with  
-   `gem install jekyll`
- - install [rdiscount](https://github.com/rtomayko/rdiscount/)  
-   `gem install rdiscount`
+ - download [Ruby 3.1.3 (x64)][1] and install it, reboot will be probably need to get path updated everywhere
+ - install [jekyll][2] with  
+   `gem install jekyll bundler`
 
-To fix the certificate, this answer helped me:
+It takes some time finally it reported:
 
-http://stackoverflow.com/questions/19150017/ssl-error-when-installing-rubygems-unable-to-pull-data-from-https-rubygems-o/27298259#27298259
+```
+...
+Successfully installed bundler-2.3.26
+Parsing documentation for bundler-2.3.26
+Installing ri documentation for bundler-2.3.26
+Done installing documentation for bundler after 0 seconds
+28 gems installed
+```
+
+ - install github-pages with
+   `gem install github-pages`
 
 ### python part
 
@@ -49,5 +51,16 @@ number of articles pointing out to number of problems, finally I needed to downg
 
 ### Test it
 
- - go into your site directory and run `jekyll serve`
- - point browser at [localhost:4000](http://localhost:4000) and check the site is working
+Go into your site directory and run `jekyll serve`. It should tell something like this:
+
+```
+...
+    Server address: http://127.0.0.1:4000
+  Server running... press ctrl-c to stop.
+```
+
+By going to the address you can check your site.
+
+
+[1]: https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-3.1.3-1/rubyinstaller-devkit-3.1.3-1-x64.exe
+[2]: http://jekyllrb.com/
