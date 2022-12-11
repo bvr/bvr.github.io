@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Notes about using jekyll and TailwindCSS
-published: yes
+published: no
 tags:
   - jekyll
   - tailwind
@@ -9,6 +9,7 @@ tags:
   - html
 ---
 In now about [12 years old article][1] there are some notes how to make jekyll working on my local Windows computer.
+
 
 
 
