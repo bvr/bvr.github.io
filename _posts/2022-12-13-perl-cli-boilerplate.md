@@ -126,3 +126,6 @@ USAGE
     exit(-1);
 }
 ```
+
+[1]: https://metacpan.org/pod/Getopt::Long
+[2]: https://metacpan.org/pod/Log::Log4perl
