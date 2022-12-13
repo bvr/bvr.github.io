@@ -1,24 +1,23 @@
 ---
 layout: post
 title: Repeated match with regex
-perex: >
-    I wrote parsing for <a href="http://www.graphviz.org">graphviz</a> dot files 
-    today and found interesting feature of perl regex engine. It can match a 
-    pattern repeatedly to sections of the string. 
-category: [perl]
 tags:
     - perl
     - regex
     - capture
 ---
+I wrote parsing for [graphviz][1] dot files 
+today and found interesting feature of perl regex engine. It can match a 
+pattern repeatedly to sections of the string. 
+
 Small excerpt looks like this.
 
-{% highlight perl %}
+```perl
 my $dot_props = 'len=2,font="Arial Black",style=box';
 while($dot_props =~ /\G \s* (\w+) \s* = \s* (\w+|".*?") \s* ,? /gcx) {
     print "$1\t$2\n";
 }
-{% endhighlight %}
+```
 
 The string for parsing is defined on first line, there are several key-value
 pairs separated by comma. Simple <b>split</b> on comma does not work well here,
@@ -29,18 +28,18 @@ Pieces
 
 One pair can be matched by this regex
 
-{% highlight perl %}
+```perl
 / \s* (\w+) \s* = \s* (\w+|".*?") /x;
-{% endhighlight %}
+```
 
 For those unfamiliar with the syntax:
 
-<table>
-<tr><td><code>\s*<td>any number of whitespace, including none
-<tr><td><code>(\w+)<td>captured group of word (alphanumeric) characters
-<tr><td><code>=<td>normal character match
-<tr><td><code>(\w+|".*?")<td>captured group of either word or anything in quotes
-</table>
+|Code|Description|
+|---|---|
+|`\s*`|any number of whitespace including none|
+|`(\w+)`|captured group of word (alphanumeric) characters|
+|`=`|normal character match|
+|`(\w+|".*?")`|captured group of either word or anything in quotes|
 
 Now using global match in a loop we can get one pair after another. The only
 remaining part is taking in account last comma (optional) and anchor regex to
@@ -51,9 +50,10 @@ Conclusion
 
 So the example on the top produces this output
 
-{% highlight perl %}
+```perl
 len     2
 font    "Arial Black"
 style   box
-{% endhighlight %}
+```
 
+[1]: http://www.graphviz.org

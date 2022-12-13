@@ -1,17 +1,16 @@
 ---
 layout: post
 title: Section numbering with Template Toolkit
-perex: >
-    Recently I was working on documentation for web-based intranet application. Every
-    page is created from templates processed by <a href="http://template-toolkit.org">Template Toolkit</a>.
-    So why not move heading definition into separate block and generate TOC automatically.
-category: perl
 tags:
     - perl
     - template
     - Template Toolkit
     - tpage
 ---
+Recently I was working on documentation for web-based intranet application. Every
+page is created from templates processed by [Template Toolkit][1].
+So why not move heading definition into separate block and generate TOC automatically.
+
 Below is the approach demonstrated, just on simple text file.
 
 The template
@@ -61,9 +60,9 @@ Process the template
 --------------------
 
 Convert to output with *tpage* tool (included in Template Toolkit):
-{% highlight bash %}
+```bash
 tpage text_with_contents.txt
-{% endhighlight %}
+```
 
 Ouput
 -----
@@ -95,3 +94,5 @@ Ouput
     ============
 
     Quick summary and high level overview of the problem.
+
+[1]: http://template-toolkit.org/

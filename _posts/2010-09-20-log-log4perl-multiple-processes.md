@@ -1,19 +1,18 @@
 ---
 layout: post
 title: Log::Log4perl in multiple processes
-perex: >
-    I am using <code>Log::Log4perl</code> to produce logs from my perl fastcgi applications.
-    There is typically several same processes writing into same log. I was wondering
-    if it is possible to lose some messages this way.
-category: perl
 tags:
     - perl
     - Log::Log4perl
     - Log::Dispatch::File::Locked
 ---
+I am using [Log::Log4perl][1] to produce logs from my perl fastcgi applications.
+There is typically several same processes writing into same log. I was wondering
+if it is possible to lose some messages this way.
+
 So I made a simple test - the code went into `log_test.pl`.
 
-{% highlight perl %}
+```perl
 use Log::Log4perl qw(:easy);
 
 Log::Log4perl->easy_init({
@@ -27,13 +26,13 @@ for (1..20) {
     DEBUG "tick $_ from $id";
     sleep(1);
 }
-{% endhighlight %}
+```
 
-Then runned simultaneously several times:
+Then run simultaneously several times:
 
-{% highlight bash %}
+```bash
 perl -E "say for 1..10" | xargs -n 1 -P 10 perl log_test.pl
-{% endhighlight %}
+```
 
 That created `test.log` file with entries like
 
@@ -44,7 +43,7 @@ That created `test.log` file with entries like
 
 Now, we should have ticks 1..20 from 10 processes. Do we?
 
-{% highlight perl %}
+```perl
 open(my $I,"test.log");
 while(<$I>) {
     $arr[$1][$2] = 1 if /tick (\d+) from (\d+)/;
@@ -55,7 +54,7 @@ for my $t (1..20) {
         print "missing tick $t from $f\n" if !$arr[$t][$f];
     }
 }
-{% endhighlight %}
+```
 
 Yields
 
@@ -77,7 +76,7 @@ Apparently not.
 I did not stop here and after few hours playing with various configuration
 found working method:
 
-{% highlight perl %}
+```perl
 use Log::Log4perl qw(:easy);
 
 Log::Log4perl->init(\ qq{
@@ -96,8 +95,11 @@ for (1..20) {
     DEBUG "tick $_ from $id";
     sleep(1);
 }
-{% endhighlight %}
+```
 
-Seems like `Log::Dispatch::File::Locked` is working fine here. Note that
+Seems like [Log::Dispatch::File::Locked][2] is working fine here. Note that
 without `close_after_write` enable this is really slow and the ten processes
 take much more time to finish.
+
+[1]: https://metacpan.org/pod/Log::Log4perl
+[2]: https://metacpan.org/pod/Log::Dispatch::File::Locked
