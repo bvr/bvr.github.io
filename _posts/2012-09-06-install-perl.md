@@ -8,7 +8,7 @@ tags:
   - install
   - module
 ---
-Steps I am usually take when installing perl on new machine. 
+Steps I usually take when installing perl on new machine. 
 
 On Windows, I was always going with ActiveState perl. It has worked for me well and I never needed to look elsewhere.
 

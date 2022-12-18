@@ -7,7 +7,7 @@ tags:
     - python
     - install
 ---
-''Update 2022-12-07:'' Tried the steps and updated paths and versions where needed.
+**Update 2022-12-07:** Tried the steps and updated paths and versions where needed.
 
 Since I started using jekyll for this site, I wanted to have local instance
 of it installed on my Windows machine for testing. Finally I made it working,
