@@ -3,7 +3,7 @@
 <xsl:template match="/sm:urlset">
 <ul>
   <xsl:for-each select="sm:url/sm:loc">
-    <li><a href="{.}"><xsl:value-of select="." /></a> <xls:value-of select="lastmod"/></li>
+    <li><a href="{.}"><xsl:value-of select="." /></a> <xsl:value-of select="lastmod"/></li>
   </xsl:for-each>
 </ul>
 </xsl:template>

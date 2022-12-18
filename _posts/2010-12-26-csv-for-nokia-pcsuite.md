@@ -1,11 +1,6 @@
 ---
 layout: post
 title: Addressbook migration to Nokia
-category: perl
-perex: >
-  This christmas I finally decided to upgrade my venerable cell phone to something
-  newer. Old one, Siemens ME45, served me well for eight years, but its second 
-  battery life is close to death and I got feeling new gizmo would be nice.  
 tags:
   - perl
   - Nokia PC Suite
@@ -14,6 +9,10 @@ tags:
   - Text::CSV_XS
   - BOM
 ---
+This christmas I finally decided to upgrade my venerable cell phone to something
+newer. Old one, Siemens ME45, served me well for eight years, but its second 
+battery life is close to death and I got feeling new gizmo would be nice.  
+
 I ended up buying 
 [Nokia 6303i][n6303].
 This is simple script to help me convert addressbook into new device.
@@ -39,10 +38,10 @@ specific column in Nokia one.
 The most tricky part was to encode output file properly and add correct 
 [BOM][bom] (byte-order mark) to the start of file. These two lines do the job:
 
-{% highlight perl %}
+```perl
 open my $nokia_out, ">:raw:encoding(utf-16le):utf8", $ARGV[1] or die;
 print {$nokia_out} "\x{FEFF}";
-{% endhighlight %}
+```
 
 First is opening file that is encoding internal perl **utf-8** into **utf-16 
 little endian**. The second line writes single letter - two bytes: `0xFE`, `0xFF` - 
@@ -56,13 +55,13 @@ into the beginning of file to indicate encoding. All [BOM][bom]s defined are:
 
 Script can be called as:
 
-{% highlight bash %}
+```bash
 perl convert_list.pl siemens.csv nokia.csv
-{% endhighlight %}
+```
 
 ## convert_list.pl
 
-{% highlight perl %}
+```perl
 use strict;
 use utf8;
 use Text::CSV_XS;
@@ -129,7 +128,7 @@ while(<$me45_in>) {
     }
     print {$nokia_out} $csv->string,"\n";
 }
-{% endhighlight %}
+```
 
 [n6303]:    http://europe.nokia.com/find-products/devices/nokia-6303i-classic
 [pc_suite]: http://europe.nokia.com/support/download-software/pc-suites

@@ -2,11 +2,6 @@
 layout: post
 title:  Date parsing
 category: perl
-perex: >
-    Date parsing is always problematic. For most of my work I prefer canonical 
-    YYYY-MM-DD or YYMMDD format that is great for sorting and easy to parse. But
-    data comes from various sources. Recently I got data with all dates in 
-    US format: <b>Wed, Sep 17 2003</b>.
 tags:
   - perl
   - parsing
@@ -15,13 +10,14 @@ tags:
   - test
   - Test::More
 ---
+**Date parsing is always problematic. For most of my work I prefer canonical YYYY-MM-DD or YYMMDD format that is great for sorting and easy to parse. But data comes from various sources.  Recently I got data with all dates in US format: `Wed, Sep 17 2003`.**
 
 Here is very simple perl class that implement the parsing. Initially I looked
 on [DateTime::Format::Natural][dfn] and some others, but I haven't found any 
 working straight for me. I've choosen a OO form, since I need to parse many
 such dates and initialization is potentially costly compared to matching code.
 
-{% highlight perl %}
+```perl
 package DateParser;
 
 sub new {
@@ -52,12 +48,12 @@ sub parse {
 }
 
 1;
-{% endhighlight %}
+```
 
 The class `DateParser` has a constructor and one method. In constructor `new`
 an anonymous hash is blessed into the class. The hash is constant and look like this:
 
-{% highlight perl %}
+```perl
 {
   months_re => "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec",
   months_tran => {
@@ -65,7 +61,7 @@ an anonymous hash is blessed into the class. The hash is constant and look like 
     'may' => 5,   'jun' => 6,   'jul' => 7,   'aug' => 8,   
     'sep' => 9,   'oct' => 10,  'nov' => 11,  'dec' => 12,
 }
-{% endhighlight %}
+```
 
 The `months_re` is part of parsing regular expression (RE) and `months_tran` is
 hash for converting month name into its ordinal number.
@@ -80,7 +76,7 @@ in scalar context returns date as string formatted `YYYY-MM-DD`.
 I used the code below to debug the class. It is using simple procedural
 [Test::More][tm] module with its `ok` and `is` functions. 
 
-{% highlight perl %}
+```perl
 use Test::More;
 use DateParser;
 
@@ -101,7 +97,7 @@ for my $input (sort keys %tests) {
 }
 
 done_testing;
-{% endhighlight %}
+```
 
 Sample run:
 

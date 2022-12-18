@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-    <div class="span-16">
-        <div class="date"><time datetime="{{ page.date }}" pubdate>{{ page.date | date_to_string }}</time></div><div class="author"> by Roman Hubáček</div>
+    <div class="span-24">
+        <div class="date"><time datetime="{{ page.date }}" pubdate>{{ page.date | date: "%Y-%m-%d"  }}</time></div><div class="author"> Roman Hubáček</div>
         <div class="tags">
         {% for tag in page.tags %}
         <div class="tag">{{ tag }}</div>
@@ -10,29 +10,6 @@ layout: default
         </div>
         <h1>{{ page.title }}</h1>
         
-        {% if page.perex != '' %}
-        <p class="perex">{{ page.perex }}
-        </p>
-        {% endif %}
-        
-
         {{ content }}
-
-    </div>
-    <div class="sidebar span-4">
-        <h3>Recent</h3>
-
-        <ul>
-        {% for post in site.posts offset: 0 limit: 5 %}
-        <li class="post"><a href="{{ post.id }}/">{{ post.title }}</a></li>
-        {% endfor %}
-        </ul>
-
-        <h3>Related</h3>
-        <ul>
-        {% for post in site.related_posts limit: 5 %}
-        <li class="post"><a href="{{ post.id }}/">{{ post.title }}</a></li>
-        {% endfor %}
-        </ul>
 
     </div>

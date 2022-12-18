@@ -1,11 +1,7 @@
 ---
 layout: post
 title: Simple web scraping with perl
-category: perl
 published: yes
-perex: >
-  There is something on web that I would like to use. The following
-  article goes on how to locate and get web-pages, parse and extract data from it.
 tags:
    - perl
    - LWP::Simple
@@ -13,6 +9,8 @@ tags:
    - URI
    - Encoding
 ---
+There is something on web that I would like to use. The following
+article goes on how to locate and get web-pages, parse and extract data from it.
 
 The code below is real-life problem I needed to solve. There was nice
 web [kaloricketabulky.cz](http://www.kaloricketabulky.cz) (calorie tables in

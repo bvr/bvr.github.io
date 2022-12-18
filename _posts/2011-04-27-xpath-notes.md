@@ -2,9 +2,6 @@
 layout: post
 title: XPath notes
 published: no
-category: xml
-perex: >
-  ??
 tags:
   - xml
   - xpath

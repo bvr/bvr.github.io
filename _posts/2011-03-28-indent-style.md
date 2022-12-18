@@ -1,17 +1,15 @@
 ---
 layout: post
 title: My indent style for perl
-category: perl
-perex: >
-  You can see my indentation style in articles around, but here is a way I am
-  using to automate this layout. It is handy when I get some messy code and 
-  also practical to reformat some parts of my code.
 tags:
   - perl
   - indent
   - perltidy
   - style
 ---
+You can see my indentation style in articles around, but here is a way I am
+using to automate this layout. It is handy when I get some messy code and 
+also practical to reformat some parts of my code.
 
 ## SciTE
 

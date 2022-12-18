@@ -1,22 +1,21 @@
 ---
 layout: post
 title: Convert hexdump to binary data
-category: perl
-perex: >
-  Working on analysis of network packets I needed to convert data dumped
-  in a file to real binary form before processing them further.
 tags:
   - perl
   - pack
   - hex
   - split
 ---
-I am using [WireShark](http://www.wireshark.org/) to capture network packets.
-Data were dumped WireShark's commandline companion **tshark**:
+Working on analysis of network packets I needed to convert data dumped
+in a file to real binary form before processing them further.
 
-{% highlight bash %}
+I am using [WireShark](http://www.wireshark.org/) to capture network packets.
+Data were dumped WireShark's command-line companion **tshark**:
+
+```bash
 tshark -n -T fields -e ip.src -e ip.dst -e data.data -r packet-data.pcap
-{% endhighlight %}
+```
 
 The data output has lines with three fields, source IP, destination IP and 
 hexdumped data.
@@ -32,7 +31,7 @@ Processing of such data is simple in perl, each line we split on tab, then
 decode hexdump to binary string by packing individual bytes into one string using 
 [pack](http://perldoc.perl.org/functions/pack.html). 
 
-{% highlight perl %}
+```perl
 while(<>) {
     chomp;
     my ($src_ip, $dst_ip, $hexdump) = split /\t/;
@@ -41,4 +40,4 @@ while(<>) {
     # process data -- treat it as several 4B big-endian integers
     my ($head, $len, @rest) = unpack 'N*', $data;
 }
-{% endhighlight %}
+```

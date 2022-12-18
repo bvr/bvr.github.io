@@ -1,12 +1,6 @@
 ---
 layout: post
 title: perl method definition benchmark
-category: perl
-perex: >
-  Here is benchmark of running methods of perl class defined by three
-  approaches: plain perl sub, with 
-  <a href="http://search.cpan.org/perldoc?Method::Signatures::Simple">Method::Signatures::Simple</a>
-  and with <a href="http://search.cpan.org/perldoc?MooseX::Declare">MooseX::Declare</a>.
 tags:
   - perl
   - method
@@ -15,6 +9,8 @@ tags:
   - MooseX::Declare
   - Method::Signatures::Simple
 ---
+Here is benchmark of running methods of perl class defined by three
+approaches: plain perl sub, with [Method::Signatures::Simple][mss] and with [MooseX::Declare][mxd].
 
 ### Introduction
 
@@ -23,22 +19,22 @@ While modules like [Moose][moose] or [Class::Accessor][ca] typically take care
 of attribute accessor generation, methods are usually left as they are in plain 
 perl. Usual pattern looks like this:
 
-{% highlight perl %}
+```perl
 sub run {
     my $self = shift;
     my ($bar, $baz, %opts) = @_;
     
     ...
 }
-{% endhighlight %}
+```
 
 I used [MooseX::Declare][mxd] (MXD) in one of my recent larger projects. It looks nice
 
-{% highlight perl %}
+```perl
 method run($bar, $baz, %opts) {
     ...
 }
-{% endhighlight %}
+```
 
 but I quickly realized that this is slow. Very slow. So I reverted it back to 
 plain perl by small script and stopped thinking about methods and their 
@@ -62,7 +58,7 @@ It looks that MSS bring very minor penalty, while slowness of MXD is more than a
 
 ### Benchmark source
 
-{% highlight perl %}
+```perl
 use Benchmark qw(:all);
 
 my $plain = Plain->new();
@@ -99,7 +95,7 @@ BEGIN {
         }
     }
 }
-{% endhighlight %}
+```
 
 [moose]: http://search.cpan.org/perldoc?Moose
 [mss]:   http://search.cpan.org/perldoc?Method::Signatures::Simple
