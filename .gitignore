@@ -1,3 +1,4 @@
 _site
 *.swp
 .vscode/settings.json
+node_modules/*

@@ -1,13 +1,9 @@
 module.exports = {
   content: [
-    "./content/**/*.md",
-    "./content/**/*.html",
-    "./layouts/**/*.html",
-    "./assets/**/*.js",
-    "./themes/digitalgarden/content/**/*.md",
-    "./themes/digitalgarden/content/**/*.html",
-    "./themes/digitalgarden/layouts/**/*.html",
-    "./themes/digitalgarden/assets/**/*.js",
+    "./*.html",
+    "./_posts/**/*.md",
+    "./_layouts/*.html",
+    "./_includes/*.html",
   ],
   darkMode: 'class',
   theme: {

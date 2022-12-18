@@ -2,15 +2,4 @@
 layout: index
 title: bvr
 ---
-<section>
-    <ul class="post-list">
-       {% for post in site.posts %}
-          {% unless post.preview %}
-       <li>
-          [<time datetime="{{ post.date | date_to_xmlschema }}"></time>{{ post.date | date: "%Y-%m-%d" }}]
-          <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
-       </li>
-          {% endunless %}
-       {% endfor %}
-    </ul>
-</section>
+<p class="text-center p-8 text-2xl text-slate-300 dark:text-slate-700">Select a post to read</p>
