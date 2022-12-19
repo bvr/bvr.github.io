@@ -64,7 +64,7 @@ Convert to output with *tpage* tool (included in Template Toolkit):
 tpage text_with_contents.txt
 ```
 
-Ouput
+Output
 -----
 
     CONTENTS
