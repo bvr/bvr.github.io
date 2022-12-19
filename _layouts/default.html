@@ -68,7 +68,7 @@
         {% unless post.preview %}
         
         <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" class="article block px-3 py-0  hover:bg-slate-200">
-            <span class="text-slate-400 py-2">[<time datetime="{{ post.date | date_to_xmlschema }}"></time>{{ post.date | date: "%Y-%m-%d" }}]</span> <span class=text-slate-800>{{ post.title }}</span>
+            <span class="text-slate-400 py-2"><time datetime="{{ post.date | date_to_xmlschema }}"></time>{{ post.date | date: "%Y-%m-%d" }}</span> <span class=text-slate-800>{{ post.title }}</span>
         </a>
 
         {% endunless %}
