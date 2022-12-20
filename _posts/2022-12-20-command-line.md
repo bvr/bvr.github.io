@@ -1,11 +1,14 @@
 ---
 layout: post
-title: Using CommandLineParser to handle C# program parameters
+title: C# program arguments
 published: yes
 tags:
   - C#
   - CommandLineParser
   - .net
+  - CLI
+  - arguments
+  - help generation
 ---
 As I was spoiled by various nice command-line (CLI) arguments parsing solutions
 from other languages, when using C# at work I was looking for some convenient
