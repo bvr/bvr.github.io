@@ -9,9 +9,7 @@ tags:
   - YAML::XS
   - Data::Dump
 ---
-When it comes to configuration of a program, my preference is structured config
-file that directly translates into a programming language structures. I've grown
-to like [YAML][1], as it allows easy comments, verbatim blocks, associations or arrays.
+When it comes to configuration of a program, my preference is structured config file that directly translates into a programming language structures. I've grown to like [YAML][1], as it allows easy comments, verbatim blocks, associations or arrays.
 
 For instance
 

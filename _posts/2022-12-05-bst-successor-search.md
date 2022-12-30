@@ -10,11 +10,7 @@ tags:
   - Moo
   - Iterator::Simple
 ---
-As I was designing interview questions for our hiring, I run 
-into [a coding interview video with binary tree](https://www.youtube.com/watch?v=jma9hFQSCDk). 
-The task caught my attention, so I put together quick solution in perl using
-[Moo](https://metacpan.org/pod/Moo) for classes and 
-[Iterator::Simple](https://metacpan.org/pod/Iterator::Simple) for in-order traversal.
+As I was designing interview questions for our hiring, I run into [a coding interview video with binary tree](https://www.youtube.com/watch?v=jma9hFQSCDk). The task caught my attention, so I put together quick solution in perl using [Moo](https://metacpan.org/pod/Moo) for classes and [Iterator::Simple](https://metacpan.org/pod/Iterator::Simple) for in-order traversal.
 
 First, I needed a tree building block.
 
@@ -74,8 +70,7 @@ $bst->insert(25);
 dd $bst;
 ```
 
-That works, it nicely dumps out whole structure, it is easily visible that
-the items are in correct order.
+That works, it nicely dumps out whole structure, it is easily visible that the items are in correct order.
 
 ```perl
 bless({
@@ -95,8 +90,7 @@ bless({
 }, "BST")
 ```
 
-For finding the successor, we can build a method for BST class to 
-iterate the tree in-order, basically a sorted sequence.
+For finding the successor, we can build a method for BST class to iterate the tree in-order, basically a sorted sequence.
 
 ```perl
     method inorder_iterator() {
@@ -146,8 +140,7 @@ ok 1
 1..1
 ```
 
-Now the final part would be to find a successor for a value. We will
-just iterate until the the numbers are smaller, then return next value.
+Now the final part would be to find a successor for a value. We will just iterate until the the numbers are smaller, then return next value.
 
 ```perl
     method inorder_successor($what_to_find) {

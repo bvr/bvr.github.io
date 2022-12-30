@@ -10,9 +10,7 @@ tags:
   - arguments
   - help generation
 ---
-As I was spoiled by various nice command-line (CLI) arguments parsing solutions
-from other languages, when using C# at work I was looking for some convenient
-solution for the problem. 
+As I was spoiled by various nice command-line (CLI) arguments parsing solutions from other languages, when using C# at work I was looking for some convenient solution for the problem. 
 
 My requirements were:
 
@@ -23,8 +21,7 @@ My requirements were:
 
 What covered all items above was [CommandLineParser][1] nuget package. 
 
-The definition of options is a C# class decorated with `Option` attributes that cover 
-command-line switches, defaults, help and other attributes needed to setup your CLI.
+The definition of options is a C# class decorated with `Option` attributes that cover command-line switches, defaults, help and other attributes needed to setup your CLI.
 
 ```c#
 class ConsoleOptions
@@ -61,8 +58,7 @@ class ConsoleOptions
 }
 ```
 
-Nice touch is method `Examples` that demonstrate the nuget's ability to construct command-line examples 
-from the structure.
+Nice touch is method `Examples` that demonstrate the nuget's ability to construct command-line examples from the structure.
 
 Usage is pretty simple, something like this:
 
@@ -89,8 +85,7 @@ class Program
 }
 ```
 
-When called with `--help` option or when there is a problem with the input, it produces 
-nice error message like this:
+When called with `--help` option or when there is a problem with the input, it produces nice error message like this:
 
 ```
 Generator 1.0.0

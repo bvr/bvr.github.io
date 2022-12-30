@@ -29,9 +29,7 @@ The commands for installation and rebuilding the css is
 
 > Building complex components from a constrained set of primitive utilities
 
-In essence it provides common classes for most CSS features with predefined values 
-for sizes and colors. The generator mentioned above then pick just those used, so
-resulting CSS for production site is rather small.
+In essence it provides common classes for most CSS features with predefined values for sizes and colors. The generator mentioned above then pick just those used, so resulting CSS for production site is rather small.
 
 There is pretty good summary in [Tailwind Cheat Sheet][5].
 
@@ -47,4 +45,3 @@ There is pretty good summary in [Tailwind Cheat Sheet][5].
 [3]: https://tailwindcss.com/docs/installation
 [4]: https://tailwindcss.com/docs/utility-first
 [5]: https://nerdcave.com/tailwind-cheat-sheet
-
