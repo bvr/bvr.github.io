@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  Date parsing
-category: perl
 tags:
   - perl
   - parsing
@@ -12,10 +11,7 @@ tags:
 ---
 **Date parsing is always problematic, especially when it comes directly from users, say an Excel spreadsheet. For most of my work I prefer canonical YYYY-MM-DD or YYMMDD format that is great for sorting and easy to parse. But data comes from various sources.  Recently I got data with all dates in US format: `Wed, Sep 17 2003`.**
 
-Here is very simple perl class that implement the parsing. Initially I looked
-on [DateTime::Format::Natural][dfn] and some others, but I haven't found any 
-working straight for me. I've choosen a OO form, since I need to parse many
-such dates and initialization is potentially costly compared to matching code.
+Here is very simple perl class that implement the parsing. Initially I looked on [DateTime::Format::Natural][dfn] and some others, but I haven't found any working straight for me. I've chosen a OO form, since I need to parse many such dates and initialization is potentially costly compared to matching code.
 
 ```perl
 package DateParser;
@@ -50,8 +46,7 @@ sub parse {
 1;
 ```
 
-The class `DateParser` has a constructor and one method. In constructor `new`
-an anonymous hash is blessed into the class. The hash is constant and look like this:
+The class `DateParser` has a constructor and one method. In constructor `new` an anonymous hash is blessed into the class. The hash is constant and look like this:
 
 ```perl
 {
@@ -60,21 +55,17 @@ an anonymous hash is blessed into the class. The hash is constant and look like 
     'jan' => 1,   'feb' => 2,   'mar' => 3,   'apr' => 4,   
     'may' => 5,   'jun' => 6,   'jul' => 7,   'aug' => 8,   
     'sep' => 9,   'oct' => 10,  'nov' => 11,  'dec' => 12,
+  }
 }
 ```
 
-The `months_re` is part of parsing regular expression (RE) and `months_tran` is
-hash for converting month name into its ordinal number.
+The `months_re` is part of parsing regular expression (RE) and `months_tran` is hash for converting month name into its ordinal number.
 
-A single method of the class does the parsing. Note that extended syntax of RE
-is used (`//x`) that allows use comments and whitespace within it to enhance
-clarity. The method in list context returns three items - year, month and day - 
-in scalar context returns date as string formatted `YYYY-MM-DD`. 
+A single method of the class does the parsing. Note that extended syntax of RE is used (`//x`) that allows use comments and whitespace within it to enhance clarity. The method in list context returns three items - year, month and day - in scalar context returns date as string formatted `YYYY-MM-DD`. 
 
 ### Test
 
-I used the code below to debug the class. It is using simple procedural
-[Test::More][tm] module with its `ok` and `is` functions. 
+I used the code below to debug the class. It is using simple procedural [Test::More][tm] module with its `ok` and `is` functions. 
 
 ```perl
 use Test::More;
