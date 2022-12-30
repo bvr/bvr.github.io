@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Notes from RUSI on Russia Invasion of Ukraine
+title: RUSI on Russia Invasion of Ukraine
 published: yes
 tags:
   - RUSI
@@ -9,37 +9,39 @@ tags:
   - Book
   - Notes
 ---
-[Preliminary Lessons in Conventional Warfighting from Russia' Invasion of Ukraine: February–July 2022][1]
+Notes from [Preliminary Lessons in Conventional Warfighting from Russia' Invasion of Ukraine: February–July 2022][1]
 
-Methodically a bit problematic report - rather preliminary observation useful for decision making than waiting for better evidence and more accurate data.
+The report is intentionally a bit problematic methodically - its purpose is rather preliminary observation useful for decision making than waiting for better evidence and more accurate data.
 
 ## Acronyms
+
+Gathered from the whole text.
 
 | Acronym | Description                                             |
 | ------- | ------------------------------------------------------- |
 | AFRF    | Armed Forces of the Russian Federation                  |
 | ATGW    | Anti-tank Guided Weapon                                 |
-| AWACS   | Airborne Warning And Control System                     |
-| BTG     | Battalion Tactical Group                                |
+| AWACS   | [Airborne Warning And Control System](https://en.wikipedia.org/wiki/Airborne_early_warning_and_control) |
+| BTG     | [Battalion Tactical Group](https://en.wikipedia.org/wiki/Battalion_tactical_group) |
 | C2      | Command and Control                                     |
 | CUAS    | Counter-UAS                                             |
 | EMS     | Electromagnetic Spectrum                                |
 | EW      | Electronic Warfare                                      |
 | FSB     | Federal Security Service (Russia)                       |
-| HIMARS  | High Mobility Artillery Rocket System                   |
+| HIMARS  | [High Mobility Artillery Rocket System](https://en.wikipedia.org/wiki/M142_HIMARS) |
 | HUMINT  | Human Intelligence                                      |
 | ISR     | Intelligence, Surveillance, Reconnaissance              |
 | JFO     | Joint Forces Operations                                 |
-| MLRS    | Multiple Launch Rocket System                           |
+| MLRS    | [Multiple Launch Rocket System](https://en.wikipedia.org/wiki/M270_Multiple_Launch_Rocket_System) |
 | NATO    | North Atlantic Treaty Organization                      |
-| RUSI    | Royal United Services Institute                         |
+| RUSI    | [Royal United Services Institute](https://rusi.org/) |
 | RViA    | Missile Forces and Artillery (Ukraine)                  |
 | TDF     | Territorial Defence Forces (Ukraine)                    |
 | UAF     | Ukrainian Armed Forces                                  |
 | UAS     | Uncrewed Aerial Systems                                 |
-| UAV     | Uncrewed Aerial Vehicle                                 |
-| VDV     | Russian Airborne Forces (Vozdushno-desantnye voyska)    |
-| VKS     | Russian Aerospace Forces (Vozdushno-kosmicheskiye sily) |
+| UAV     | [Uncrewed Aerial Vehicle](https://en.wikipedia.org/wiki/Unmanned_aerial_vehicle) |
+| VDV     | [Russian Airborne Forces (Vozdushno-desantnye voyska)](https://en.wikipedia.org/wiki/Russian_Airborne_Forces) |
+| VKS     | [Russian Aerospace Forces (Vozdushno-kosmicheskiye sily)](https://en.wikipedia.org/wiki/Russian_Aerospace_Forces) |
 
 ## Ad 1 - Russia planning and preparations
 
