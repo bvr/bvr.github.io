@@ -149,3 +149,25 @@ Suggestions for policy makers.
 
 [1]: https://static.rusi.org/359-SR-Ukraine-Preliminary-Lessons-Feb-July-2022-web-final.pdf
 *[AFRF]: Armed Forces of the Russian Federation
+*[ATGW]: Anti-tank Guided Weapon
+*[AWACS]: Airborne Warning And Control System
+*[BTG]: Battalion Tactical Group
+*[C2]: Command and Control
+*[CUAS]: Counter-UAS                                             
+*[EMS]: Electromagnetic Spectrum                                
+*[EW]: Electronic Warfare                                      
+*[FSB]: Federal Security Service (Russia)                       
+*[HIMARS]: High Mobility Artillery Rocket System
+*[HUMINT]: Human Intelligence                                      
+*[ISR]: Intelligence, Surveillance, Reconnaissance              
+*[JFO]: Joint Forces Operations                                 
+*[MLRS]: Multiple Launch Rocket System
+*[NATO]: North Atlantic Treaty Organization                      
+*[RUSI]: Royal United Services Institute
+*[RViA]: Missile Forces and Artillery (Ukraine)                  
+*[TDF]: Territorial Defence Forces (Ukraine)                    
+*[UAF]: Ukrainian Armed Forces                                  
+*[UAS]: Uncrewed Aerial Systems                                 
+*[UAV]: Uncrewed Aerial Vehicle
+*[VDV]: Russian Airborne Forces (Vozdushno-desantnye voyska)
+*[VKS]: Russian Aerospace Forces (Vozdushno-kosmicheskiye sily)
