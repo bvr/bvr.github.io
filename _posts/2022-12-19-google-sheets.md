@@ -1,11 +1,12 @@
 ---
 layout: post
-title: Tracking number of push ups with Google Sheets
+title: Tracking GTG with Google Sheets
 published: yes
 tags:
   - google
   - sheets
   - gtg
+  - push up
 ---
 [Grease the Groove (GTG)][1] is a system to become stronger with regular repetitions of an exercise of choice (typically a push up, pull up, squat or similar). The idea is to take a quick break many times a day and do quick exercise.
 

@@ -148,3 +148,4 @@ Suggestions for policy makers.
  3. Think about how new capabilities and weapons integrate with legacy systems and how they enable/magnify their effects in modern battlefield. The modernization should not be just deciding what to procure and what to discard
 
 [1]: https://static.rusi.org/359-SR-Ukraine-Preliminary-Lessons-Feb-July-2022-web-final.pdf
+*[AFRF]: Armed Forces of the Russian Federation
