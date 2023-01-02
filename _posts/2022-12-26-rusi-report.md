@@ -75,7 +75,7 @@ Structure of the force
 
  - Manoeuvre Brigades
  - Special Forces
- - Territorial Defence
+ - Territorial Defense
 
 Problems with retention and pay in UAF has also good side to create large pool of reservists.
 
@@ -87,7 +87,7 @@ In tanks, preference was to modernize existing tanks over buying new ones, since
 
 Anti-tank weapons counted about 1000 launchers and 9000 missiles for them. Initial problems with training and maintenance were quite quickly addressed. Their main purpose was to blunt enemy armor operations and raids with light forces.
 
-Air-defence has improved significantly as it was priority of Ukraine government. Number of upgraded radars were distributed with improved survivability. Long range systems used are variants of S-300, S-125 and Buk-M1. MANPADS are extensively used across all units.
+Air-defense has improved significantly as it was priority of Ukraine government. Number of upgraded radars were distributed with improved survivability. Long range systems used are variants of S-300, S-125 and Buk-M1. MANPADS are extensively used across all units.
 
 The Air units were overmatched by Russian systems in almost every aspect, so training focused on survivability, low-level flying and good use of terrain characteristics. The main problem was with equipment, rather than with trained crews.
 
@@ -97,7 +97,7 @@ Altogether the UAF was surprised on operational level, but on tactical level the
 
 ## Ad 3 - The Invasion
 
-Initial fire strike campaign targeted industrial facilities, fuel and energy storage, air defences, C2 sites, ammunition storage and troops concentration points according to Russian doctrine. It was accompanied by EW and aerial decoys to saturate air defence. Within first 48 hours 75% of stationary Air defence sites were engaged, contrary to 10% or mobile sites. The strikes successfully disrupted the air defence, but caused less damage to actual platforms due to relocation orders and moving targets.
+Initial fire strike campaign targeted industrial facilities, fuel and energy storage, air defenses, C2 sites, ammunition storage and troops concentration points according to Russian doctrine. It was accompanied by EW and aerial decoys to saturate air defense. Within first 48 hours 75% of stationary Air defense sites were engaged, contrary to 10% or mobile sites. The strikes successfully disrupted the air defense, but caused less damage to actual platforms due to relocation orders and moving targets.
 
 Critical weak point to the campaign was damage assessment which makes AFRF forces very susceptible to deception. Satellite capabilities proved insufficient, also proved by fact that Russia started buying satellite imagery from external sources in April 2023.
 
@@ -113,9 +113,9 @@ Except for destruction of Mariupol, where fierce resistance was anticipated, the
 
 After the retreat from Kyiv AFRF focused on Donbas. This phase is roughly day 38 to day 91. At this point, both forces had significant casualties, the uniformity of units (BTG or companies) was lost. Russia had discussion about needs for mobilization and at this time decided against it. UAF needed to develop techniques for troops rotations to prevent fatigue and concussion from artillery fire. Still the success was mostly with UAF, leading to good morale and confidence on their side and also low morale on AFRF side stemming from lack of success on almost all axes.
 
-The war became artillery confrontation at this stage. Due to reduced stockpiles this was mostly dominated by AFRF, often leading to spending 6000 rounds per day on some 3 km frontage. UAV became very important for target acquisition on both sides. The types used were ranging from commercial quadcopters to fixed-wing medium altitude types like SKIF or Orlan-10.
+The war became artillery confrontation at this stage. Due to reduced stockpiles this was mostly dominated by AFRF, often leading to spending 6000 rounds per day on some 3 km frontage. UAV became very important for target acquisition on both sides. The types used were ranging from commercial quadcopters to fixed-wing medium altitude types like SKIF or [Orlan-10][2].
 
-During the offensive on Donbas the Russians relied more on obsolete systems. For instance, after first two weeks, use of Iskander missiles dropped from salvo to single strikes. Similar transition occurred with naval fires. Reasons might be shortage of missiles. Consequence was reduced accuracy and in many cases strikes of civilian structures.
+During the offensive on Donbas the Russians relied more on obsolete systems. For instance, after first two weeks, use of [Iskander missiles][3] dropped from salvo to single strikes. Similar transition occurred with naval fires. Reasons might be shortage of missiles. Consequence was reduced accuracy and in many cases strikes of civilian structures.
 
 The volume of fires inflicted casualties and took ground from UAF, but it had problems with sustainment. Large volume of transportation on railways occurred. Since the amount of ammo delivery was much larger than expected, Russians setup "field artillery depots" (basically a industrial building adapted to storage of ammunition) that could supply units within radius 30-50 km. Other solution was to store ammo directly in units. The depots were placed about 50 km behind the lines and initially they were frequently attacked by MLRS or other missiles. Only after the end of April the concentration was moved further so they are out of range of UAF weapons.
 
@@ -133,8 +133,8 @@ Despite all problems observed the AFRF already demonstrated ability to learn and
 
 ## Ad 5 - Lessons Identified for the British Military
 
- 1. It is unlikely to conceal/protect important places from long-range strike. Only means to survivability is to disperse and frequent moves. Large footprint is not viable on the modern battlefield. Russian missile systems are reliable and accurate. They can be intercepted, but the flight routes were routinely adapted for every mission and there were up to 80 changes of course on their way to target. It is not economical to maintain enough coverage to guarantee defence against such threats.
- 2. Warfighting demands significant stock capacity and ability to replenish them. At Ukrainian rates of consumption, British stockpiles would potentially last a week. This problem is present for almost all kind of weapons, be it air defence, tube artillery, missiles, etc. Same capacity is needed for training staff to address preparation of second echelon of army.
+ 1. It is unlikely to conceal/protect important places from long-range strike. Only means to survivability is to disperse and frequent moves. Large footprint is not viable on the modern battlefield. Russian missile systems are reliable and accurate. They can be intercepted, but the flight routes were routinely adapted for every mission and there were up to 80 changes of course on their way to target. It is not economical to maintain enough coverage to guarantee defense against such threats.
+ 2. Warfighting demands significant stock capacity and ability to replenish them. At Ukrainian rates of consumption, British stockpiles would potentially last a week. This problem is present for almost all kind of weapons, be it air defense, tube artillery, missiles, etc. Same capacity is needed for training staff to address preparation of second echelon of army.
  3. UAS/CUAS has to be available across all branches of the force. Many NATO systems are relatively old, expensive and require complex training, so specialized units were created for them. Lessons from Ukraine show that UAS should be classified rather as ammunition than an aircraft and speed up deployment of them (at the moment there are fewer administrative restrictions to fire live 155-mm shell than to fly UAS to monitor the target). Means to defeat UAS are there to deny it to achieve its mission - typically dazzling of sensors or denial of navigation or control (using EW). In some cases is kinetic elimination needed, usually for loitering ammunition or target acquisition drones.
  4. With a lot of EW in place, some kind of synchronization and deconflicting is needed to properly allocate time, place and frequencies. UAF setup special command for this activities. This also include detection of enemy systems and finding places which can be exploited. Better allocation of Electromagnetic spectrum (EMS) can provide signification tactical advantages.
  5. Related to point 1. the dispersion of forces is needed. As a consequence, the battalion is usually occupying similar area as before a brigade would. This puts more strain on commanders that are not as staffed. Developing tools for C2 to allow beyond the sight operation is critical. For battle operations, force need to concentrate and then survivability is achieved mostly through mobility to prevent effective fires against them. When unit stays for longer time, hardened shelters are very important.
@@ -148,6 +148,8 @@ Suggestions for policy makers.
  3. Think about how new capabilities and weapons integrate with legacy systems and how they enable/magnify their effects in modern battlefield. The modernization should not be just deciding what to procure and what to discard
 
 [1]: https://static.rusi.org/359-SR-Ukraine-Preliminary-Lessons-Feb-July-2022-web-final.pdf
+[2]: https://en.wikipedia.org/wiki/Orlan-10
+[3]: https://en.wikipedia.org/wiki/9K720_Iskander
 *[AFRF]: Armed Forces of the Russian Federation
 *[ATGW]: Anti-tank Guided Weapon
 *[AWACS]: Airborne Warning And Control System
