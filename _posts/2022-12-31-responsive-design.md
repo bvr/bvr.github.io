@@ -10,7 +10,7 @@ tags:
 ---
 Notes about [Tailwind][1] responsive features and how to build web site working nicely on all screen sizes from this video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hX1zUdj4Dw4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="w-full aspect-video" src="https://www.youtube.com/embed/hX1zUdj4Dw4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
  - there is five breakpoints: `sm` (640px), `md` (768px), `lg` (1024px), `xl` (1280px), `2xl` (1536px). 
  - `max-w-md` and `mx-auto` classes for centered block with specified maximum width
