@@ -13,7 +13,7 @@ A riddle from [riddlesbrainteasers.com][1]: Find a six-digit number containing n
  2. The first and second digits when read as a two-digit number equal one quarter the fourth and fifth digits.
  3. The last digit is four times the third digit.
 
-Since the potential problem space is small, a quick brute-force solution using [Algorithm::Combinatorics][2] would do. The library provides efficient iterator-based tool for comminatory problems. The script below tries all options and remove those that does not match the conditions specified. Matching numbers are printed, in this case there is only one solution, number `192768`.
+Since the potential problem space is small, a quick brute-force solution using [Algorithm::Combinatorics][2] would do. The library provides efficient iterator-based tool for combinatorial problems. The script below tries all options and remove those that does not match the conditions specified. Matching numbers are printed, in this case there is only one solution, number `192768`.
 
 ```perl
 use 5.16.3;
