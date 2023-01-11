@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Notes about using jekyll and TailwindCSS
+title: jekyll and TailwindCSS
 published: yes
 tags:
   - jekyll
