@@ -20,7 +20,7 @@ my $person = {
 };
 ```
 
-A hash reference (basically a scalar with an address) is used here, so the initialization is with `{}`. I had some code to update such hash with data from another one, that was created by an user action, something like this
+A hash reference (basically a scalar with an address) is used here, so the initialization is with `{}`. I needed code to update such hash with data from another one, which was created by an user action, something like this
 
 ```perl
 my $updated = {
@@ -30,20 +30,20 @@ my $updated = {
 };
 ```
 
-The code I came with is based on the fact that `keys` and `values` functions return items in same order as is internally stored in the hash, so simple list assignment would do
+The code I came with is based on the fact that `keys` and `values` functions return items in same order as is internally stored in the hash, so simple slice assignment would do
 
 ```perl
-@{$person}{keys %$updated} = values %$updated;
+@{ $person }{ keys %$updated } = values %$updated;
 ```
 
-When dumped
+When dumped with
 
 ```perl
 use Data::Dump;
 dd $person;
 ```
 
-we got updated `name` and `city` and added `zip` item
+we got updated `name` and `city` and added `zip` entry
 
 ```
 {
