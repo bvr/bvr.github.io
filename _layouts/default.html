@@ -9,67 +9,57 @@
     <link rel="alternate" type="application/rss+xml" href="/atom.xml" title="bvr">
     <link rel="stylesheet" href="/css/syntax.css" type="text/css">
 </head>
-<body class="flex relative h-full min-h-screen">
-    <aside class="will-change-transform transform transition-transform -translate-x-full absolute top-0 left-0 md:relative md:translate-x-0 w-3/4 md:w-96 h-full min-h-screen p-3 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col gap-2.5 z-20 sidebar" style="width: 700px">
-        <p class="font-bold mb-5 flex items-center gap-2">
-            <button aria-label="Close sidebar" class="md:hidden menu-trigger-close p-1 rounded text-slate-800 dark:text-slate-50 hover:bg-slate-200 dark:hover:bg-slate-700">
-                <svg class="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z"/>
-                <line x1="18" y1="6" x2="6" y2="18"/>
-                <line x1="6" y1="6" x2="18" y2="18"/>
-                </svg>
-            </button>
-            <a href="{{ site.url }}" class="px-2 rounded-md hover:bg-slate-200"><span class="text-xl text-slate-400">BVR</span></a>
-            <a class="px-2 py-1.5 rounded-md text-sm block text-slate-800 dark:text-slate-50 hover:bg-slate-200 dark:hover:bg-slate-700" href="https://github.com/bvr" target=_blank rel="noopener noreferrer">
-                <span class=sr-only>GitHub</span>
-                <span>
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/>
-                    </svg>
-                </span>
-            </a>
-            <a class="px-2 py-1.5 rounded-md text-sm block text-slate-800 dark:text-slate-50 hover:bg-slate-200 dark:hover:bg-slate-700" href=/atom.xml target=_blank rel="noopener noreferrer">
-                <span class=sr-only>RSS</span>
-                <span>
-                    <svg class="h-4 w-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z"/>
-                        <circle cx="5" cy="19" r="1"/>
-                        <path d="M4 4a16 16 0 0116 16"/>
-                        <path d="M4 11a9 9 0 019 9"/>
-                    </svg>
-                </span>
-            </a>
-        </p>
-        <ul class="list-none flex flex-col gap-1">
-            {% for post in site.posts %}
-            {% unless post.preview %}
-            
-            <li>
-                <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" class="article block px-3 py-0  hover:bg-slate-200">
-                    <span class="text-slate-400 py-2 rounded-md"><time datetime="{{ post.date | date_to_xmlschema }}"></time>{{ post.date | date: "%Y-%m-%d" }}</span> <span class=text-slate-800>{{ post.title }}</span>
-                </a>
-            </li>
-    
-            {% endunless %}
-            {% endfor %}
-        </ul>
-        <div class="flex-1"></div>
-    </aside>
-    <div class="fixed bg-slate-700 bg-opacity-5 transition duration-200 ease-in-out inset-0 z-10 pointer-events-auto md:hidden left-0 top-0 w-full h-full hidden menu-overlay"></div>
-    <button aria-label="Toggle Sidebar" class="md:hidden absolute top-3 left-3 z-10 menu-trigger p-1 rounded text-slate-800 dark:text-slate-50 hover:bg-slate-100">
-        <svg class="h-6 w-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<body>
+
+<div class="w-screen h-screen grid grid-cols-[500px_1fr] grid-rows-1 gap-0 overflow-hidden">
+<nav class="p-3 bg-slate-50 border-r border-slate-200">
+    <p class="font-bold mb-5 flex items-center gap-2">
+        <button aria-label="Close sidebar" class="md:hidden menu-trigger-close p-1 rounded text-slate-800 dark:text-slate-50 hover:bg-slate-200 dark:hover:bg-slate-700">
+            <svg class="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z"/>
-            <line x1="4" y1="6" x2="20" y2="6"/>
-            <line x1="4" y1="12" x2="20" y2="12"/>
-            <line x1="4" y1="18" x2="16" y2="18"/>
-        </svg>
-    </button>
-    <div class="overflow-y-auto h-screen w-full">
-    <article class="px-6 py-10 w-full mx-auto prose lg:prose-base h-fit dark:prose-invert prose-img:mx-auto max-w-4xl">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+        <a href="{{ site.url }}" class="px-2 rounded-md hover:bg-slate-200"><span class="text-xl text-slate-400">BVR</span></a>
+        <a class="px-2 py-1.5 rounded-md text-sm block text-slate-800 dark:text-slate-50 hover:bg-slate-200 dark:hover:bg-slate-700" href="https://github.com/bvr" target=_blank rel="noopener noreferrer">
+            <span class=sr-only>GitHub</span>
+            <span>
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/>
+                </svg>
+            </span>
+        </a>
+        <a class="px-2 py-1.5 rounded-md text-sm block text-slate-800 dark:text-slate-50 hover:bg-slate-200 dark:hover:bg-slate-700" href=/atom.xml target=_blank rel="noopener noreferrer">
+            <span class=sr-only>RSS</span>
+            <span>
+                <svg class="h-4 w-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z"/>
+                    <circle cx="5" cy="19" r="1"/>
+                    <path d="M4 4a16 16 0 0116 16"/>
+                    <path d="M4 11a9 9 0 019 9"/>
+                </svg>
+            </span>
+        </a>
+    </p>
+    <ul class="list-none overflow-y-auto" style="height: 95%">
+        {% for post in site.posts %}
+        {% unless post.preview %}
+        <li><a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" class="article block px-3 py-0  hover:bg-slate-200"><span class="text-slate-400 py-2 rounded-md"><time datetime="{{ post.date | date_to_xmlschema }}"></time>{{ post.date | date: "%Y-%m-%d" }}</span> <span class=text-slate-800>{{ post.title }}</span></a></li>
+        {% endunless %}
+        {% endfor %}
+    </ul>
+</nav>
+
+<div class="overflow-y-auto w-xl">
+<article class="px-6 py-10 w-full mx-auto prose lg:prose-base h-fit prose-img:mx-auto max-w-4xl">
 
 {{ content }}
 
-    </article>
-    </div>
+</article>
+</div>
+        
+</div>
+
 </body>
 </html>
