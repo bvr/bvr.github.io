@@ -10,13 +10,17 @@ tags:
   - Method::Signatures::Simple
 ---
 Here is benchmark of running methods of perl class defined by three
-approaches: plain perl sub, with [Method::Signatures::Simple][mss] and with [MooseX::Declare][mxd].
+approaches: 
+
+ - plain perl sub
+ - [Method::Signatures::Simple][mss] 
+ - [MooseX::Declare][mxd].
 
 ### Introduction
 
 There are several ways how to avoid some typing when defining perl classes. 
 While modules like [Moose][moose] or [Class::Accessor][ca] typically take care 
-of attribute accessor generation, methods are usually left as they are in plain 
+of attribute accessor generation while methods are usually left as they are in plain 
 perl. Usual pattern looks like this:
 
 ```perl
@@ -36,7 +40,7 @@ method run($bar, $baz, %opts) {
 }
 ```
 
-but I quickly realized that this is slow. Very slow. So I reverted it back to 
+but I quickly realized that it is slow. Very slow. So I reverted it back to 
 plain perl by small script and stopped thinking about methods and their 
 signatures.
 
@@ -46,7 +50,7 @@ made some benchmarks to prevent surprises later.
 
 ### Results
 
-Benchmark module brings handy `cmpthese` function, that runs the variants and 
+[Benchmark][benchmark] module brings handy `cmpthese` function, that runs the variants and 
 creates handy comparison table:
 
               Rate    mxd    mss  plain
@@ -97,7 +101,8 @@ BEGIN {
 }
 ```
 
-[moose]: http://search.cpan.org/perldoc?Moose
-[mss]:   http://search.cpan.org/perldoc?Method::Signatures::Simple
-[mxd]:   http://search.cpan.org/perldoc?MooseX::Declare
-[ca]:    http://search.cpan.org/perldoc?Class::Accessor
+[moose]: https://metacpan.org/pod/Moose
+[mss]:   https://metacpan.org/pod/Method::Signatures::Simple
+[mxd]:   https://metacpan.org/pod/MooseX::Declare
+[ca]:    https://metacpan.org/pod/Class::Accessor
+[benchmark]: https://metacpan.org/pod/Benchmark
