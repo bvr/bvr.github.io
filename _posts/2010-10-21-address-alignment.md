@@ -31,7 +31,7 @@ mask lower bits of result.
 
 ### C implementation
 
-{% highlight cpp %}
+```cpp
 inline unsigned int align(unsigned int addr, unsigned int align) {
     if(!align) align = 1;       // zero alignment means actually 1 byte
     return (addr + align-1) & ~(align-1);
@@ -39,4 +39,4 @@ inline unsigned int align(unsigned int addr, unsigned int align) {
 
 // sample usage
 new_addr = align(addr,4);
-{% endhighlight %}
+```

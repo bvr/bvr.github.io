@@ -18,11 +18,11 @@ From [Tailwind installation guide][3] ...
 
 The commands for installation and rebuilding the css is 
 
-```cmd
-    npm install tailwindcss
-    npm install @tailwindcss/typography
-    npm install @tailwindcss/line-clamp
-    npx tailwindcss -i css\tailwind.css -o css\output.css --watch
+```
+npm install tailwindcss
+npm install @tailwindcss/typography
+npm install @tailwindcss/line-clamp
+npx tailwindcss -i css\tailwind.css -o css\output.css --watch
 ```
 
 ## [Utility first][4] - basic concepts
