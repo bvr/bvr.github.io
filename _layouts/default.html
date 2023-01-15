@@ -13,7 +13,7 @@
 
 <div class="w-screen h-screen grid grid-cols-[500px_1fr] grid-rows-1 gap-0 overflow-hidden">
 <nav class="p-3 bg-slate-50 border-r border-slate-200">
-    <p class="font-bold mb-5 flex items-center gap-2">
+    <p class="font-bold mb-1 flex items-center gap-2">
         <button aria-label="Close sidebar" class="md:hidden menu-trigger-close p-1 rounded text-slate-800 dark:text-slate-50 hover:bg-slate-200 dark:hover:bg-slate-700">
             <svg class="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z"/>
@@ -42,13 +42,37 @@
             </span>
         </a>
     </p>
-    <ul class="list-none overflow-y-auto" style="height: 95%">
+    <label class="mb-2 block px-2"><span></span>
+        <input type="text" placeholder="Search articles" class="searchInput bg-white rounded px-2 py-1 w-full border">
+    </label>
+    <script>
+        const searchElt = document.querySelector('.searchInput')
+        if (searchElt) {
+          searchElt.addEventListener('input', evt => {
+            const value = evt.target.value || '';
+      
+            const articles = document.querySelectorAll('.article')
+            if (!value) {
+              articles.forEach(article => article.classList.remove('hidden'))
+            } else {
+              articles.forEach(article => article.classList.add('hidden'))
+              Array.from(articles).filter(article => {
+                const title = article.innerText
+                if (!title) return false;
+      
+                return title.toLowerCase().includes(value.toLowerCase())
+              }).forEach(article => article.classList.remove('hidden'))
+            }
+          })
+        }
+      </script>
+      <div class="overflow-y-auto" style="height:95%"><ul class="list-none">
         {% for post in site.posts %}
         {% unless post.preview %}
-        <li><a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" class="article block px-3 py-0  hover:bg-slate-200"><span class="text-slate-400 py-2 rounded-md"><time datetime="{{ post.date | date_to_xmlschema }}"></time>{{ post.date | date: "%Y-%m-%d" }}</span> <span class=text-slate-800>{{ post.title }}</span></a></li>
+        <li class="{% if post.url == page.url%}bg-slate-900 text-slate-200{% else %}text-slate-800 hover:bg-slate-200{% endif %}"><a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" class="article block px-3 py-0"><span class="text-slate-400 py-2 rounded-md"><time datetime="{{ post.date | date_to_xmlschema }}"></time>{{ post.date | date: "%Y-%m-%d" }}</span> <span>{{ post.title }}</span> <span class=hidden>{{ post.tags | join: " " }}</span></a></li>
         {% endunless %}
         {% endfor %}
-    </ul>
+    </ul></div>
 </nav>
 
 <div class="overflow-y-auto w-xl">
