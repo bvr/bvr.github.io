@@ -31,7 +31,6 @@ Fonts for logo:
 
 Topics:
 
- - C# documentation comments and generation tools (Sandcastle?)
  - Graphviz and dot
  - Regexp::Grammars
  - XSLT
