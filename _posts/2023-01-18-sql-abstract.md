@@ -55,9 +55,9 @@ The module get pretty wild with definition of WHERE clauses. The hashref defines
 
 ```perl
 my($stmt, @bind) = $sql->select('tickets', '*', {
-    reporter => 'Roman',
-    owner => \@names,
-    status => 'closed',
+    reporter   => 'Roman',
+    owner      => \@names,
+    status     => 'closed',
     resolution => [
         { '!=', 'invalid'},
         { '!=', 'wontfix'},
