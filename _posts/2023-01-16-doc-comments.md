@@ -99,7 +99,7 @@ This approach would provide number of benefits
 
  1. It is easier to come back to the methods and get idea what it does
  2. Tools like Visual Studio will help you with parameters
- 3. When there is variants of parameters, you can document difference between them
+ 3. When there are variants of parameters, you can document difference between them
  4. It is possible to generate nice documentation with tools like [Sandcastle][3]
 
 Summary of all XML tags to use can be found in [Annex D of C# specification][4].
