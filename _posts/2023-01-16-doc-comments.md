@@ -48,7 +48,7 @@ Then lets convert those sequences into pairs of length and the character itself.
 
 ```c#
 /// <summary>
-/// Convert sequence to Run Lenght Encoding (RLE), i.e. pairs of chars -- count of chars and char itself
+/// Convert sequence to Run Length Encoding (RLE), i.e. pairs of chars -- count of chars and char itself
 /// </summary>
 /// <param name="seq">Sequence of numbers</param>
 /// <returns>Encoded sequence</returns>
