@@ -15,11 +15,11 @@ Building SQL from data structures is common problem. One solution is using full 
 use SQL::Abstract;
 
 my %data = (
-    name => 'Jimbo Bobson',
-    phone => '123-456-7890',
+    name    => 'Jimbo Bobson',
+    phone   => '123-456-7890',
     address => '42 Sister Lane',
-    city => 'St. Louis',
-    state => 'Louisiana',
+    city    => 'St. Louis',
+    state   => 'Louisiana',
 );
 my($stmt, @bind) = $sql->insert('people', \%data);
 ```
@@ -41,7 +41,7 @@ my $sth = $dbh->prepare($stmt);
 $sth->execute(@bind);
 ```
 
-Similar approach works for UPDATE statements, all what is needed is to change `insert` method to `update`. Result is
+Similar approach works for `UPDATE` statements, all what is needed is to change `insert` method to `update`. Result is
 
 ```sql
 UPDATE people SET address = ?, city = ?, name = ?, phone = ?, state = ?
@@ -79,10 +79,10 @@ WHERE ( ( ( owner = ? OR owner = ? OR owner = ? OR owner = ? )
 Binding values are 
 
 ```perl
-("Jim", "John", "Joe", "Chuck", "Roman", "invalid", "wontfix", "closed")
+( "Jim", "John", "Joe", "Chuck", "Roman", "invalid", "wontfix", "closed" )
 ```
 
-The module can make your SQL building much easier and actually is used by DBIx::Class to support filtering of resultsets.
+The module can make your SQL building much easier and actually is used by [DBIx::Class][1] to support filtering of resultsets.
 
 [1]: https://metacpan.org/pod/DBIx::Class
 [2]: https://metacpan.org/pod/SQL::Abstract
