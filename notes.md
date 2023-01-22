@@ -36,6 +36,9 @@ Topics:
  - XSLT
  - XSD
  - Devel::NYTProf
+ - lunr.js
+ - technical writing https://developers.google.com/tech-writing
+ - 
 
 
 <div class="fixed bg-slate-700 bg-opacity-5 transition duration-200 ease-in-out inset-0 z-10 pointer-events-auto md:hidden left-0 top-0 w-full h-full hidden menu-overlay"></div>
