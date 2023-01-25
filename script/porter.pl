@@ -6,18 +6,18 @@ package EndsWith {
     my $C = qr/[^aeiou] [^aeiouy] */x;
     my $V = qr/[aeiouy] [aeiou] */x;
 
-    has result => (is => 'ro');
-    has stem   => (is => 'ro');
-    has s1     => (is => 'ro');
-    has s2     => (is => 'ro');
+    has success => (is => 'ro');
+    has stem    => (is => 'ro');
+    has s1      => (is => 'ro');
+    has s2      => (is => 'ro');
 
     method test($class: $word, $s1, $s2 = undef) {
         my $pos = length($word) - length($s1);
         return $class->new(
-            result => ($pos > 0 ? index($word, $s1, $pos) == $pos : 0),
-            stem   => substr($word, 0, $pos),
-            s1     => $s1,
-            s2     => $s2,
+            success => ($pos > 0 ? index($word, $s1, $pos) == $pos : 0),
+            stem    => substr($word, 0, $pos),
+            s1      => $s1,
+            s2      => $s2,
         );
     }
 
@@ -106,7 +106,7 @@ sub stem_word {
     my ($word) = @_;
 
     # step 1a
-    if(my $rule = first { $_->result }
+    if(my $rule = first { $_->success }
         EndsWith->test($word, 'sses' => 'ss'),
         EndsWith->test($word, 'ies'  => 'i'),
         EndsWith->test($word, 'ss'   => 'ss'),
@@ -117,16 +117,16 @@ sub stem_word {
 
     # step 1b
     my $eed = EndsWith->test($word, 'eed', 'ee');
-    if($eed->result && $eed->m > 0) {
+    if($eed->success && $eed->m > 0) {
         $word = $eed->stem . $eed->s2;
     }
     else {
-        $rule = first { $_->result }
+        $rule = first { $_->success }
             EndsWith->test($word, 'ed'),
             EndsWith->test($word, 'ing');
-        if($rule && $rule->result && $rule->contains_vowel) {
+        if($rule && $rule->success && $rule->contains_vowel) {
             $word = $rule->stem;
-            my $subrule = first { $_->result }
+            my $subrule = first { $_->success }
                 EndsWith->test($word, 'at' => 'ate'),
                 EndsWith->test($word, 'bl' => 'ble'),
                 EndsWith->test($word, 'iz' => 'ize');
@@ -144,12 +144,12 @@ sub stem_word {
 
     # step 1c
     my $yi = EndsWith->test($word, 'y' => 'i');
-    if($yi->result && $yi->contains_vowel) {
+    if($yi->success && $yi->contains_vowel) {
         $word = $yi->stem . $yi->s2;
     }
 
     # step 2
-    if(my $rule = first { $_->result }
+    if(my $rule = first { $_->success }
         EndsWith->test($word, 'ational' => 'ate'),
         EndsWith->test($word, 'ational' => 'ate'),
         EndsWith->test($word, 'tional'  => 'tion'),
