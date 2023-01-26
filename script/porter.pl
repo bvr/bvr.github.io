@@ -21,8 +21,17 @@ package EndsWith {
         );
     }
 
+    method kinds($word) {
+        my $kind = "";
+        for my $i (0 .. length($word) - 1) {
+            my $letter = substr($word, $i, 1);
+            $kind .= $letter =~ /[^aeiou]/ && (substr($kind, -1, 1) eq 'c' ? $letter ne 'y' : 1) ? 'c' : 'v';
+        }
+        return $kind;
+    }
+
     method m() {
-        return 1;
+        return () = $self->kinds($self->stem) =~ /vc/g;
     }
 
     method contains_vowel() {
@@ -76,7 +85,21 @@ test_word('formaliti'      =>  'formal');
 test_word('sensitiviti'    =>  'sensitive');
 test_word('sensibiliti'    =>  'sensible');
 
+my $pieces = EndsWith->new();
+is $pieces->kinds("toy"), "cvc", "toy -> cvc";
+is $pieces->kinds("syzygy"), "cvcvcv", "syzygy -> cvcvcv";
 
+my %test_m = (
+    0 => [qw(tr ee tree y by)],
+    1 => [qw(trouble oats trees ivy)],
+    2 => [qw(troubles private oaten orrery)],
+);
+for my $m (sort keys %test_m) {
+    for my $word (@{ $test_m{$m} }) {
+        my $test = EndsWith->new(stem => $word);
+        is $test->m, $m, "$word m=$m";
+    }
+}
 
 
 # dictionary test
@@ -117,8 +140,10 @@ sub stem_word {
 
     # step 1b
     my $eed = EndsWith->test($word, 'eed', 'ee');
-    if($eed->success && $eed->m > 0) {
-        $word = $eed->stem . $eed->s2;
+    if($eed->success) {
+        if($eed->m > 0) {
+            $word = $eed->stem . $eed->s2;
+        }
     }
     else {
         $rule = first { $_->success }
