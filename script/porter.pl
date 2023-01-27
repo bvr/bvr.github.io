@@ -3,14 +3,6 @@ package EndsWith {
     use Moo;
     use Function::Parameters;
 
-    my $C = qr/[^aeiou] [^aeiouy] */x;
-    my $V = qr/[aeiouy] [aeiou] */x;
-
-    has success => (is => 'ro');
-    has stem    => (is => 'ro');
-    has s1      => (is => 'ro');
-    has s2      => (is => 'ro');
-
     method test($class: $word, $s1, $s2 = undef) {
         my $pos = length($word) - length($s1);
         return $class->new(
@@ -21,7 +13,14 @@ package EndsWith {
         );
     }
 
-    method kinds($word) {
+    has success => (is => 'ro');
+    has stem    => (is => 'ro');
+    has s1      => (is => 'ro');
+    has s2      => (is => 'ro');
+    has kinds   => (is => 'lazy');
+
+    method _build_kinds() {
+        my $word = $self->stem;
         my $kind = "";
         for my $i (0 .. length($word) - 1) {
             my $letter = substr($word, $i, 1);
@@ -31,11 +30,11 @@ package EndsWith {
     }
 
     method m() {
-        return () = $self->kinds($self->stem) =~ /vc/g;
+        return () = $self->kinds =~ /vc/g;
     }
 
     method contains_vowel() {
-        return $self->stem =~ /$V/;
+        return $self->kinds =~ /v/;
     }
 }
 
@@ -43,52 +42,11 @@ use Test::More;
 use List::AllUtils qw(first);
 use Data::Dump qw(dd);
 
-# step 1a
-test_word('caresses' => 'caress');
-test_word('ponies'   => 'poni');
-test_word('ties'     => 'ti');
-test_word('caress'   => 'caress');
-test_word('cats'     => 'cat');
+# test kinds
+is(EndsWith->new(stem => 'toy')->kinds, "cvc", "toy -> cvc");
+is(EndsWith->new(stem => 'syzygy')->kinds, "cvcvcv", "syzygy -> cvcvcv");
 
-# step 1b
-test_word('feed'      => 'feed');
-test_word('agreed'    => 'agree');
-test_word('plastered' => 'plaster');
-test_word('bled'      => 'bled');
-test_word('motoring'  => 'motor');
-test_word('sing'      => 'sing');
-
-# step 1c
-test_word('happy'     => 'happi');
-test_word('sky'       => 'sky');
-
-# step 2
-test_word('relational'     =>  'relate');
-test_word('conditional'    =>  'condition');
-test_word('rational'       =>  'rational');
-test_word('valenci'        =>  'valence');
-test_word('hesitanci'      =>  'hesitance');
-test_word('digitizer'      =>  'digitize');
-test_word('conformabli'    =>  'conformable');
-test_word('radicalli'      =>  'radical');
-test_word('differentli'    =>  'different');
-test_word('vileli'         =>  'vile');
-test_word('analogousli'    =>  'analogous');
-test_word('vietnamization' =>  'vietnamize');
-test_word('predication'    =>  'predicate');
-test_word('operator'       =>  'operate');
-test_word('feudalism'      =>  'feudal');
-test_word('decisiveness'   =>  'decisive');
-test_word('hopefulness'    =>  'hopeful');
-test_word('callousness'    =>  'callous');
-test_word('formaliti'      =>  'formal');
-test_word('sensitiviti'    =>  'sensitive');
-test_word('sensibiliti'    =>  'sensible');
-
-my $pieces = EndsWith->new();
-is $pieces->kinds("toy"), "cvc", "toy -> cvc";
-is $pieces->kinds("syzygy"), "cvcvcv", "syzygy -> cvcvcv";
-
+# test m calculation
 my %test_m = (
     0 => [qw(tr ee tree y by)],
     1 => [qw(trouble oats trees ivy)],
@@ -101,19 +59,22 @@ for my $m (sort keys %test_m) {
     }
 }
 
-
 # dictionary test
-# open my $voc, '<', 'porter-test/voc.txt' or die;
-# open my $out, '<', 'porter-test/output.txt' or die;
+open my $voc, '<', 'porter-test/voc.txt' or die;
+open my $out, '<', 'porter-test/output.txt' or die;
 
-my $stop_after = 10;
+my $stop_after = 100;
 while(defined (my $word = <$voc>)) {
     my $expected = <$out>;
     chomp($word);
     chomp($expected);
-    is stem_word($word), $expected, "$word => $expected";
 
-    last if $stop_after-- < 0;
+    my $stemmed = stem_word($word);
+    if($stemmed ne $expected) {
+        is $stemmed, $expected, "$word => $expected";
+    }
+
+    # last if $stop_after-- < 0;
 }
 
 
@@ -161,7 +122,7 @@ sub stem_word {
             elsif($word =~ /([^slz])\1$/)  {
                 $word =~ s/.$//;
             }
-            elsif($word =~ /^[^aeiouy]+[aeiouy][^aeiouwxy]$/) {
+            elsif($rule->kinds =~ /cvc$/ && $word =~ /[^wxy]$/) {
                 $word .= 'e';
             }
         }
@@ -199,6 +160,68 @@ sub stem_word {
     ) {
         if($rule && $rule->m > 0) {
             $word = $rule->stem . $rule->s2;
+        }
+    }
+
+    # step 3
+    if(my $rule = first { $_->success }
+        EndsWith->test($word, 'icate' => 'ic'),
+        EndsWith->test($word, 'ative' => ''),
+        EndsWith->test($word, 'alize' => 'al'),
+        EndsWith->test($word, 'iciti' => 'ic'),
+        EndsWith->test($word, 'ical' => 'ic'),
+        EndsWith->test($word, 'ful' => ''),
+        EndsWith->test($word, 'ness' => '')
+    ) {
+        if($rule && $rule->m > 0) {
+            $word = $rule->stem . $rule->s2;
+        }
+    }
+
+    # step 4
+    if(my $rule = first { $_->success }
+        EndsWith->test($word, 'al'    => ''),
+        EndsWith->test($word, 'ance'  => ''),
+        EndsWith->test($word, 'ence'  => ''),
+        EndsWith->test($word, 'er'    => ''),
+        EndsWith->test($word, 'ic'    => ''),
+        EndsWith->test($word, 'able'  => ''),
+        EndsWith->test($word, 'ible'  => ''),
+        EndsWith->test($word, 'ant'   => ''),
+        EndsWith->test($word, 'ement' => ''),
+        EndsWith->test($word, 'ment'  => ''),
+        EndsWith->test($word, 'ent'   => ''),
+        EndsWith->test($word, 'ion'   => ''),
+        EndsWith->test($word, 'ou'    => ''),
+        EndsWith->test($word, 'ism'   => ''),
+        EndsWith->test($word, 'ate'   => ''),
+        EndsWith->test($word, 'iti'   => ''),
+        EndsWith->test($word, 'ous'   => ''),
+        EndsWith->test($word, 'ive'   => ''),
+        EndsWith->test($word, 'ize'   => '')
+    ) {
+        if($rule && $rule->s1 eq 'ion' && $rule->stem =~ /[st]$/ && $rule->m > 1) {
+            $word = $rule->stem . $rule->s2;
+        }
+        elsif($rule && $rule->m > 1) {
+            $word = $rule->stem . $rule->s2;
+        }
+    }
+
+    # step 5a
+    if(my $rule = EndsWith->test($word, 'e' => '')) {
+        if($rule->success && $rule->m > 1) {
+            $word = $rule->stem . $rule->s2;
+        }
+        elsif($rule->success && $rule->m == 1 && !( $rule->kinds =~ /cvc$/ && $rule->stem =~ /[^wxy]$/)) {
+            $word = $rule->stem . $rule->s2;
+        }
+    }
+
+    # step 5b
+    if(my $rule = EndsWith->new(stem => $word)) {
+        if($rule->m > 1 && $rule->stem =~ /ll$/) {
+            $word =~ s/.$//;
         }
     }
 
