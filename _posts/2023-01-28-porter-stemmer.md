@@ -77,7 +77,8 @@ package EndsWith {
 
     method to_string() {
         return sprintf "rule: stem=%s (%s) m=%d, %s -> %s, success=%d, caller=%s",
-            $self->stem, $self->kinds, $self->m(), $self->s1, $self->s2, $self->success, join(":",(caller(1))[1,2]);
+            $self->stem, $self->kinds, $self->m(), $self->s1, $self->s2, 
+            $self->success, join(":",(caller(1))[1,2]);
     }
 }
 ```
@@ -87,7 +88,7 @@ The class provides alternate constructor `test` that define an application of a 
 ```perl
 my $eed = EndsWith->test($word, 'eed', 'ee');
 if($eed->success) {
-    if($eed->m > 0) {
+    if($eed->m() > 0) {
         $word = $eed->apply();
     }
 }
@@ -112,6 +113,15 @@ if(my $rule = first { $_->success }
 }
 ```
 
+This is check for this section of the specification
+
+```
+SSES -> SS
+IES  -> I
+SS   -> SS
+S    ->
+```
+
 During the algorithm implementation I run into few inconsistencies between the specification and provided test set. 
 
  - the implementation skips words shorter than 3 characters, I haven't found this mentioned anywhere
@@ -119,7 +129,7 @@ During the algorithm implementation I run into few inconsistencies between the s
  - there is missing rule `LOGI -> LOG` in step 2
  - testing of `*o` condition is described as stem ending consonant, vowel, consonant different from w, x, or y. In actual test it limits the length of the word
 
-All except the last one are mentioned in [Points of difference from the published algorithm section][2] which I noticed after I spent some time analyzing the differences.
+All except the last one are mentioned in [Points of difference from the published algorithm section][2] which I noticed after I spent quite some time analyzing the differences.
 
 My implementation of the algorithm goes as follows
 
@@ -145,7 +155,7 @@ sub stem_word {
     # step 1b
     my $eed = EndsWith->test($word, 'eed', 'ee');
     if($eed->success) {
-        if($eed->m > 0) {
+        if($eed->m() > 0) {
             $word = $eed->apply();
         }
     }
@@ -202,7 +212,7 @@ sub stem_word {
         EndsWith->test($word, 'biliti'  => 'ble'),
         EndsWith->test($word, 'logi'    => 'log')
     ) {
-        if($rule->m > 0) {
+        if($rule->m() > 0) {
             $word = $rule->apply();
         }
     }
@@ -217,7 +227,7 @@ sub stem_word {
         EndsWith->test($word, 'ful' => ''),
         EndsWith->test($word, 'ness' => '')
     ) {
-        if($rule->m > 0) {
+        if($rule->m() > 0) {
             $word = $rule->apply();
         }
     }
@@ -245,27 +255,27 @@ sub stem_word {
         EndsWith->test($word, 'ize'   => '')
     ) {
         if($rule->s1 eq 'ion') {
-            if($rule->stem =~ /[st]$/ && $rule->m > 1) {
+            if($rule->stem =~ /[st]$/ && $rule->m() > 1) {
                 $word = $rule->apply();
             }
         }
-        elsif($rule->m > 1) {
+        elsif($rule->m() > 1) {
             $word = $rule->apply();
         }
     }
 
     # step 5a
     my $rule = EndsWith->test($word, 'e' => '');
-    if($rule->success && $rule->m > 1) {
+    if($rule->success && $rule->m() > 1) {
         $word = $rule->apply();
     }
-    elsif($rule->success && $rule->m == 1 && !($rule->kinds =~ /^c+vc$/ && $rule->stem =~ /[^wxy]$/)) {
+    elsif($rule->success && $rule->m() == 1 && !($rule->kinds =~ /^c+vc$/ && $rule->stem =~ /[^wxy]$/)) {
         $word = $rule->apply();
     }
 
     # step 5b
     my $ll = EndsWith->new(stem => $word);
-    if($ll->m > 1 && $ll->stem =~ /ll$/) {
+    if($ll->m() > 1 && $ll->stem =~ /ll$/) {
         $word =~ s/.$//;
     }
 
@@ -291,7 +301,7 @@ my %test_m = (
 for my $m (sort keys %test_m) {
     for my $word (@{ $test_m{$m} }) {
         my $test = EndsWith->new(stem => $word);
-        is $test->m, $m, "$word m=$m";
+        is $test->m(), $m, "$word m=$m";
     }
 }
 
