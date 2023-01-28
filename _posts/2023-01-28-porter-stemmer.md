@@ -20,7 +20,7 @@ The [Porter Stemming Algorithm][1] tries to reduce words into their stems. For t
 
 The reduction into the stem is usually done by removing of various suffixes. The Porter algorithm does it for english source.
 
-The algorithm defines **consonants** and **vowels**. Based on those, it considers each word of alternating sequence of consonant and vowel blocks. If we ignore optional consonant group at the beginning and option vowel group at the end, number of vowel-consonant blocks is called a **measure**. It is used to calculate "length" of the word and limit some rules before applying.
+The algorithm defines **consonants** and **vowels**. Based on those, it takes each word as alternating sequence of consonant and vowel blocks. If we ignore optional consonant group at the beginning and optional vowel group at the end, number of vowel-consonant blocks is called a **measure**. It is used to calculate "length" of the word and limit some rules before applying.
 
 The **rules** for removing suffix are defined in form
 
@@ -28,7 +28,7 @@ The **rules** for removing suffix are defined in form
 (condition) S1 -> S2
 ```
 
-where **condition** can use the measure and tests related to the stem that remains after removing suffix. The rules are grouped in a **set** where only first applicable rule is applied.
+where **S1** is suffix to replace with **S2** and **condition** can use the measure and other tests related to the stem that remains after removing suffix. The rules are grouped in a **set** where only first applicable rule is applied.
 
 To improve my understanding of a specification I tried to implement the algorithm as much as it was specified. Since evaluation of the rule needs many side-effects like removing suffix and analyzing the remaining stem, I created small class to help with rule processing.
 
@@ -58,7 +58,9 @@ package EndsWith {
         my $kind = "";
         for my $i (0 .. length($word) - 1) {
             my $letter = substr($word, $i, 1);
-            $kind .= $letter =~ /[^aeiou]/ && (substr($kind, -1, 1) eq 'c' ? $letter ne 'y' : 1) ? 'c' : 'v';
+            $kind .= 
+                $letter =~ /[^aeiou]/ && (substr($kind, -1, 1) eq 'c' ? $letter ne 'y' : 1) 
+                ? 'c' : 'v';
         }
         return $kind;
     }
