@@ -2,7 +2,7 @@ package EndsWith {
     use Moo;
     use Function::Parameters;
 
-    method test($class: $word, $s1, $s2 = undef) {
+    method test($class: $word, $s1, $s2 = '') {
         my $pos = length($word) - length($s1);
         return $class->new(
             success => ($pos > 0 ? index($word, $s1, $pos) == $pos : 0),
@@ -23,7 +23,9 @@ package EndsWith {
         my $kind = "";
         for my $i (0 .. length($word) - 1) {
             my $letter = substr($word, $i, 1);
-            $kind .= $letter =~ /[^aeiou]/ && (substr($kind, -1, 1) eq 'c' ? $letter ne 'y' : 1) ? 'c' : 'v';
+            $kind .= 
+                $letter =~ /[^aeiou]/ && (substr($kind, -1, 1) eq 'c' ? $letter ne 'y' : 1) 
+                ? 'c' : 'v';
         }
         return $kind;
     }
@@ -42,7 +44,8 @@ package EndsWith {
 
     method to_string() {
         return sprintf "rule: stem=%s (%s) m=%d, %s -> %s, success=%d, caller=%s",
-            $self->stem, $self->kinds, $self->m(), $self->s1, $self->s2, $self->success, join(":",(caller(1))[1,2]);
+            $self->stem, $self->kinds, $self->m(), $self->s1, $self->s2, 
+            $self->success, join(":",(caller(1))[1,2]);
     }
 }
 
@@ -111,7 +114,7 @@ sub stem_word {
     ) {
         if($rule->contains_vowel) {
             $word = $rule->apply();
-            if($subrule = first { $_->success }
+            if(my $subrule = first { $_->success }
                 EndsWith->test($word, 'at' => 'ate'),
                 EndsWith->test($word, 'bl' => 'ble'),
                 EndsWith->test($word, 'iz' => 'ize')
@@ -169,9 +172,9 @@ sub stem_word {
         EndsWith->test($word, 'ative' => ''),
         EndsWith->test($word, 'alize' => 'al'),
         EndsWith->test($word, 'iciti' => 'ic'),
-        EndsWith->test($word, 'ical' => 'ic'),
-        EndsWith->test($word, 'ful' => ''),
-        EndsWith->test($word, 'ness' => '')
+        EndsWith->test($word, 'ical'  => 'ic'),
+        EndsWith->test($word, 'ful'   => ''),
+        EndsWith->test($word, 'ness'  => '')
     ) {
         if($rule->m > 0) {
             $word = $rule->apply();
@@ -212,11 +215,13 @@ sub stem_word {
 
     # step 5a
     my $rule = EndsWith->test($word, 'e' => '');
-    if($rule->success && $rule->m > 1) {
-        $word = $rule->apply();
-    }
-    elsif($rule->success && $rule->m == 1 && !($rule->kinds =~ /^c+vc$/ && $rule->stem =~ /[^wxy]$/)) {
-        $word = $rule->apply();
+    if($rule->success) {
+        if($rule->m > 1) {
+            $word = $rule->apply();
+        }
+        elsif($rule->m == 1 && !($rule->kinds =~ /^c+vc$/ && $rule->stem =~ /[^wxy]$/)) {
+            $word = $rule->apply();
+        }
     }
 
     # step 5b
@@ -227,4 +232,3 @@ sub stem_word {
 
     return $word;
 }
-
