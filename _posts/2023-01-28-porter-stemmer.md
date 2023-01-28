@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Porter's stemmer
-published: no
+published: yes
 tags:
   - stemmer
   - Martin Porter
@@ -313,5 +313,12 @@ done_testing;
 
 Overall it was nice exercise that led me to better understanding of stemming algorithms and possible strategy for them.
 
+Here are other interesting implementations I run into:
+
+ - [F#][3]
+ - [XSLT][4]
+
 [1]: https://tartarus.org/martin/PorterStemmer/def.txt
 [2]: https://tartarus.org/martin/PorterStemmer/
+[3]: https://github.com/andagr/PorterStemmer/blob/master/PorterStemmer/Stemmer.fs
+[4]: https://github.com/joeytakeda/xslt-stemmer/blob/master/porterStemmer.xsl
