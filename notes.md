@@ -38,7 +38,6 @@ Topics:
  - Devel::NYTProf
  - lunr.js
  - technical writing https://developers.google.com/tech-writing
- - Lingua::Stem::UniNE::CS
  - https://toby.ink/blog/2023/01/24/perl-testing-in-2023/
 
 
