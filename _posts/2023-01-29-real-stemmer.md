@@ -21,7 +21,7 @@ One popular approach used in real world is based on [Snowball language][3], also
 
 > The Snowball compiler translates a Snowball program into source code in another language - currently Ada, ISO C, C#, Go, Java, Javascript, Object Pascal, Python and Rust are supported. 
 
-There is many language stemmers implemented using this tool, then compiled into C and provided via modules to other programming languages, like perl. Here is an example using [Lingua::Stem::UniNE::CS][2] module for Czech language based on Snowball stemmer created at University of Neuchâtel. It tries to stem all words from czech annotation of **Taipan** book by James Clavell.
+There are many language stemmers implemented using this tool, then compiled into C and provided via modules to other programming languages, like perl. Here is an example using [Lingua::Stem::UniNE::CS][2] module for Czech language based on Snowball stemmer created at University of Neuchâtel. It tries to stem all words from czech annotation of **Taipan** book by James Clavell.
 
 ```perl
 use v5.16;
@@ -52,7 +52,7 @@ while($text =~ /(\w+)/gs) {
 }
 ```
 
-It produces list of words and its stems calculated. Note when `utf8` is enabled, all czech characters with accents also become word characters matched by `\w` pattern.
+It produces list of words and their stems calculated. Note when `utf8` is enabled, all czech characters with accents also become word characters matched by `\w` regex pattern.
 
 ```
 Příběh = příběh
