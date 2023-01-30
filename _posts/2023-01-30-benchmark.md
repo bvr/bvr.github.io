@@ -109,14 +109,11 @@ Global total time: 00:01:28 (88.77 sec), executed benchmarks: 3
 It also builds number of files in `BenchmarkDotNet.Artifacts` directory, including a markdown to include on your github
 
 ``` ini
-
 BenchmarkDotNet=v0.13.4, OS=Windows 10 (10.0.19042.2486/20H2/October2020Update)
 Intel Core i5-8400H CPU 2.50GHz (Coffee Lake), 1 CPU, 8 logical and 4 physical cores
 .NET SDK=7.0.102
   [Host]     : .NET 6.0.13 (6.0.1322.58009), X64 RyuJIT AVX2 [AttachedDebugger]
   DefaultJob : .NET 6.0.13 (6.0.1322.58009), X64 RyuJIT AVX2
-
-
 ```
 
 |        Method |         Mean |      Error |     StdDev |
