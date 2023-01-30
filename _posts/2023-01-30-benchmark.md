@@ -35,7 +35,7 @@ public class StringBenchmark
     }
 
     [Benchmark]
-    public string Join ()
+    public string Join()
     {
         return string.Join(" ", data);
     }
@@ -50,7 +50,8 @@ public class StringBenchmark
     }
 
     [Benchmark]
-    public string StringBuilder() {
+    public string StringBuilder()
+    {
         StringBuilder sb = new();
         foreach(string one in data)
         {
