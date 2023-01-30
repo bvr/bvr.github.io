@@ -118,11 +118,14 @@ Intel Core i5-8400H CPU 2.50GHz (Coffee Lake), 1 CPU, 8 logical and 4 physical c
 
 
 ```
+
 |        Method |         Mean |      Error |     StdDev |
 |-------------- |-------------:|-----------:|-----------:|
 |          Join |     9.016 μs |  0.1775 μs |  0.2866 μs |
 |     Additions | 1,687.048 μs | 32.5457 μs | 34.8236 μs |
 | StringBuilder |    15.119 μs |  0.3010 μs |  0.5193 μs |
+
+From the output is clearly visible the performance of `String.Join` method and `StringBuilder`, where plain additions of strings that leads to many allocations and reallocations is very slow. The library also makes quite easy to parameterize the task, finding how those methods would perform with shorter or longer strings, more or less data, etc.
 
 
 [1]: https://benchmarkdotnet.org/index.html
