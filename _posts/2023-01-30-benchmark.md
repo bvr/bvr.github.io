@@ -12,8 +12,10 @@ Sometimes you need to measure elapsed time of a process. Probably simplest appro
 
 ```c#
 Stopwatch timer = new();
+timer.Start();
 DoSomething();
 Console.WriteLine(timer.Elapsed);
+timer.Stop();
 ```
 
 This gives some idea about the performance, but if you need something more complex, it is useful to write a benchmark. Here is small example written using [BenchmarkDotNet][1] to measure ways to put strings together. The class below initializes `N` string of length `20`, then compare three methods to put them together separated by space. 
