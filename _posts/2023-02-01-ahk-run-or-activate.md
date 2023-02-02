@@ -21,8 +21,7 @@ The script defines following applications:
 
 If there is multiple windows running, it activates the most bottom one, which means you can cycle all windows of the application with repeated key presses.
 
-
-```ahk
+```
 #SingleInstance force
 #Persistent
 
