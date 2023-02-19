@@ -16,7 +16,9 @@ Just finished reading of [Prisoners of Geography][1] book by journalist **Tim Ma
 
 ![Book cover](/img/marshall-v-zajeti-geografie.png)
 
-1. First chapter covers **Russia**, its vast expanses, distances and natural resources. It covers its grow during Peter the Great, its raise to superpower after the WWII, increased influence over Soviet Union, its collapse back into many countries. In more detail it takes on the Russia influence over neighboring countries, military interventions and economic ties. It also provides good insight into Russian views and fears, no matter how justified they are.
+The book subtitle is "Ten Maps That Explain Everything About the World". Those are
+
+1. **Russia**, its vast expanses, distances and natural resources. It covers its grow during Peter the Great, its raise to superpower after the WWII, increased influence nations that encompassed the Soviet Union, and its collapse back into many countries in 1991. In more detail it takes on remaining Russia influence over neighboring countries, military interventions and economic ties. It also provides good insight into Russian views and fears, no matter how justified they are.
 
 2. **China** boundaries are defined by sea to the south and east, mountains to the west, and desert to the north. It covers its long history, European domination over 19th and 20th century, victory of communism after WWII and escape of former government to Taiwan. Good portion of the chapter is dedicated to trade routes and China recent interests in Africa and South America.
 
