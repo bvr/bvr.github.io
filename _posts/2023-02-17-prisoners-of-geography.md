@@ -30,7 +30,7 @@ Just finished reading of [Prisoners of Geography][1] book by journalist **Tim Ma
 
 7. **India and Pakistan** lie in india subcontinent limited by sea and mountains. Inside there is India, Pakistan, Bangladesh, Bhutan and Nepal. India is dominant power in the region and slowly drives itself into world superpower. The chapter also discusses Pakistan influence on Afganistan events, China interests in Tibet and Bhutan. 
 
-8. Eight chapter covers **Japan** and **Korea**. There was not much of a surprise for me in this area as I am interested in the region for quite some time. Great deal of the chapter is related to problem of North Korea. Japan and Korea situation is briefly covered and presented as counterweight for China in the region.
+8. Eighth chapter covers **Japan** and **Korea**. There was not much of a surprise for me in this area as I am interested in the region for quite some time. Great deal of the chapter is related to problem of North Korea. Japan and Korea situation is briefly covered and presented as counterweight for China in the region.
 
 9. **Latin America** despite its potential is greatly limited by the geography of the continent. The most developed countries are Brasil, Argentina and Chile. The chapter discusses influence of Monroe doctrine and United States influence on the countries, starting from Mexico, Panama or Venezuela, going down to southern countries. When talking about Argentina, it mentions great source for shale gas called Vaca Muerta (Dead cow) and conflict with United Kingdom about Falkland islands.
 
