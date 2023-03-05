@@ -40,6 +40,8 @@ Topics:
  - technical writing https://developers.google.com/tech-writing
  - https://toby.ink/blog/2023/01/24/perl-testing-in-2023/
  - https://learn.microsoft.com/en-us/dotnet/api/system.linq.iorderedenumerable-1?view=net-7.0
+ - dynamic dispatch as described in https://ericlippert.com/2015/05/07/wizards-and-warriors-part-four/
+ - [Inform7 language](https://ganelson.github.io/inform-website/)
  
 <div class="fixed bg-slate-700 bg-opacity-5 transition duration-200 ease-in-out inset-0 z-10 pointer-events-auto md:hidden left-0 top-0 w-full h-full hidden menu-overlay"></div>
 
