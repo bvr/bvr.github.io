@@ -16,11 +16,11 @@ Brief googling revealed that it is so called Infinity scrolling plugin for Wordp
 
 The request itself is HTTP POST like this
 
-![](../img/infinity-request.gif)
+![](/img/infinity-request.gif)
 
 Where most information is sent as a form data
 
-![](../img/infinity-data.gif)
+![](/img/infinity-data.gif)
 
 There is plenty of fields specified, but with quick experimentation it turned out that only handful is actually needed. So I came with this code to get HTML of all articles related to specific month
 
