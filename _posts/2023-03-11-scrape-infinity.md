@@ -10,7 +10,7 @@ tags:
   - Infinite scrolling
   - Wordpress
 ---
-In [one of previous posts]({% post_url 2023-02-28-eric.md %}) I talked about scraping [Eric Lippert's web][1] to build a list of articles there. As I am reading through them, I noticed that some articles are missing from my list. Inspecting the network communication in developer tools revealed that only first ten entries is returned in the query and following entries are loaded with javascript when user scrolls down to the end of the page.
+In [one of previous posts]({% post_url 2023-02-28-eric %}) I talked about scraping [Eric Lippert's web][1] to build a list of articles there. As I am reading through them, I noticed that some articles are missing from my list. Inspecting the network communication in developer tools revealed that only first ten entries is returned in the query and following entries are loaded with javascript when user scrolls down to the end of the page.
 
 Brief googling revealed that it is so called Infinity scrolling plugin for Wordpress. 
 
