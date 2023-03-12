@@ -10,7 +10,7 @@ tags:
   - Infinite scrolling
   - Wordpress
 ---
-In [one of previous posts]({% post_url 2023-02-28-eric %}) I talked about scraping [Eric Lippert's web][1] to build a list of articles there. As I am reading through them, I noticed that some articles are missing from my list. Inspecting the network communication in developer tools revealed that only first ten entries is returned in the query and following entries are loaded with javascript when user scrolls down to the end of the page.
+In [one of previous posts]({% post_url 2023-02-28-eric %}) I talked about scraping [Eric Lippert's web][1] to build a list of articles there. As I am reading through them, I noticed that some articles are missing from my list. Inspecting the network communication in developer tools revealed that only first ten entries is returned in the monthly archives page and following entries are loaded with javascript when user scrolls down to the end of the page.
 
 Brief googling revealed that it is so called Infinity scrolling plugin for Wordpress. 
 
@@ -49,9 +49,9 @@ for my $article (Mojo::DOM->new($posts->res->json->{html})->find('article')->eac
 }
 ```
 
-Testing was successful. On top of [Mojo::UserAgent][2] we have seen before, I am using [Mojo::URL][3] to add query fields into the base path and [Mojo::DOM][4] directly to parse the HTML, that is provided in JSON field `html`.
+Testing was successful, this returned all the articles. On top of [Mojo::UserAgent][2] we have seen before, I am using [Mojo::URL][3] to add query fields into the base path and [Mojo::DOM][4] to parse the HTML which is provided in JSON field `html`.
 
-Now we can just wrap the code into some classes to make the usage easier and nicely encapsulated. First, simple storage class for articles
+Now we can just wrap the code into few classes to make the usage easier and nicely encapsulated. First, simple storage class for articles, each property only with a getter and constructor to init them
 
 ```perl
 package Fabulous::Article;
@@ -64,7 +64,7 @@ has tags  => (is => 'ro', default => sub { +[] });
 1;
 ```
 
-And class to extract list of months and articles in them
+And class that can extract list of months and articles in them
 
 ```perl
 package Fabulous;
@@ -115,7 +115,7 @@ method get_articles_for_month($month) {
 1;
 ```
 
-Main program is then just the iteration like
+Main program is then just getting all available months, getting articles of them and output markdown as before
 
 ```perl
 use lib 'lib';
@@ -133,7 +133,7 @@ for my $month ($fabulous->get_all_months()) {
 }
 ```
 
-Which added some more articles into my list.
+Running it added some more articles into my list.
 
 [1]: https://ericlippert.com/
 [2]: https://docs.mojolicious.org/Mojo/UserAgent
