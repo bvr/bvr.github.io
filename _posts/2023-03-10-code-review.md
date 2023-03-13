@@ -13,7 +13,23 @@ At work we are using combination of [Subversion][2] and [Trac][1] for the develo
 
 But sometimes there is new development and you end up with reviewing everything in the repository.  In that case it is useful to avoid the diffs and walk through the code completely. In such cases I lack github approach of commenting on the code. This is a simple workaround.
 
-I just go into the code to review and at any place I want to refer place comment like `RH: Text`. When I run `svn diff -x "-U0" directory` command, the output shows changes I've done with references to file, revision and particular line. Following script extracts it and generates markup that refers to the file revisions with my notes included
+I just go into the code to review and at any place I want to refer place comment like `RH: Text`. The command
+
+    svn diff -x "-U0" directory
+    
+builds the output which shows changes I've done with references to file, revision and particular line:
+
+```diff
+Index: D:/SVN/Tool/trunk/Database/DbLayer/Disposition.cs
+ ===================================================================
+ --- D:/SVN/Tool/trunk/Database/DbLayer/Disposition.cs (revision 11272)
+ +++ D:/SVN/Tool/trunk/Database/DbLayer/Disposition.cs (working copy)
+ @@ -21 +21 @@
+ -        class Database
+ +        class Database              RH: Nice, consistent database interface with TraceDb
+```
+
+Following script uses such data to generates markup that refers to the file revisions with my notes included
 
 ```perl
 use 5.16.3;
@@ -87,7 +103,7 @@ Result look like this
 ```
  - Database
    - DbLayer
-     - [source:Tool/trunk/Database/DbLayer/Disposition.cs@11272#L21 Disposition.cs line 21] - Nice, consistent database interface with TraceDb]
+     - [source:Tool/trunk/Database/DbLayer/Disposition.cs@11272#L21 Disposition.cs line 21] - Nice, consistent database interface with TraceDb
 ```
 
 Which in Trac builds nice structured list of comments with references to the connected Subversion.
