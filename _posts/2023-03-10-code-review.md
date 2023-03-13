@@ -106,7 +106,7 @@ Result look like this
      - [source:Tool/trunk/Database/DbLayer/Disposition.cs@11272#L21 Disposition.cs line 21] - Nice, consistent database interface with TraceDb
 ```
 
-Which in Trac builds nice structured list of comments with references to the connected Subversion.
+Which in Trac builds nice structured list of comments with references to the connected Subversion. After the review, it is easy to revert all the changes to get back to previous state.
 
 [1]: https://trac.edgewall.org/
 [2]: https://subversion.apache.org/
