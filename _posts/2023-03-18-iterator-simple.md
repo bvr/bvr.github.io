@@ -72,5 +72,49 @@ my $filtered = igrep { $_ % 4 == 0 } $it;
  - `islice`, `ihead`, `iskip` - allows to skip/get specified number of items
  - `list` - turns iterator into array reference. Obviously works only for finite iterators
 
+Last example comes from [Dueling Generators][3] of 2017 Advent Of Code. The `generator` function creates infinite iterator of the values and `matches` function implements the "judge" to count matching pairs. Note how easy it was for second part to add filtering of values via `igrep` and rest of the program stayed the same.
+
+```perl
+use Function::Parameters;
+use Iterator::Simple qw(iterator ihead list izip imap igrep);
+use Data::Dump;
+
+use Test::More;
+
+# part 1
+{
+    my $a = generator(init => 699, factor => 16807);
+    my $b = generator(init => 124, factor => 48271);
+    is matches(a => $a, b => $b, samples => 40_000_000), 600, 'Input for part 1 matches';
+}
+
+# part 2
+{
+    my $a = igrep { $_ % 4 == 0 } generator(init => 699, factor => 16807);
+    my $b = igrep { $_ % 8 == 0 } generator(init => 124, factor => 48271);
+    is matches(a => $a, b => $b, samples => 5_000_000), 313, 'Input for part 2 matches';
+}
+
+done_testing;
+
+
+fun matches(:$a, :$b, :$samples) {
+    my $judge = imap { ($_->[0]&0xFFFF) == ($_->[1]&0xFFFF) ? 'x' : '-' } izip $a, $b;
+    my $matches_in_first_few = igrep { $_ eq 'x' } ihead($samples, $judge);
+    my $count = 0;
+    $count++ while $matches_in_first_few->next;
+    return $count;
+}
+
+fun generator(:$init, :$factor) {
+    my $prev = $init;
+    return iterator {
+        $prev = ($prev * $factor) % 2147483647;
+        return $prev;
+    }
+}
+```
+
 [1]: https://hop.perl.plover.com/book/
 [2]: https://metacpan.org/pod/Iterator::Simple
+[3]: http://adventofcode.com/2017/day/15
