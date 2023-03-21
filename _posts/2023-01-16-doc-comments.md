@@ -7,6 +7,7 @@ tags:
   - documentation
   - xml
   - Sandcastle
+  - Advent of Code
 ---
 There are many approaches to document a code. I really like having some kind of requirements/specification for the problem, then it is very useful to have design notes, documenting what was considered, which option was selected and why, and which option was not selected and why. Then comes documentation of smaller pieces (modules, classes, methods).
 

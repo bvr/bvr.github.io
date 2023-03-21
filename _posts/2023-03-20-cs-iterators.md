@@ -7,6 +7,7 @@ tags:
   - Iterator
   - Enumerator
   - LINQ
+  - Advent of Code
 ---
 In [previous post]({% post_url 2023-03-18-iterator-simple %}) I discussed how iterators are done in perl. In C# they are called enumerators. Old C# required to create class that provides IEnumerator methods to init and get next item. But since C# version 2 there is very nice interface to generate items in natural way. Following code produces range per specified bounds
 

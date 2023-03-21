@@ -7,6 +7,7 @@ tags:
   - Iterator::Simple
   - Iterator
   - Higher-Order Perl
+  - Advent of Code
 ---
 Since I read the [Higher-Order Perl][1] by Mark Jason Dominus I became big fan of iterator approach. As shown in few previous posts like [Date range]({% post_url 2023-01-17-date-range %}) or [BST Successor Search]({% post_url 2022-12-05-bst-successor-search %}), I am usually using [Iterator::Simple][2] to build iterators.
 
