@@ -13,24 +13,24 @@ tags:
   - DSLR
   - jhead
 ---
-This is summary of my digital photographic workflow and ways for photo organization. The system developed during last 20 years, so it would be good to explain my photo background. My most common subject is capturing my trips, which is mostly countryside, preferably mountains if I can help it.
+This post is summary of my digital photography workflow and my ways for photo organization. It is a system developed during last 20 years. It would be good to explain my photo background first. My most common subject is capturing traveling trips, people in countryside, preferably mountains if I can help it.
 
 ![Vysoke Tatry](/img/tatry.jpg)
 *The picture above is taken in Slovakia mountains called Vysoke Tatry (High Tatras).*
 
 ## Early days
 
-I've been taking photos since I was small. Back then, I used 35mm film with full-manual cameras that were usually East Germany made, like those [Praktica][1] SLR. The usual process was rather slow, you needed to finish your cassette with 24 or 36 frames and let it develop. This was not too much fun, but when digital started to be usable, I quickly jumped that train and bought initially [Cannon A40][2] with 2 megapixel resolution. It is laughable these days, but back then it was great camera and I took tens of thousands pictures with it and learned a ton about photography that way.
+I've been taking photos since I was small. Back then, I used 35mm film with full-manual cameras that were usually East Germany made, like [Praktica][1] SLR. The usual process was slow, you needed to finish your cassette with 24 or 36 frames and let it develop. This was not much fun, so when digital started to be usable, I quickly jumped that train and bought initially [Cannon A40][2] with 2 megapixel resolution. It is laughable these days, but back then it was great camera and I took tens of thousands pictures with it and learned a ton about photography that way.
 
 ![Canon A40](/img/canon-a40.jpg)
 
-In the meantime Canon came with its affordable Rebel DSLR and shortly after Nikon came with its [D70][3]. I was able to save some money and bought it along with standard 18-70 mm lens. This was huge step forward and I stayed with Nikon since then. Over the time I got some additional lenses, a flash, tripod and other tools. The DSLR experience is something that is hard to convey, but it is wonderful as a photographic tool. Every function is quickly accessible on external buttons, viewfinder is bright and clear, providing great control on depth of field, focus and camera settings.
+In the meantime Canon came with its first affordable DSLR (Canon Digital Rebel) and shortly after Nikon came with its [D70][3]. I was able to save some money and bought it along with standard 18-70 mm lens. This was huge step forward and I stayed with Nikon since then. Over the time I got some additional lenses, a flash, and a tripod. The DSLR experience is something that is hard to convey, but it is wonderful as a photographic tool. Every function is quickly accessible on external buttons, viewfinder is bright and clear, providing great control on depth of field, focus and camera settings.
 
 ![Nikon D70](/img/nikon-d70.jpg)
 
 ## Current equipment
 
-Last iteration of Nikon DSLR I currently use is **Nikon D7200** camera. Over last cameras it has much better 24 megapixel sensor, even better viewfinder, great sport modes with fast focusing and wonderful image quality. Controls are taken from higher level cameras, while keeping similar philosophy of usage.
+Last iteration of Nikon DSLR I currently use is **Nikon D7200** camera. Over last cameras it has much better 24 megapixel sensor, even better viewfinder, great sport modes with fast focusing and wonderful image quality. Controls are taken from higher-level cameras, while keeping similar philosophy of usage.
 
 ![Nikon D7200](/img/nikon-d7200.jpg)
 
@@ -46,11 +46,11 @@ There is also number of other devices that take pictures like cell phones of who
 
 ## Photo gathering
 
-From camera I usually download SD cards directly, from cell phones I use USB connection to the device and download photos into folder called `00-Incoming`. I try to make sure the devices are properly setup for the timezone where capture happened - for cell phones, this happens automatically using operator synchronization, for camera one need to setup the timezone manually. 
+From D7200 camera I usually download data directly from the SD cards, from cell phones I use USB connection to the device and download photos.  I have a folder called `00-Incoming` for the purpose. I try to make sure the devices are properly setup for the timezone where capture happened - in cell phones this happens automatically using operator synchronization, with the camera you need to setup the timezone manually. 
 
 If it fails, there is an option to fix the time in downloaded photos using trick described in [one of previous posts on jhead tool]({% post_url 2015-09-20-jhead %}).
 
-Once all files are gathered in the `00-Incoming`, I would like to rename all of them to format `YYMMDD-hhmmss-nn.jpg`, i.e. something like `210101-122046-00.jpg` and put the files into a one-day folder named `YYMMDD`. I have script like this
+Once all files are gathered in the incoming I would like to rename all of them to format `YYMMDD-hhmmss-nn.jpg`, i.e. something like `210101-122046-00.jpg` and put the files into a one-day folder named `YYMMDD`. For the purpose I have script like this
 
 ```perl
 use 5.16.3;
@@ -151,7 +151,7 @@ for my $file (sort { $a->date_time cmp $b->date_time } @files) {
 }
 ```
 
-The script uses EXIF date stored in the photos, as file dates can differ wildly. The `nn` numbering is useful if multiple photos were created in the same second. This usually happens quite rarely, either when continuous drive is used or when two people are capturing at the same time. With this completed, the incoming folder looks like this:
+It uses EXIF date stored in the photos, as file dates can differ wildly. The `nn` numbering is useful if multiple photos were created in the same second. This usually happens quite rarely, either when continuous drive is used or when two people are capturing at the same time. With this completed, the incoming folder looks like this:
 
 ```
 ├───210101
@@ -175,9 +175,9 @@ The script uses EXIF date stored in the photos, as file dates can differ wildly.
 
 ## Organization
 
-My photo collection is simple, directory based, structure. Top level are simple years, second level is per event, with directories named like `YYMMDD - Name of event`. This way it is easy to find each event, name sorting reflects the date and it keeps those information even if I take whole folder and move it somewhere else.
+My photo collection is simple directory based structure. There is top level directory for each year, second level is per event, with directories named like `YYMMDD - Name of event`. This way it is easy to find the event, name sorting reflects the date and it keeps those information even if I take whole folder and move it somewhere else.
 
-This structure is created manually by walking incoming folders and grouping them into an event. Most of the events can stay as they are (just add the name), but with longer trips I merge few days together.
+This structure is created manually by walking incoming folders and grouping them into an event. Most of short events can stay as they are (just add the name), but with longer trips I merge several together.
 
 Inside the event folder, I work through the photos and pick those that I like even during the time of processing. It is often the case that I like the moment, but the photo is not too interesting. For the down-select, using [IrfanView][4] and its function `File/Copy File (F8)` transfer good photos into directory `choice`. If there is too many selected photos, I usually repeat the process until I have reasonable number of them. For events about week long, I like to end with 50-100 photos.
 
