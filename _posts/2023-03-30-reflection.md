@@ -33,7 +33,8 @@ var guy = new Person
     Street = "123 Elm Street",
     City = "Boston",
 };
-string sql = BuildInsertQuery(guy);   // INSERT INTO Person (FirstName, LastName, Street, City) VALUES ("Jim", "Black", "123 Elm Street", "Boston")
+string sql = BuildInsertQuery(guy);   
+// INSERT INTO Person (FirstName, LastName, Street, City) VALUES ("Jim", "Black", "123 Elm Street", "Boston")
 ```
 
 The method for building the query first uses `object` classes method `GetType` to extract the meta-class. It provides means to get name of the class via `Name` property and provides handy `GetProperties` method.
