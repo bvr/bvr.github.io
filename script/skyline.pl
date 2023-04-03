@@ -1,6 +1,7 @@
 
 use utf8;
-use List::Util qw(reduce max);
+use List::Util qw(reduce min max);
+use Data::Dump qw(dd);
 
 my @buildings = (
     [1,11,5], [2,6,7], [3,13,9], [12,7,16], [14,3,25], [19,18,22], [23,13,29], [24,4,28],
@@ -8,19 +9,35 @@ my @buildings = (
 
 draw_buildings(@buildings);
 my @skyline = calc_skyline(@buildings);
+dd @skyline;
 
 sub calc_skyline {
     my @buildings = @_;
 
+    my $min = min map { $_->[0] } @buildings;
+    my $max = max map { $_->[2] } @buildings;
+
+    my @output = ();
+    my $last = -1;
+    for my $x ($min .. $max) {
+        my $skyline = max map { $_->[1] } grep { $_->[0] <= $x && $x < $_->[2] } @buildings;
+        if($last != $skyline) {
+            push @output, $x, $skyline//0;
+            $last = $skyline;
+        }
+    }
+
+    return @output;
 }
 
 sub draw_buildings {
     my @buildings = @_;
 
-    # find dimension of the range
+    # find dimension of the range (assume positive and zero-based data)
     my $dim = reduce {
-        my $mx = max($a->[0], $b->[2]);
-        my $my = max($a->[1], $b->[1]);
+        my ($left, $height, $right) = @$b;
+        my $mx = max($a->[0], $right);
+        my $my = max($a->[1], $height);
         [$mx, $my];
     } [0,0], @buildings;
 
