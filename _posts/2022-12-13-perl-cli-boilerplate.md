@@ -6,6 +6,9 @@ tags:
   - perl
   - Getopt::Long
   - Log::Log4perl
+  - CLI
+  - arguments
+  - help generation
 ---
 When I am starting work on a command-line (CLI) thing in perl, This is starter boilerplate I am using. It goes for standard [Getopt::Long][1] to parse the parameters, provides common format for help message and setups [Log::Log4perl][2] logging with current-date stamped logs.
 
