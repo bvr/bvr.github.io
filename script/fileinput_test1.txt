@@ -1,0 +1,9 @@
+args.py	670
+czech-stemmer.pl	1734
+firefox.pl	838
+iterator.pl	323
+porter.pl	7311
+re-debug.pl	727
+repeated-regex.pl	155
+section-numbering.tt	1053
+skyline.pl	3327
