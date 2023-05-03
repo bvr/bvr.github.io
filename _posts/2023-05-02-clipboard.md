@@ -1,6 +1,6 @@
 ---
 layout: post
-title: win32clipboard
+title: clipboard
 published: yes
 tags:
   - python
@@ -31,9 +31,13 @@ In python, I found following ways to do such operation:
  - with `pywin32`
  - with `clipboard`
 
+Lets look on each of them in more detail.
+
 ## ctypes
 
-The [ctypes][2] is a library that allows to interoperate with foreign DLLs. In our case, we use Windows libraries `user32` and `kernel32` to access the clipboard. I gathered the examples below from StackOverflow and other internet sources and I placed them here for the study purposes
+The [ctypes][2] is a library that allows to interoperate with foreign DLLs. In our case, we use Windows libraries `user32` and `kernel32` to access the clipboard. I gathered the examples below from StackOverflow and other internet sources and I placed them here for the study purposes. 
+
+The `ctypes` is included in python distribution and thus can be quite cheap solution that does not need to install any dependencies.
 
 ```python
 import sys
@@ -81,9 +85,11 @@ if len(text) > 0:
 print(get_clipboard())
 ```
 
+You can see all the hoops that needs to be covered for calling quite simple functions. Just the memory allocation is rather wordy.
+
 ## win32clipboard
 
-The [win32clipboard][3] comes from pywin32 package (and can be installed with it). Usage is rather simple
+The [win32clipboard][3] comes from pywin32 package (and can be installed with it). Usage is rather simple, you just need to keep in mind to open/close the clipboard to make it available to other applications.
 
 ```python
 import sys
@@ -107,9 +113,9 @@ if len(text) > 0:
 print(get_clipboard())
 ```
 
-## clipboard
+## [clipboard][4]
 
-Probably simplest interface for text data. It also should be multi-platform solution
+Probably simplest interface for text data. It also should be multi-platform solution as it is based on [pyperclip][5] that works on all Windows, Linux, and Mac.
 
 ```python
 import sys
@@ -124,3 +130,5 @@ print(clipboard.paste())
 [1]: https://metacpan.org/pod/Win32::Clipboard
 [2]: https://docs.python.org/3/library/ctypes.html
 [3]: http://timgolden.me.uk/pywin32-docs/win32clipboard.html
+[4]: https://pypi.org/project/clipboard/
+[5]: https://pypi.org/project/pyperclip/
