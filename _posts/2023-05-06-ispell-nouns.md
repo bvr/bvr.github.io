@@ -39,9 +39,9 @@ babí/Y
 babizna/ZQ
 ```
 
-In the script I tried to use number of techniques. Core of the functionality is generator function `ispell_entries` that parses ispell lines and lazily produces entries as tuple of the word and its flags. The entries are then filtered through `longer_noun` function that allows only flags I am interested in and longer words.
+In the script I tried to use number of techniques. Core of the functionality is generator function `ispell_entries` that parses ispell lines and lazily produces entries as tuple of the word and its flags. On top of building the generator with `yield` command, I also tried [regular expressions][3] including the verbose syntax that allows to make the patterns more readable. Another nice thing is named capture groups with `(?P<name> ... )` syntax.
 
-I am only printing first few hundreds of words via `islice` function from [itertools][2]
+The entries are then filtered through `longer_noun` function that allows only flags I am interested in and longer words. Final part is printing only first few hundreds of words via `islice` function from [itertools][2]
 
 ```python
 import fileinput
@@ -98,3 +98,4 @@ advokacie
 
 [1]: https://github.com/tvondra/ispell_czech
 [2]: https://docs.python.org/3/library/itertools.html
+[3]: https://docs.python.org/3/library/re.html
