@@ -19,6 +19,19 @@
             "type": "shell",
             "command": "npx tailwindcss -i css\\tailwind.css -o css\\output.css --watch",
             "problemMatcher": []
+        },
+        {
+            "label": "New Post",
+            "type": "shell",
+            "command": "create_post.bat ${input:name} ${workspaceFolder}",
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "name",
+            "type": "promptString",
+            "description": "Specify name of the newly created file"
         }
     ]
 }
