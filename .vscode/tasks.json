@@ -24,7 +24,10 @@
             "label": "New Post",
             "type": "shell",
             "command": "create_post.bat ${input:name} ${workspaceFolder}",
-            "problemMatcher": []
+            "problemMatcher": [],
+            "presentation": {
+                "close": true,
+            }
         }
     ],
     "inputs": [
