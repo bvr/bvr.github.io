@@ -24,4 +24,10 @@ Here are notes for [Command Line Interface Guidelines][1] web site.
    - lead with examples, easy to copy/paste and start with
    - for advanced help, show web page (easy to search and copy from)
 
+ - output
+   - human-readable output is paramount, but make it machine-readable where it does not impact usability
+   - expect the output of every program to become input to another program
+
+
+
 [1]: https://clig.dev/
