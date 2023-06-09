@@ -1,10 +1,15 @@
 ---
 layout: post
 title: CLI Guidelines
-published: no
+published: yes
 tags:
   - CLI
   - Guideline
+  - jq
+  - pager
+  - less
+  - help
+  - output
 ---
 Here are notes for [Command Line Interface Guidelines][1] web site.
 
@@ -27,7 +32,33 @@ Here are notes for [Command Line Interface Guidelines][1] web site.
  - output
    - human-readable output is paramount, but make it machine-readable where it does not impact usability
    - expect the output of every program to become input to another program
+   - it is good idea to provide option to produce structured output (json, yaml, or xml). There is number of tools like [jq][2] or [xq][3] to process and filter such output
+   - report state changes and make sure user knows what is going on
+   - suggest commands the user can use
+   - check whether tty is used and possibly use extended features like colors
+   - for longer output pager is good idea (for instance `less -FIRX` is good default). This is generally not available on Windows
 
+ - errors
+   - make sure the error output is reasonable for user
+   - make it easy to submit error report (an url with pre-filled information can help)
 
+ - arguments and flags
+   - provide long version for all flags. They are much more readable in the scripts
+   - make sure arguments support globbing like `*.txt`
+   - if there is a standard, use it. Common flags can be
+     - `-a`, `--all`: All. For example, ps, fetchmail.
+     - `-d`, `--debug`: Show debugging output.
+     - `-f`, `--force`: Force. For example, rm -f will force the removal of files, even if it thinks it does not have permission to do it. This is also useful for commands which are doing something destructive that usually require user confirmation, but you want to force it to do that destructive action in a script.
+     - `--json`: Display JSON output.
+     - `-h`, `--help`: Help. This should only mean help.
+     - `-o`, `--output`: Output file. For example, sort, gcc.
+     - `-p`, `--port`: Port. For example, psql, ssh.
+     - `-q`, `--quiet`: Quiet. Display less output. This is particularly useful when displaying output for humans that you might want to hide when running in a script.
+     - `-u`, `--user`: User. For example, ps, ssh, mysql.
+     - `--version`: Version.
+   - confirm before doing anything dangerous
+   - do not read secrets from flags, they will be visible in process list and shell history. Prefer taking secrets from files only
 
 [1]: https://clig.dev/
+[2]: https://jqlang.github.io/jq/
+[3]: https://github.com/kislyuk/yq
