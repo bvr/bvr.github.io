@@ -14,6 +14,8 @@ tags:
 ---
 Here are my notes from [Command Line Interface Guidelines][1] web site. I really like the summary and it opened various interesting points. Will try to incorporate those ideas into my command line programs.
 
+![Command Line Interface Guidelines](/img/cli-guidelines.png)
+
  - movement from machine-first to human-first approach. From necessity to utility
  - UNIX philosophy - small, simple programs with clean interfaces can be combined to build larger system
  - conversation as a norm. The exchange with the CLI can be seen as conversation
