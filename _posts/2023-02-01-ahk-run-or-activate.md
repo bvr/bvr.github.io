@@ -5,6 +5,7 @@ published: yes
 tags:
   - autohotkey
   - Windows 10
+  - keyboard
 ---
 I was always into efficient control of the computer and use of keyboard is key to it. Probably everybody is using the `Alt+Tab` and `Shift+Alt+Tab` to cycle active windows. It is useful, but requires finding the intended application in displayed windows and press the combination until it becomes active.
 
