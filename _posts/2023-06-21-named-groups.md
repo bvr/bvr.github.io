@@ -4,7 +4,7 @@ title: Named groups in C# regex
 published: yes
 tags:
   - C#
-  - Regex
+  - regex
   - named group
   - IgnoreCase
 ---

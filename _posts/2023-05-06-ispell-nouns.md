@@ -9,7 +9,7 @@ tags:
   - fileinput
   - re
   - named group
-  - Regex
+  - regex
 ---
 I am working on a small Hangman game that allows to guess words. Part of the problem is to find good czech language dictionary that I can use as an input. Searching of the internet for text-based dictionaries I found [ispell Czech dictionary][1] that looks good for my purpose.
 
