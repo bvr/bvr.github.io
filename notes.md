@@ -2,17 +2,23 @@
 # Topics:
 
  - Graphviz and dot
- - Regexp::Grammars
- - XSLT
- - XSD
- - Devel::NYTProf
+ - perl
+   - Regexp::Grammars
+   - XSLT
+   - XSD
+   - Devel::NYTProf
+   - https://toby.ink/blog/2023/01/24/perl-testing-in-2023/
  - lunr.js
  - technical writing https://developers.google.com/tech-writing
- - https://toby.ink/blog/2023/01/24/perl-testing-in-2023/
- - https://learn.microsoft.com/en-us/dotnet/api/system.linq.iorderedenumerable-1?view=net-7.0
- - dynamic dispatch as described in https://ericlippert.com/2015/05/07/wizards-and-warriors-part-four/
  - [Inform7 language](https://ganelson.github.io/inform-website/)
- - explore ThreadLocal as in [Fixing Random, part 2](https://ericlippert.com/2019/02/04/fixing-random-part-2/)
+ - C#
+   - explore ThreadLocal as in [Fixing Random, part 2](https://ericlippert.com/2019/02/04/fixing-random-part-2/)
+   - https://learn.microsoft.com/en-us/dotnet/api/system.linq.iorderedenumerable-1?view=net-7.0
+   - dynamic dispatch as described in https://ericlippert.com/2015/05/07/wizards-and-warriors-part-four/
+ - python
+   - [itertools](https://docs.python.org/3/library/itertools.html)
+   - [types annotations](https://realpython.com/preview/python-type-self/)
+
 
 # Layout
 
