@@ -10,6 +10,7 @@ tags:
   - Web
   - Infinite scrolling
   - Wordpress
+  - Eric Lippert
 ---
 In [one of previous posts]({% post_url 2023-02-28-eric %}) I talked about scraping [Eric Lippert's web][1] to build a list of articles there. As I am reading through them, I noticed that some articles are missing from my list. Inspecting the network communication in developer tools revealed that only first ten entries is returned in the monthly archives page and following entries are loaded with javascript when user scrolls down to the end of the page.
 
