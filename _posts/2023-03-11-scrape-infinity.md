@@ -6,6 +6,7 @@ tags:
   - perl
   - Scrape
   - Mojo::UserAgent
+  - Mojo::URL
   - Web
   - Infinite scrolling
   - Wordpress
