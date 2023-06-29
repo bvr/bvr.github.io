@@ -16,7 +16,7 @@ use Mojo::URL;
 my $url = Mojo::URL->new('https://bitbucket/scm/repo/requirements.git')
             ->userinfo('account:pwd34#')
             ->query(a => 'b');
-for my $method (qw(to_unsafe_string scheme userinfo host port path query fragment)) {
+for my $method (qw(to_string to_unsafe_string scheme userinfo host port path query fragment)) {
     printf "%-20s: %s\n", $method, $url->$method();
 }
 ```
@@ -24,6 +24,7 @@ for my $method (qw(to_unsafe_string scheme userinfo host port path query fragmen
 I basically needed only the `to_unsafe_string` method to build the final url. The `to_string` omits user info from the url, so it is not usable here. As I played a bit more with this, I made it complete decomposition using all methods. The output is as follows
 
 ```
+to_string           : https://bitbucket/scm/repo/requirements.git?a=b
 to_unsafe_string    : https://account:pwd34%23@bitbucket/scm/repo/requirements.git?a=b
 scheme              : https
 userinfo            : account:pwd34#
