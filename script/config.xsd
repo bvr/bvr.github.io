@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="DataCfg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Setups"/>
+        <xs:element ref="DataTypes"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Setups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Setup"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Setup">
+    <xs:complexType>
+      <xs:attribute name="ID" use="required"/>
+      <xs:attribute name="Name" use="required"/>
+      <xs:attribute name="Description" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="DataType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataType">
+    <xs:complexType>
+      <xs:attribute name="Name" use="required"/>
+      <xs:attribute name="CodeTypeName" use="required"/>
+      <xs:attribute name="Size" use="required"/>
+      <xs:attribute name="Min" use="required"/>
+      <xs:attribute name="Max" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

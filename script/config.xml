@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataCfg>
+  <Setups>
+    <Setup ID="1" Name="V1" Description="Variant 1" />
+    <Setup ID="2" Name="V2" Description="Variant 2" />
+  </Setups>
+  <DataTypes>
+    <DataType Name="uint32" CodeTypeName="uint32_T" Size="4" Min="0" Max="4294967295" />
+    <DataType Name="int32" CodeTypeName="int32_T" Size="4" Min="-2147483648" Max="2147483647" />
+    <DataType Name="boolean" CodeTypeName="boolean_T" Size="4" Min="0" Max="1" />
+    <DataType Name="double" CodeTypeName="real_T" Size="4"  Min="-1.79769313486231e+308" Max="1.79769313486231e+308"/>
+    <DataType Name="uint16" CodeTypeName="uint16_T" Size="2" Min="0" Max="65535" />
+    <DataType Name="int16" CodeTypeName="int16_T" Size="2" Min="-32768" Max="32767" />
+    <DataType Name="uint8" CodeTypeName="uint8_T" Size="1" Min="0" Max="255" />
+    <DataType Name="int8" CodeTypeName="int8_T" Size="1" Min="-128" Max="127" />
+  </DataTypes>
+  <Component Name="PF"/>
+</DataCfg>
