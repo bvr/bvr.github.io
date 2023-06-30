@@ -6,6 +6,7 @@ tags:
   - perl
   - topological sort
   - algorithm
+  - Eric Lippert
 ---
 I run across very useful algorithms for situation where total order of a sequence is not clear in [excellent article of Eric Lippert][1]. It allows you to make sure some items go earlier than others, typically when we have some dependencies. I recently used it for sequential processing of interdependent sets of safety [cutsets][2].
 
