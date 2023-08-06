@@ -7,6 +7,7 @@ tags:
   - css
   - tailwind
   - responsive
+  - youtube
 ---
 Notes about [Tailwind][1] responsive features and how to build web site working nicely on all screen sizes from this video:
 

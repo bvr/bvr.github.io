@@ -14,7 +14,7 @@ tags:
 ---
 Just finished reading of [Prisoners of Geography][1] book by journalist **Tim Marshall**. I am interested in history, but over the years I neglected many regions. As the title suggests, the book emphasizes geography and its impact on forming nations. The book is quite short and covers whole world, so it is natural that it cannot provide great detail. But as introduction to the world geopolitics it provides good primer and can be used as basis for further study.
 
-![Book cover](/img/marshall-v-zajeti-geografie.png)
+![Prisoners of Geography book cover](/img/marshall-v-zajeti-geografie.png)
 
 The book subtitle is "Ten Maps That Explain Everything About the World". Those are
 
