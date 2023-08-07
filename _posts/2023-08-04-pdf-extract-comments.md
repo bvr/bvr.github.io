@@ -30,7 +30,7 @@ All regular stuff. The nullable items are there because the library returns ever
 The extractor is then opening the PDF, traversing all pages and annotations on them and yields annotations of appropriate types
 
 ```c#
-public static IEnumerable<Comment> ExtractComments(string pdfFilePath)
+private static IEnumerable<Comment> ExtractComments(string pdfFilePath)
 {
     using (var fileStream = new FileStream(pdfFilePath, FileMode.Open))
     using (var pdfReader = new PdfReader(fileStream))
@@ -75,6 +75,6 @@ foreach (Comment cm in ExtractComments(inputPdf))
     Console.WriteLine(cm);
 ```
 
-Next time we can look on how to build the tree of comments and present them in order.
+Next time we can look on how to [build the tree of comments]({% post_url 2023-08-07-comment-tree %}) and present them in order.
 
 [1]: https://itextpdf.com
