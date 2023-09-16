@@ -8,6 +8,9 @@ tags:
   - xml
   - System.IO.Packaging
   - System.Xml.XDocument
+  - EnumerateFiles
+  - GetPart
+  - Package
 ---
 At work we use Word documents with some helpers to define requirements, so there are many such files. There are different kinds of the documents (high-level requirements, low-level, tests, etc). The kind is stored in the document properties, namely in the `category` field.
 
