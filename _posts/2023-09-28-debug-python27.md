@@ -7,6 +7,7 @@ tags:
   - vscode
   - python
   - config
+  - debug
 ---
 Recently I had to debug old program written years ago using python 2.7. The thing worked quite nicely for more than decade, but last month the version-control system used as data source -  [Dimensions][1] - was updated and various reports it produces changed their format.
 
@@ -41,6 +42,9 @@ The debugging then works, we just need to setup the tool to run with proper argu
 }
 ```
 
+More information on other debug parameters can be found in the [editor documentation for debugging][4].
+
 [1]: https://en.wikipedia.org/wiki/Dimensions_CM
 [2]: https://code.visualstudio.com/
 [3]: https://stackoverflow.com/questions/72214043/how-to-debug-python-2-7-code-with-vs-code
+[4]: https://code.visualstudio.com/docs/editor/debugging#_launchjson-attributes
