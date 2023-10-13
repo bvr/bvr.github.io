@@ -35,7 +35,7 @@ query               : a=b
 fragment            :
 ```
 
-Another useful operation supported by the class is to build relative url to some base, as demonstrate in [Scrape infinity]({% post_url 2023-03-11-scrape-infinity %}) post.
+Another useful operation supported by the class is to build relative url to some base, as demonstrated in [Scrape infinity]({% post_url 2023-03-11-scrape-infinity %}) post.
 
 [1]: https://mojolicious.io/
 [2]: https://docs.mojolicious.org/Mojo/URL
