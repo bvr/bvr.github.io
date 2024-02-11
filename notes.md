@@ -36,6 +36,8 @@
    - [types annotations](https://realpython.com/preview/python-type-self/)
    - https://docs.python.org/3/reference/datamodel.html
    - https://realpython.com/python-testing/
+ - YAML
+   - https://lyz-code.github.io/yamlfix/
 
 
 # Layout

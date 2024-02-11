@@ -11,7 +11,6 @@ tags:
 There is very useful utility I use very often - [Capture::Tiny][1]. It takes almost anything sent to STDOUT and STDERR in a code block. This is very useful for any kind of logging, for example
 
 ```perl
-
 use Capture::Tiny qw(capture_merged);
 
 my $output = capture_merged { 
