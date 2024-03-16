@@ -6,6 +6,7 @@ tags:
   - Visual Basic
   - VBA
   - Microsoft Word
+  - Word
   - Command Bar
 ---
 At work we use Microsoft Word to author requirements and there is plenty of macros that help with the task. When it was designed years ago, it used command bars functionality. At that time, you could edit them easily, create new buttons, and assign them macros. 
