@@ -11,6 +11,7 @@
    - XSLT
    - Devel::NYTProf
    - https://toby.ink/blog/2023/01/24/perl-testing-in-2023/
+   - [Test2::V0](https://perladvent.org/2023/2023-12-15.html)
  - lunr.js
  - technical writing https://developers.google.com/tech-writing
  - Game Development
@@ -38,7 +39,11 @@
    - https://realpython.com/python-testing/
  - YAML
    - https://lyz-code.github.io/yamlfix/
-
+ - Drawing
+   - [Mi-10](https://en.wikipedia.org/wiki/Mil_Mi-10)
+   - [S-64 SkyCrane](https://cs.wikipedia.org/wiki/Sikorsky_S-64_Skycrane)
+   - [DH.88 Comet](https://en.wikipedia.org/wiki/De_Havilland_DH.88_Comet)
+ - [Gitlab docs](https://docs.gitlab.com/)
 
 # Layout
 
