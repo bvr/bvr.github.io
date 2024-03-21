@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Title
+title: Log::Log4perl chunked output
 published: yes
 tags:
   - perl
