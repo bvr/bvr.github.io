@@ -4,6 +4,8 @@ title: Date range
 published: yes
 tags:
   - perl
+  - date
+  - time
   - Time::Moment
   - Function::Parameters
   - Types::Standard
