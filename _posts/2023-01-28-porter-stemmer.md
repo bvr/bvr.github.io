@@ -8,6 +8,10 @@ tags:
   - perl
   - specification
   - algorithm
+  - List::AllUtils
+  - Function::Parameters
+  - Moo
+  - Test::More
 ---
 The [Porter Stemming Algorithm][1] tries to reduce words into their stems. For typical full-text search, each document is described by vector of words (this can come from title, abstract, text of the document, keywords, etc). Term with same stem usually have similar meaning like in:
 
