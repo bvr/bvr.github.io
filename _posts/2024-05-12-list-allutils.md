@@ -12,9 +12,9 @@ tags:
   - natatime
   - partition_by
 ---
-The functional approach to programming leads to extensive list processing. In perl, there are several modules that offer all kinds of utilities to do that efficiently, like [List::Util][1] or[List::MoreUtils][2]. Since I started using them, I wished there was one solution that includes all of them, so I don't have to always look where it is. Probably out of same sentiment the [List::AllUtils][3] was created.
+The functional approach to programming leads to extensive list processing. In perl, there are several modules that offer all kinds of utilities to do that efficiently, like [List::Util][1] or [List::MoreUtils][2]. Since I started using them, I wished there was one solution that includes all of them, so I don't have to always look where it is. Probably out of the same sentiment the [List::AllUtils][3] was created.
 
-It is well worth reading the documentation to at least have an idea of what is available. Here are my favorites:
+It is well worth reading the documentation to at least have an idea of what is available. Here are my favorites.
 
 ## Aggregators
 
