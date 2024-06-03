@@ -16,7 +16,7 @@ The functional approach to programming leads to extensive list processing. In pe
 
 It is well worth reading the documentation to at least have an idea of what is available. Here are my favorites.
 
-## Aggregators
+### Aggregators
 
 On top of usual `sum`, `min` and `max`, sometimes it is handy to find range of the data with `minmax`
 
@@ -25,7 +25,7 @@ use List::AllUtils qw(minmax);
 my ($min, $max) = minmax(@data);
 ```
 
-## Junctions
+### Junctions
 
 While a lot of work is possible with standard `grep` function, it is more readable to write stuff like
 
@@ -35,7 +35,7 @@ if(all { $_->writable } @files) {
 }
 ```
 
-## Pairs
+### Pairs
 
 Works with list of pairs. This is very useful to have something similar to a hash, but with retained order. For instance we might want to keep the table headers and data processing together like in [this post]({% post_url 2023-01-10-table-generation %})
 
@@ -55,7 +55,7 @@ for my $row (@data_rows) {
 }
 ```
 
-## Groups of n items
+### Groups of n items
 
 What I use quite often is `natatime`. It builds an iterator for number of elements. It comes handy for any kind of block processing
 
