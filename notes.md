@@ -5,7 +5,9 @@
  - Various CLI Tools
    - [CLI tools you won't be able to live without](https://dev.to/lissy93/cli-tools-you-cant-live-without-57f6)
    - [aria2c](https://aria2.github.io/manual/en/html/aria2c.html#http-ftp-segmented-downloads)
- - [400 Free AI Tools - Unleashing the Power of AI](https://dev.to/anmolbaranwal/200-free-ai-tools-unleashing-the-power-of-ai-eb0)
+ - AI
+   - [400 Free AI Tools - Unleashing the Power of AI](https://dev.to/anmolbaranwal/200-free-ai-tools-unleashing-the-power-of-ai-eb0)
+   - [Best AI Tools for productivity](https://designshack.net/articles/software/best-ai-tools-for-productivity/)
  - perl
    - Regexp::Grammars
    - XSLT
