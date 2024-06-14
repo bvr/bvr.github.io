@@ -54,6 +54,10 @@
  - Make sure it works nice on small screens (mobile)
  - Dark mode?
 
+## Favicon
+
+Created with https://favicon.io/favicon-generator/
+
 ## Some cut out from the original template
 
 <div class="fixed bg-slate-700 bg-opacity-5 transition duration-200 ease-in-out inset-0 z-10 pointer-events-auto md:hidden left-0 top-0 w-full h-full hidden menu-overlay"></div>
