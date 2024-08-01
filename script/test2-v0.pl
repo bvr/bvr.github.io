@@ -46,7 +46,7 @@ my $xmas = Acme::Christmas->new();
 
 
 isa_ok $xmas, 'Acme::Christmas';
-can_ok $xmas, qw( read_letters make_toys );
+can_ok $xmas, $_ for qw( read_letters make_toys );
 
 is $xmas->date, 'December, 25th', 'got the right date';
 
@@ -54,18 +54,19 @@ note "let's see if the Grinch is close";
 subtest 'assert that the grinch is far away' => sub {
     if (grinch()) {
         fail 'oh, noes';
-    } else {
+    } 
+    else {
         pass 'coast is clear!';
     }
 };
 
 SKIP: {
-    skip "tests for winter only", 1 unless $xmas->is_winter;
+    skip 'tests for winter only', 1 unless $xmas->is_winter;
     like $xmas->carol, qr/Merry/, 'found the proper lyrics';
 }
 
 use Data::Dump qw(dd);
-dd [keys %{ $mock_meta->sub_tracking } ];
+# dd [ $mock_meta->sub_tracking ];
 
 
 done_testing;
