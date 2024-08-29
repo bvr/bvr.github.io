@@ -1,14 +1,14 @@
 ---
 layout: post
-title: Encode/decode url
-published: yes
+title: Encode special chars in URL
+published: yes  
 tags:
   - perl
   - Mojo::URL
   - Web
   - Mojolicious
 ---
-Very short post - I recently needed to build an url with weird character `#` in authentication string. It was clear that the character needed to be somehow encoded. There is for sure many convertors on the net, but I reached for utility class from [Mojolicious][1] framework, the [Mojo::URL][2]. Following script would do
+I recently needed to build an URL with the weird character # in an authentication string. It was clear that the character needed to be properly encoded. There are for sure many online convertors, but I reached for a utility class from the [Mojolicious][1] framework, called [Mojo::URL][2]. The following script demonstrates how to handle this:
 
 ```perl
 use Mojo::URL;
@@ -21,7 +21,7 @@ for my $method (qw(to_string to_unsafe_string scheme userinfo host port path que
 }
 ```
 
-I basically needed only the `to_unsafe_string` method to build the final url. The `to_string` omits user info from the url, so it is not usable here. As I played a bit more with this, I made it complete decomposition using all methods. The output is as follows
+In this case, I primarily needed the `to_unsafe_string` method to build the final URL. The `to_string` method omits the user info from the URL, so it wasn't usable here. As I explored further, I tried all available methods to completely decompose the URL, resulting in the following output:
 
 ```
 to_string           : https://bitbucket/scm/repo/requirements.git?a=b
@@ -35,7 +35,7 @@ query               : a=b
 fragment            :
 ```
 
-Another useful operation supported by the class is to build relative url to some base, as demonstrated in [Scrape infinity]({% post_url 2023-03-11-scrape-infinity %}) post.
+Another handy feature provided by this class is the ability to build a relative URL based on a given base URL, as I discussed in the [Scrape Infinity]({% post_url 2023-03-11-scrape-infinity %}) post.
 
 [1]: https://mojolicious.io/
 [2]: https://docs.mojolicious.org/Mojo/URL

@@ -7,7 +7,7 @@ use Data::Dump qw(dd);
 # at http://teppeisensei.com
 
 my $ua  = Mojo::UserAgent->new;
-my $page = 'http://teppeisensei.com/index-67.html';
+my $page = 'http://teppeisensei.com/index-66.html';
 
 my $dom = $ua->get($page)->result->dom;
 my @download_urls = $dom->find('a')
