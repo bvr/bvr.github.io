@@ -1,22 +1,32 @@
 
-use Iterator::Simple qw(iterator islice);
+use Iterator::Simple qw(iterator ihead list);
 use Path::Class::Rule;
 
 
 my $finder = Path::Class::Rule->new->file->iname("*.md");
-my $files = $finder->iter("..\\_posts");
 
-# while(defined( my $file = $files->() )) {
-#     warn "$file\n";
-# }
-
-while(my @files = block_of($files, 10)) {
-    for my $file (@files) {
-        warn "$file\n";
+# using list ihead
+{
+    my $files = $finder->iter("..\\_posts");
+    while(my @files = @{ list ihead(10, $files) }) {
+        for my $file (@files) {
+            warn "$file\n";
+        }
+        warn "-"x30, "\n";
     }
-    warn "-"x30, "\n";
 }
 
+
+# using block_of
+{
+    my $files = $finder->iter("..\\_posts");
+    while(my @files = block_of($files, 10)) {
+        for my $file (@files) {
+            warn "$file\n";
+        }
+        warn "-"x30, "\n";
+    }
+}
 sub block_of {
     my ($iterator, $block_size) = @_;
 
