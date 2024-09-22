@@ -16,7 +16,6 @@ my $finder = Path::Class::Rule->new->file->iname("*.md");
     }
 }
 
-
 # using block_of
 {
     my $files = $finder->iter("..\\_posts");
@@ -27,6 +26,7 @@ my $finder = Path::Class::Rule->new->file->iname("*.md");
         warn "-"x30, "\n";
     }
 }
+
 sub block_of {
     my ($iterator, $block_size) = @_;
 
