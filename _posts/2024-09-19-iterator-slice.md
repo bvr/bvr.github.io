@@ -5,13 +5,14 @@ published: yes
 tags:
   - perl
   - Path::Class::Rule
+  - List::Util
   - Iterator::Simple
   - natatime
   - ihead
   - list
   - block_ok
 ---
-In one of [previous posts]({% post_url 2024-05-12-list-allutils %}) I mentioned the utility of `natatime` utility to process the list in blocks of defined size. This works nicely, but I often need same thing for an iterator, that is providing one item per a call. For example
+In a [previous post]({% post_url 2024-05-12-list-allutils %}), I discussed using the `natatime` function from the [List::Util][2] module to process a list in blocks of a defined size. This method works well, but I often need the same functionality for an iterator, which provides one item per call. For example
 
 ```perl
 use Path::Class::Rule;
@@ -23,7 +24,12 @@ while(my $file = $files->()) {
 }
 ```
 
-This common use allows us to recursively traverse the specified directory `..\_posts` and yield an entry to each `.md` file. Now if I want to process those files in blocks of 10 items, what options I have? At first, I implemented simple function to provide list of items:
+This code recursively traverses the `..\_posts` directory and yield an object for each `.md` file. But what if I want to process these files in blocks of 10? Let's explore some options.
+
+
+## A Custom `block_of` Function
+
+At first, I wrote a simple function to gather items into blocks:
 
 ```perl
 sub block_of {
@@ -39,7 +45,7 @@ sub block_of {
 }
 ```
 
-It can be used like this:
+We can use this function like so:
 
 ```perl
 # get the iterator as before ...
@@ -49,7 +55,11 @@ while(my @files = block_of($files, 10)) {
 }
 ```
 
-Then I thought more about it. In the [Iterator::Simple][1] there is a function `ihead` that makes an iterator that returns selected number of items. The function `list` allows to get everything from an iterator and return a reference to the list. Combined it provides following solution:
+This approach works well, but I thought about how to simplify it further.
+
+## Using [Iterator::Simple][1]
+
+The [Iterator::Simple][1] module offers a more concise way to handle this. The `ihead` function returns an iterator that yields a specified number of items. Additionally, the `list` function collects everything from an iterator into a list reference. Combined, these functions provide a neat solution:
 
 ```perl
 use Iterator::Simple qw(ihead list);
@@ -61,6 +71,7 @@ while(my @files = @{ list ihead(10, $files) }) {
 }
 ```
 
-I used this method to process Matlab models in batches and it works quite nice. When the `$files` iterator is exhausted, the returned list is empty and the loop ends.
+I used this approach to process Matlab models in batches, and it works smoothly. When the `$files` iterator is exhausted, the returned list is empty, and the loop terminates naturally.
 
 [1]: https://metacpan.org/pod/Iterator::Simple
+[2]: https://metacpan.org/pod/List::Util
