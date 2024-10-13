@@ -51,8 +51,8 @@
 
 ## TODO
 
- - Make sure it works nice on small screens (mobile)
- - Dark mode?
+ - [ ] - Make sure it works nice on small screens (mobile)
+ - [ ] - Dark mode?
 
 ## Favicon
 
