@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Title
+title: Read MS Access MDB
 published: yes
 tags:
   - C#
@@ -8,11 +8,11 @@ tags:
   - MDB
   - Database
 ---
-Recently I worked on a tool that needs to get data from MS Access database in its old form, the `.mdb`. There is an ODBC driver installed in all Windows, including the version 11 - `Microsoft.Jet.OleDb.4.0`, even though it is only available in 32-bit version, so your application has to be set as such.
+Recently, I worked on a tool that needed to fetch data from an old MS Access `.mdb` database. Fortunately, Microsoft still includes an ODBC driver, `Microsoft.Jet.OleDb.4.0`, even in Windows 11. However, note that this driver is only available as a 32-bit version, so any application interacting with it must also run as a 32-bit process.
 
 Lets build a class to load the data and provide it through it interface. My case was relatively small databases, so no special lazy loading was needed. 
 
-First, we need a class for data storage, something like
+First, we need a class for data storage, something like below or built as a [C# record]({% post_url 2023-02-03-records %})
 
 ```c#
 public class Person
@@ -23,14 +23,18 @@ public class Person
 }
 ```
 
-Usage will be something like this
+The database class will be used like this:
 
 ```c#
 PeopleDatabase db = PeopleDatabase.Load(filePath);
 List<Person> people = db.People;
 ```
 
-The database class can only be initialized by static method `Load` as its constructor is private. During the load it builds the connection and query the data and type them into proper class, so we can work with them nicely and add some functionality inherent to the `Person` class. The two private methods `ExecuteReader` and `ExecuteCommand` are simple helpers build on top of `OleDbCommand`, making it easier to query/command the data.
+The `PeopleDatabase` class is initialized using the static `Load` method, as its constructor is private. During loading, the connection is established, and data is queried and mapped into the `Person` class, allowing us to work with typed data and add any necessary functionality directly to that class.
+
+The database class makes use of two private helper methods, `ExecuteReader` and `ExecuteCommand`, built on top of `OleDbCommand`. These methods simplify the process of querying and executing commands on the database.
+
+Here's the full implementation:
 
 ```c#
 public class PeopleDatabase
@@ -88,4 +92,4 @@ public class PeopleDatabase
 }
 ```
 
-The approach works nicely and it also allows to build simple mocking class to test the functionality without dealing with actual `.mdb` files and the drivers. 
+This approach works well for small datasets and also makes it easy to create a mock class for testing without needing actual `.mdb` files or drivers.
