@@ -17,7 +17,35 @@ Since I often learn offline, I wanted to download the podcast episodes in `.mp3`
 - `index-69.html` - second batch
 - and so on
 
-Each page contains links to a generic download page. The link includes a parameter `u` that points to the `.mp3` file. Using this, it’s relatively straightforward to build a simple script based on the [Mojolicious][3] framework and its web client, [Mojo::UserAgent][4].
+Each page contains `article` entries with links to a generic download page is lower part of the entry. The link includes a parameter `u` that points to the `.mp3` file that we want to download: 
+
+```html
+<article class="entry">
+    <h2 class="entry__title">
+        <a href="http://teppeisensei.com/article/458763341.html">#49友達について</a>
+    </h2>
+    <div class="meta">
+        <div class="date">
+            <span class="icn icn--calendar"></span><time datetime="2018年04月13日">2018年04月13日</time>
+        </div>
+    </div>
+    <div class="article article--entry">
+        <div class="audio-link">
+            <audio style="max-width: 100%" controls="controls">
+                このブラウザでは再生できません。
+                <source src="https://blog.seesaa.jp/pages/tools/download/play?d=e7ba055eebd78bb90650b70a0679c452&u=https://teppeisensei.up.seesaa.net/image/Nihongo20con20Teppei2349.mp3">
+            </audio>
+            <br>
+            再生できない場合、ダウンロードは&#x1F3B5;
+            <a href="https://blog.seesaa.jp/pages/tools/download/index?d=e7ba055eebd78bb90650b70a0679c452&u=https://teppeisensei.up.seesaa.net/image/Nihongo20con20Teppei2349.mp3">
+                こちら
+            </a>
+    </div>
+    <a name="more"></a>
+</article>
+```
+
+Using this, it’s relatively straightforward to build a simple script based on the [Mojolicious][3] framework and its web client, [Mojo::UserAgent][4].
 
 ```perl
 use 5.16.3;
