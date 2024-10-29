@@ -47,6 +47,7 @@
    - [DH.88 Comet](https://en.wikipedia.org/wiki/De_Havilland_DH.88_Comet)
  - [Gitlab docs](https://docs.gitlab.com/)
  - [Julia](https://www.julialang.org/)
+   - [Modern Julia Workflows](https://modernjuliaworkflows.org/writing/)
 
 # Layout
 
