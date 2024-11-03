@@ -12,6 +12,7 @@ tags:
   - Canon
   - DSLR
   - jhead
+  - EXIF
 ---
 This post is summary of my digital photography workflow and my ways for photo organization. It is a system developed during last 20 years. It would be good to explain my photo background first. My most common subject is capturing traveling trips, people in countryside, preferably mountains if I can help it.
 
