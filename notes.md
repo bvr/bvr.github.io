@@ -28,6 +28,9 @@
      - https://pyopengl.sourceforge.net/
      - https://www.panda3d.org/
      - https://kivy.org/#home
+     - https://pypi.org/project/hexdump/
+     - https://docs.python.org/3/library/struct.html for pack/unpack
+     - https://docs.python.org/3/library/socketserver.html
    - Elm
      - [All Elm Games](https://github.com/rofrol/elm-games/blob/master/README.md)
  - C#
