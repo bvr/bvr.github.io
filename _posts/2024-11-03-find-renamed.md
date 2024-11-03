@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Identify Renamed Photos
+title: Identify renamed photos
 published: yes
 tags:
   - perl
