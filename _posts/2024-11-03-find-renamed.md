@@ -9,7 +9,7 @@ tags:
   - hash
   - Dictionary
 ---
-This is mostly a reminder that [perl][1] hashes are pretty flexible and can easily handle large keys. In the case below I needed to find renamed photos. As I [explained before]({% post_url  %}), I use date-based naming scheme for my photos. After our last vacation in Corsica, my wife selected photos before I renamed them, so I needed to find photos from her folder in my renamed photos.
+This is mostly a reminder that [perl][1] hashes are pretty flexible and can easily handle large keys. In the case below I needed to find renamed photos. As I [explained before]({% post_url 2023-03-26-photo-organization %}), I use date-based naming scheme for my photos. After our last vacation in Corsica, my wife selected photos before I renamed them, so I needed to find photos from her folder in my renamed photos.
 
 First I created signatures based on the content of each photo (about 10MB per file) and stored them in a hash:
 
