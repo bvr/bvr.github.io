@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JSON Pretty
+title: Pretty JSON
 published: yes
 tags:
   - json

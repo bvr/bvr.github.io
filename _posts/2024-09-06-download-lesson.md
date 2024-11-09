@@ -1,6 +1,6 @@
 ---
 layout: post  
-title: Download Japanese Podcast  
+title: Download Japanese podcast
 published: yes  
 tags:
   - perl
