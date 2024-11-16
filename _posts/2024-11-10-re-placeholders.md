@@ -8,7 +8,7 @@ tags:
   - placeholder
   - hash
 ---
-I was recently parsing some data with perl regexes. Each match provided number of found items that I needed to extract. The problem was slightly different, but say we have following input and a variable:
+Recently, I worked on parsing data using Perl regexes. The task involved extracting specific information from matches. Here's an example scenario:
 
 ```
 id: 1   label: Button
@@ -16,7 +16,7 @@ id: 2   label: Radiobutton
 id: 3   label: Checkbox
 ```
 
-If I want to create mapping between label and the id, I can use something like this:
+The goal was to create a mapping between `label` and `id`. Solution can look like this:
 
 ```perl
 my %label_to_id = ();
@@ -25,13 +25,20 @@ while($items =~ /id: \s* (?<id>\d+) \s+ label: \s* (?<label>.*?)$/gmx) {
 }
 ```
 
-The regex is pretty straightforward. For better readability it uses `x` modifier that allows us to put in whitespace and even comments. The spacing then needs to be explicitly written as you can see with `\s*` entries.
+The regex is pretty straightforward, but few bits are worth explanation.
 
-The captures can be done with parenthesis and address them with `$1` and `$2` variables, but here we use named capture with `(?<name> ...)`. All results are then available in `%+` hash. 
+ 1. **Regex Details**:
+   - The `x` modifier enhances readability by allowing whitespace and comments in the regex.
+   - Explicit whitespace (`\s*`) is required where necessary.
+   - Named captures (`(?<name> ...)`) store matched values in the `%+` hash for easy access.
 
-Last thing worth noting is `g` modifier. It tries to find all matches, so we can iterate over them with `while` and store every match. 
+2. **Match Iteration**:
+   - The `g` modifier finds all matches, enabling iteration with `while` to process each match.
 
-When we dump the `%label_to_id` contents, we get following as expected:
+3. **Named Captures vs Positional**:
+   - Named captures (`$+{name}`) are clearer than positional captures (`$1`, `$2`), especially in complex patterns.
+
+When dumping `%label_to_id`, we get the expected output:
 
 ```perl
 { Button => 1, Checkbox => 3, Radiobutton => 2 }
