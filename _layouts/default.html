@@ -83,11 +83,11 @@
         window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
       </script>
       <div class="overflow-y-auto" style="height:95%"><ul class="list-none">
-        {% for post in site.posts %}
-        {% unless post.preview %}
+        {%- for post in site.posts -%}
+        {%- unless post.preview -%}
         <li class="{% if post.url == page.url%}bg-slate-900 text-slate-200{% else %}text-slate-800 hover:bg-slate-200{% endif %}"><a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" class="article block px-3 py-0"><span class="text-slate-400 py-2 rounded-md"><time datetime="{{ post.date | date_to_xmlschema }}"></time>{{ post.date | date: "%Y-%m-%d" }}</span> <span>{{ post.title }}</span> <span class=hidden>{{ post.tags | join: " " }}</span></a></li>
-        {% endunless %}
-        {% endfor %}
+        {% endunless -%}
+        {%- endfor -%}
     </ul></div>
 </nav>
 
