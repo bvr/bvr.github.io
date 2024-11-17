@@ -101,6 +101,8 @@ var config = {
     }
 };
 mermaid.initialize(config);
-window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+mermaid_blocks = document.querySelectorAll('.language-mermaid')
+window.mermaid.init(undefined, mermaid_blocks);
+mermaid_blocks.forEach(article => article.parent.classList.add('not-prose'))
 </script>
 </html>
