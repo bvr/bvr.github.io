@@ -70,17 +70,6 @@
             }
           })
         }
-
-        var config = {
-            startOnLoad:true,
-            theme: 'forest',
-            flowchart:{
-                useMaxWidth:false,
-                htmlLabels:true
-            }
-        };
-        mermaid.initialize(config);
-        window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
       </script>
       <div class="overflow-y-auto" style="height:95%"><ul class="list-none">
         {%- for post in site.posts -%}
@@ -102,4 +91,16 @@
 </div>
 
 </body>
+<script>
+var config = {
+    startOnLoad:true,
+    theme: 'forest',
+    flowchart:{
+        useMaxWidth:false,
+        htmlLabels:true
+    }
+};
+mermaid.initialize(config);
+window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+</script>
 </html>
