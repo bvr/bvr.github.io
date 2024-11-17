@@ -103,6 +103,6 @@ var config = {
 mermaid.initialize(config);
 mermaid_blocks = document.querySelectorAll('.language-mermaid')
 window.mermaid.init(undefined, mermaid_blocks);
-mermaid_blocks.forEach(article => article.parent.classList.add('not-prose'))
+mermaid_blocks.forEach(mb => mb.parentElement.style.backgroundColor = 'transparent')
 </script>
 </html>
