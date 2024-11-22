@@ -30,6 +30,7 @@
      - https://kivy.org/#home
      - https://docs.python.org/3/library/struct.html for pack/unpack
      - https://docs.python.org/3/library/socketserver.html
+     - https://docs.python.org/3/library/dataclasses.html#module-dataclasses
    - Elm
      - [All Elm Games](https://github.com/rofrol/elm-games/blob/master/README.md)
  - C#
@@ -41,8 +42,6 @@
    - [types annotations](https://realpython.com/preview/python-type-self/)
    - https://docs.python.org/3/reference/datamodel.html
    - https://realpython.com/python-testing/
- - YAML
-   - https://lyz-code.github.io/yamlfix/
  - Drawing
    - [Mi-10](https://en.wikipedia.org/wiki/Mil_Mi-10)
    - [S-64 SkyCrane](https://cs.wikipedia.org/wiki/Sikorsky_S-64_Skycrane)
