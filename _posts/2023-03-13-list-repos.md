@@ -7,6 +7,7 @@ tags:
   - Migration
   - Subversion
   - Git
+  - XPath
 ---
 As I was migrating to new computer, I wanted to list all repositories I have checked out. Simple perl script to help
 
