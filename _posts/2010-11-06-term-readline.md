@@ -8,6 +8,7 @@ tags:
   - terminal
   - Term::ReadLine
   - Term::ReadLine::Perl
+  - Devel::Trace
 ---
 I plan to write simple console application to interface with databases I have to maintain. Something like **mysql** command do, but with few advanced features like autocompletion (which does not work in mysql on Windows) or sending output to pager.
 
@@ -16,8 +17,8 @@ choice, so I took the example from SYNOPSIS and tried to add simple
 auto-completion. Traversal along the line and history worked fine, but I could 
 not make it react on **Tab** at all.
 
-Finally runned my script with [Devel::Trace](http://search.cpan.org/perldoc?Devel%3A%3ATrace) 
-turned on and in its lenghty output I found this part:
+Finally run my script with [Devel::Trace](http://search.cpan.org/perldoc?Devel%3A%3ATrace) 
+turned on and in its lengthy output I found this part:
 
 ```bash
 >> C:/Perl/lib/Term/ReadLine/readline.pm:1536:     if ($dumb_term) {
