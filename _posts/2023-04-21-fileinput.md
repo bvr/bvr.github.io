@@ -5,6 +5,13 @@ published: yes
 tags:
   - python
   - fileinput
+  - input
+  - argparse
+  - dict
+  - strip
+  - rstrip
+  - split
+  - filelineno
 ---
 There is a little helper in python to iterate number of files - [fileinput][1]. By default it takes files specified on command-line or stdin. Basic usage is something like this
 
