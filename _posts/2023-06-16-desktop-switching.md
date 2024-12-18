@@ -3,7 +3,8 @@ layout: post
 title: Virtual Desktops Windows 10
 published: yes
 tags:
-  - Windows 10
+  - windows
+  - windows 10
   - virtual desktop
   - keyboard
   - activity history

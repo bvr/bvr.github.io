@@ -4,7 +4,7 @@ title: clipboard
 published: yes
 tags:
   - python
-  - Windows
+  - windows
   - Clipboard
   - pywin32
   - win32clipboard
