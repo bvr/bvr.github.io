@@ -14,7 +14,13 @@
    - Devel::NYTProf
    - https://toby.ink/blog/2023/01/24/perl-testing-in-2023/
    - [Test2::V0](https://perladvent.org/2023/2023-12-15.html)
-   - 
+   - [e - beast mode unleashed](https://perladvent.org/2024/2024-12-10.html)
+   - [Map::Tube](https://perladvent.org/2024/2024-12-11.html)
+   - [Object::Pad](https://metacpan.org/pod/Object::Pad)
+   - self signed certificate generation: `yes '' | openssl req -new -newkey rsa:4096 -x509 -sha256 -days 36500 -nodes -out exampleserver.crt -keyout exampleserver.key`
+   - [Valiant for validation inspired by Ruby on Rails](https://metacpan.org/pod/Valiant)
+   - Telemetry - https://perladvent.org/2024/2024-12-18.html
+   - Randall Schwartz interview - https://perladvent.org/2024/2024-12-19.html
  - lunr.js
  - technical writing https://developers.google.com/tech-writing
  - Game Development
@@ -24,7 +30,7 @@
      - [The Startup Guide to Storytelling: Learn from Text-Based Adventure Games!](https://www.taskade.com/blog/text-based-storytelling-games-startup-business/)
      - [TADS](https://www.tads.org/)
    - Python
-     - https://pyglet.org/    
+     - https://pyglet.org/, documentation at [readthedocs](https://pyglet.readthedocs.io/en/latest/programming_guide/quickstart.html)
      - https://realpython.com/python-wordle-clone/
      - https://pyopengl.sourceforge.net/
      - https://www.panda3d.org/
@@ -57,6 +63,10 @@
 
  - [ ] - Make sure it works nice on small screens (mobile)
  - [ ] - Dark mode?
+ - [ ] - Scrolling similar to how readthedocs implement it (with keyboard it scrolls both lists) - example at https://pyglet.readthedocs.io/en/latest/programming_guide/quickstart.html
+ - [ ] - Keyboard shortcut to enter the search box (with `/` key)
+ - [ ] - Tags in article should be clickable and fill in the search box
+ - [ ] - Can/should we remember the filter? Probably not easily
 
 ## Favicon
 
