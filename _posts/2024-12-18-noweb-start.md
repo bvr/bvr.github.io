@@ -15,4 +15,6 @@ When it hit me last time, I went to the internet if it could be disabled somehow
 
 Long story short, in the registry `HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer` create DWORD `DisableSearchBoxSuggestions` and set it to value 1. After the reboot, it works much better for me.
 
+![Seach PATH in Start Menu](/img/start-menu.png)
+
 [1]: https://www.tomshardware.com/how-to/disable-windows-web-search
