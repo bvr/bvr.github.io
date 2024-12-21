@@ -21,6 +21,8 @@
    - [Valiant for validation inspired by Ruby on Rails](https://metacpan.org/pod/Valiant)
    - Telemetry - https://perladvent.org/2024/2024-12-18.html
    - Randall Schwartz interview - https://perladvent.org/2024/2024-12-19.html
+   - [Set::Scalar](https://metacpan.org/pod/Set::Scalar)
+   - [Mojo::Collection](https://metacpan.org/pod/Mojo::Collection)
  - lunr.js
  - technical writing https://developers.google.com/tech-writing
  - Game Development
