@@ -49,6 +49,7 @@
    - [types annotations](https://realpython.com/preview/python-type-self/)
    - https://docs.python.org/3/reference/datamodel.html
    - https://realpython.com/python-testing/
+   - https://treyhunner.com/2024/12/lazy-self-installing-python-scripts-with-uv/
  - Drawing
    - [Mi-10](https://en.wikipedia.org/wiki/Mil_Mi-10)
    - [S-64 SkyCrane](https://cs.wikipedia.org/wiki/Sikorsky_S-64_Skycrane)
