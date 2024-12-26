@@ -49,15 +49,15 @@ method to_string() {
 
 Few notes and rationale for above:
 
- - I started making classes with [Moose][2], but later found I don't need the meta-protocol very often and `Moo` is usually more than enough for my needs. It has also much smaller memory footprint and it is very fast to load and run
+ - I started making classes with [Moose][2], but later found I don't need the meta-protocol very often and [Moo][1] is usually more than enough for my needs. It has also much smaller memory footprint and it is very fast to load and run
 
- - [Type::Tiny][3] and [Types::Standard][4] are wonderful for type constraints, even pretty complicated ones like `HashRef[ArrayRef[InstanceOf['Point']]]`. `Moo` accepts them for property type checking, but they can be also used standalone or with `Function::Parameters`. They also have means to coerce the value into the type, allowing to "inflate" plain values into classes and similar
+ - [Type::Tiny][3] and [Types::Standard][4] are wonderful for type constraints, even pretty complicated ones like `HashRef[ArrayRef[InstanceOf['Point']]]`. [Moo][1] accepts them for property type checking, but they can be also used standalone or with [Function::Parameters][5]. They also have means to coerce the value into the type, allowing to "inflate" plain values into classes and similar
 
- - [Function::Parameters][5] provide nice and fast (see [my benchmark]({% post_url 2010-12-01-method-benchmark %})) implementation for parameters, unpacking `$self`, or building class methods. They also support named parameters, defaults, and type constraints using `Type::Tiny`
+ - [Function::Parameters][5] provide nice and fast (see [my benchmark]({% post_url 2010-12-01-method-benchmark %})) implementation for parameters, unpacking `$self`, or building class methods. They also support named parameters, defaults, and type constraints using [Type::Tiny][3]
 
  - [namespace::clean][6] removes imported functions from the class interface. This means `has`, type constraints, or anything used internally
 
- - [MooX::StrictConstructor][7] prevents typos in constructor usage and make sure only supported properties are supplied. Unfortunately it needs to be specified *after* the `namespace::clean`, because of [this problem][8]
+ - [MooX::StrictConstructor][7] prevents typos in constructor usage and make sure only supported properties are supplied. Unfortunately it needs to be specified *after* the [namespace::clean][6], because of [this problem][8]
 
  - Also note the factory method `up` to build the object some custom way. I often have something like `from_string` or `from_xml` to build the class
 
@@ -79,7 +79,7 @@ my @array = (
 );
 ```
 
-It creates three small `Moo`-based classes with read-only attributes defined as specified. This is really basic usage, there are plenty of options how to override this behavior, inherit other structs, use roles, add methods and such. But in larger usage the boilerplate is not that big deal, so I usually only use it for small things.
+It creates three small [Moo][1]-based classes with read-only attributes defined as specified. This is really basic usage, there are plenty of options how to override this behavior, inherit other structs, use roles, add methods and such. But in larger usage the boilerplate is not that big deal, so I usually only use it for small things.
 
 [1]: https://metacpan.org/pod/Moo
 [2]: https://metacpan.org/pod/Moose
