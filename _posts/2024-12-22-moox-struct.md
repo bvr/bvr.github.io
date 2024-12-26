@@ -49,11 +49,16 @@ method to_string() {
 
 Few notes and rationale for above:
 
- - I started making classes with [Moose][2], but later found I don't need the meta-protocol very often and `Moo` is usually more than enough for my needs
- - [Type::Tiny][3] and [Types::Standard][4] are wonderful for type constraints, even pretty complicated ones like `HashRef[ArrayRef[InstanceOf['Point']]]`
- - [Function::Parameters][5] provide nice and fast (see [my benchmark]({% post_url 2010-12-01-method-benchmark %})) implementation for parameters, unpacking `$self`, or building class methods
+ - I started making classes with [Moose][2], but later found I don't need the meta-protocol very often and `Moo` is usually more than enough for my needs. It has also much smaller memory footprint and it is very fast to load and run
+
+ - [Type::Tiny][3] and [Types::Standard][4] are wonderful for type constraints, even pretty complicated ones like `HashRef[ArrayRef[InstanceOf['Point']]]`. `Moo` accepts them for property type checking, but they can be also used standalone or with `Function::Parameters`. They also have means to coerce the value into the type, allowing to "inflate" plain values into classes and similar
+
+ - [Function::Parameters][5] provide nice and fast (see [my benchmark]({% post_url 2010-12-01-method-benchmark %})) implementation for parameters, unpacking `$self`, or building class methods. They also support named parameters, defaults, and type constraints using `Type::Tiny`
+
  - [namespace::clean][6] removes imported functions from the class interface. This means `has`, type constraints, or anything used internally
+
  - [MooX::StrictConstructor][7] prevents typos in constructor usage and make sure only supported properties are supplied. Unfortunately it needs to be specified *after* the `namespace::clean`, because of [this problem][8]
+
  - Also note the factory method `up` to build the object some custom way. I often have something like `from_string` or `from_xml` to build the class
 
 Now this provides many nice features and good way to grow, but feels a bit over when you just need small storage class. Here the [MooX::Struct][9] can be of use:
