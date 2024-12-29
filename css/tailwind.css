@@ -34,7 +34,10 @@
   html.dark * {
     scrollbar-color: theme("colors.slate.400") theme("colors.slate.600");
   }
-  
+
+  img {
+    @apply shadow-md;
+  }
 }
 
 @layer components {

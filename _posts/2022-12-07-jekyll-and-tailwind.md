@@ -35,7 +35,7 @@ There is pretty good summary in [Tailwind Cheat Sheet][5].
 
 ## Some inspiration webs
 
- - [Flotiq Gatsby Blog](https://github.com/flotiq/flotiq-gatsby-blog-2) - [live demo](https://flotiqgatsbyblog2.gatsbyjs.io/)
+ - [Flotiq Gatsby Blog](https://github.com/flotiq/flotiq-gatsby-blog-2) - [live demo](https://flotiq-gatsby-blog-2.netlify.app/)
  - [Digital Garden theme for Hugo](https://github.com/apvarun/digital-garden-hugo-theme) - [live demo](https://digital-garden-hugo-theme.vercel.app/)
  - [Chirpy Jekyll Theme](https://github.com/cotes2020/jekyll-theme-chirpy/) - [live demo](https://chirpy.cotes.page/)
 
