@@ -1,13 +1,9 @@
 
 # Topics:
 
- - Graphviz and dot
  - Various CLI Tools
    - [CLI tools you won't be able to live without](https://dev.to/lissy93/cli-tools-you-cant-live-without-57f6)
    - [aria2c](https://aria2.github.io/manual/en/html/aria2c.html#http-ftp-segmented-downloads)
- - AI
-   - [400 Free AI Tools - Unleashing the Power of AI](https://dev.to/anmolbaranwal/200-free-ai-tools-unleashing-the-power-of-ai-eb0)
-   - [Best AI Tools for productivity](https://designshack.net/articles/software/best-ai-tools-for-productivity/)
  - perl
    - Regexp::Grammars
    - XSLT
@@ -15,8 +11,6 @@
    - https://toby.ink/blog/2023/01/24/perl-testing-in-2023/
    - [Test2::V0](https://perladvent.org/2023/2023-12-15.html)
    - [e - beast mode unleashed](https://perladvent.org/2024/2024-12-10.html)
-   - [Map::Tube](https://perladvent.org/2024/2024-12-11.html)
-   - [Object::Pad](https://metacpan.org/pod/Object::Pad)
    - self signed certificate generation: `yes '' | openssl req -new -newkey rsa:4096 -x509 -sha256 -days 36500 -nodes -out exampleserver.crt -keyout exampleserver.key`
    - [Valiant for validation inspired by Ruby on Rails](https://metacpan.org/pod/Valiant)
    - Telemetry - https://perladvent.org/2024/2024-12-18.html
@@ -64,12 +58,11 @@
 
 ## TODO
 
- - [ ] - Make sure it works nice on small screens (mobile)
- - [ ] - Dark mode?
- - [ ] - Scrolling similar to how readthedocs implement it (with keyboard it scrolls both lists) - example at https://pyglet.readthedocs.io/en/latest/programming_guide/quickstart.html
- - [ ] - Keyboard shortcut to enter the search box (with `/` key)
- - [ ] - Tags in article should be clickable and fill in the search box
- - [ ] - Can/should we remember the filter? Probably not easily
+ - [ ] Make sure it works nice on small screens (mobile)
+ - [ ] Scrolling similar to how readthedocs implement it (with keyboard it scrolls both lists) - example at https://pyglet.readthedocs.io/en/latest/programming_guide/quickstart.html
+ - [ ] Keyboard shortcut to enter the search box (with `/` key)
+ - [ ] Tags in article should be clickable and fill in the search box
+ - [ ] Can/should we remember the filter? Probably not easily
 
 ## Favicon
 
