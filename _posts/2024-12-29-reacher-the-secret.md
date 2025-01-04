@@ -8,7 +8,7 @@ tags:
   - Andrew Child
   - Jack Reacher
 ---
-I got [this book][1] as a Christmas gift and finished it within few days. I don't have too much to compare against as it is just my second book from Jack Reacher universe. The other was [No Plan B][2] which I caught my eye on an airport and I liked the style.
+I got [this book][1] as a Christmas gift and finished it within few days. I don't have too much to compare against as it is just my second book from Jack Reacher universe. The other was [No Plan B][2] which caught my eye on an airport and I liked the style.
 
 ![The Secret](/img/the-secret.png)
 

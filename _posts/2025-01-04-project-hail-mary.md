@@ -17,7 +17,7 @@ Slowly recovering, the guy has a flashback to a moment in the past and now he kn
 
 Similar to [The Martian][2], previous book by same author I read, I loved the problem solving approach, thinking about options and potential course of action, and methodical attempts to get through. This time also dealing with extra-terrestrial buddy, building means for communication and mutual trust to allow cooperation.
 
-I really enjoyed the book.
+I really enjoyed the book and can it recommend. It tries to promote real properties of space travel and could provide good idea on problems involved.
 
 [1]: https://www.amazon.com/Project-Hail-Mary-Andy-Weir/dp/0593135202
 [2]: https://www.amazon.com/Martian-Andy-Weir/dp/0553418025
