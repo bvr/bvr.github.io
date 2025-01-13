@@ -20,4 +20,6 @@ Existing users can be modified like this:
 ALTER USER 'username'@'host' IDENTIFIED WITH mysql_native_password BY 'password';
 ```
 
-Note the `mysql_native_password` plugin is deprecated and will be disabled with version 9.0.
+Note the `mysql_native_password` plugin is deprecated and will be disabled with version 9.0. You can find more rationale for the step in [this article][1].
+
+[1]: https://blogs.oracle.com/mysql/post/mysql-90-its-time-to-abandon-the-weak-authentication-method
