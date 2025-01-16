@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Blog pOplety</title>
+        <link>https://www.poplety.cz/blog</link>
+        <description>Blog pOplety</description>
+        <language>cs-cz</language>
+        <image>
+            <url>https://www.poplety.cz/data/files/favicon2.jpg</url>
+            <title>Blog pOplety</title>
+            <link>https://www.poplety.cz/blog</link>
+        </image>
+
+        <item>
+            <title>Jedu v medu</title>
+            <description>
+            &lt;img src=&quot;https://www.poplety.cz/data/files/photos/jeduvmedu2.jpg&quot; style=&quot;width: 100%;&quot;&gt;
+            S tichounkým bzučením vsunula ruku, v níž svírala sklenici, přímo do díry uprostřed kmene. Ruth zničehonic uslyšela zvuk připomínající cirkulárku a obloha zčernala, jak se z otvoru vyrojily spousty rozzuřených včel.
+            </description>
+            <link>https://www.poplety.cz/blog/jedu-v-medu</link>
+            <pubDate>Fri, 10 Jan 2025 20:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>Vykročit do 2025</title>
+            <description>
+            &lt;img src=&quot;https://www.poplety.cz/data/files/photos/pf_svetla_poplety.jpg&quot; style=&quot;width: 100%;&quot; &gt;
+            ... zbrusu mám novou a dobrou náladu, vše bych teď chápal, i smutnou baladu. ... Znovu zas dítětem, seznámen se světem náhle se stávám, zlé...
+            </description>
+            <link>https://www.poplety.cz/blog/vykrocit-do-2025</link>
+            <pubDate>Wed, 1 Jan 2025 20:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>Světlo na konci bludiště</title>
+            <description>
+            &lt;img src=&quot;https://www.poplety.cz/data/files/photos/paprskavka1.jpg&quot; style=&quot;width: 100%;&quot; &gt;
+            Projekt &quot;Vánoce v našem měste&quot; byl na pořadu dnem i nocí od prvního do třiadvacátého prosince. Čas od času jsme s Jimem byli nuceni uchýlit se do...
+            </description>
+            <link>https://www.poplety.cz/blog/svetlo-na-konci-bludiste</link>
+            <pubDate>Fri, 27 Dec 2024 20:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>Dárek</title>
+            <description>
+            &lt;img src=&quot;https://www.poplety.cz/data/files/photos/darek.jpg&quot; style=&quot;width: 100%;&quot; &gt;
+            Ódin hul podal Oddovi a rekl: &quot;Tohle je pro tebe.&quot; Odd namítl: &quot;Ale to nemohu přijmout.&quot; Starý bůh se na něj vážně zahledel svým zdravým okem....
+            </description>
+            <link>https://www.poplety.cz/blog/darek</link>
+            <pubDate>Fri, 20 Dec 2024 20:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>Vábení hor</title>
+            <description>
+            &lt;img src=&quot;https://www.poplety.cz/data/files/photos/vabenihor1.jpg&quot; style=&quot;width: 100%;&quot; &gt;
+            Daleko pod námi zářily oranžovou barvou skalní věže a plotny okolních vrcholů, jako by byly v strašidelném celonočním soumraku arktického léta...
+            </description>
+            <link>https://www.poplety.cz/blog/vabeni-hor</link>
+            <pubDate>Fri, 13 Dec 2024 20:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
