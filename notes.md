@@ -53,6 +53,9 @@
  - [Gitlab docs](https://docs.gitlab.com/)
  - [Julia](https://www.julialang.org/)
    - [Modern Julia Workflows](https://modernjuliaworkflows.org/writing/)
+ - Music
+   - https://justindarc.github.io/raphael.chord.js/
+   - https://github.com/martijnversluis/ChordSheetJS
 
 # Layout
 
