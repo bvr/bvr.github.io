@@ -51,6 +51,7 @@
    - [S-64 SkyCrane](https://cs.wikipedia.org/wiki/Sikorsky_S-64_Skycrane)
    - [DH.88 Comet](https://en.wikipedia.org/wiki/De_Havilland_DH.88_Comet)
  - [Gitlab docs](https://docs.gitlab.com/)
+   - [Useful git aliases](https://www.durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/)
  - [Julia](https://www.julialang.org/)
    - [Modern Julia Workflows](https://modernjuliaworkflows.org/writing/)
  - Music
