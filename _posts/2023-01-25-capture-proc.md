@@ -4,6 +4,7 @@ title: Capture Process output
 published: yes
 tags:
   - C#
+  - .NET
   - Process
   - System.Diagnostics
 ---

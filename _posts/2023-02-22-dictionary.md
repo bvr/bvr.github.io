@@ -4,6 +4,7 @@ title: Dictionary initialization
 published: yes
 tags:
   - C#
+  - .NET
   - Dictionary
   - Init
 ---

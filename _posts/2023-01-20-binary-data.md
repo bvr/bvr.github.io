@@ -4,6 +4,7 @@ title: Store for binary data
 published: yes
 tags:
   - C#
+  - .NET
   - Binary
   - Data
   - Hex Dump

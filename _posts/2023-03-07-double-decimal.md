@@ -4,6 +4,7 @@ title: Double vs Decimal
 published: yes
 tags:
   - C#
+  - .NET
   - float
   - double
   - decimal

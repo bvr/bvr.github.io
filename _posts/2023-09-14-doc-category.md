@@ -4,6 +4,7 @@ title: Get document category
 published: yes
 tags:
   - C#
+  - .NET
   - Word
   - xml
   - System.IO.Packaging

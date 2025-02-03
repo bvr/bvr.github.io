@@ -4,6 +4,7 @@ title: Aggregated table
 published: yes
 tags:
   - C#
+  - .NET
   - Table
   - LINQ
   - GroupBy
@@ -13,7 +14,7 @@ In [Generate table]({% post_url 2023-01-10-table-generation %}) post I presented
 
 I was recently working a program that processes zip files that contain output of Test Coverage analysis tool. Each file contains HTML pages with summary table and my program was building summary of those summaries.
 
-First a class to store the data was needed, completely straightforward one. Note I cannot use [records]({% post_url 2023-02-03-records %}) as this was part of older tool that does not use new .net. So I just listed those properties and let the Visual Studio create a constructor for me.
+First a class to store the data was needed, completely straightforward one. Note I cannot use [records]({% post_url 2023-02-03-records %}) as this was part of older tool that does not use new .NET. So I just listed those properties and let the Visual Studio create a constructor for me.
 
 ```c#
 public class TestCoverageEntry

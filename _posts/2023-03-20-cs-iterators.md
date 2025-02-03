@@ -4,6 +4,7 @@ title: C# Enumerators
 published: yes
 tags:
   - C#
+  - .NET
   - Iterator
   - Enumerator
   - LINQ

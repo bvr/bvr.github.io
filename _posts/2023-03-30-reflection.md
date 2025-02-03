@@ -4,6 +4,7 @@ title: Reflection
 published: yes
 tags:
   - C#
+  - .NET
   - Reflection
   - SQL
   - GetType

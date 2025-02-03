@@ -4,6 +4,7 @@ title: Parameter array
 published: yes
 tags:
   - C#
+  - .NET
   - params
   - Parameter array
 ---
