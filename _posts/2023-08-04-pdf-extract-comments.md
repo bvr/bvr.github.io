@@ -4,6 +4,7 @@ title: Extract PDF comments
 published: yes
 tags:
   - C#
+  - .NET
   - record
   - iText7
   - PDF

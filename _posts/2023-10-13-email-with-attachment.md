@@ -4,6 +4,7 @@ title: Email with attachment
 published: yes
 tags:
   - C#
+  - .NET
   - System.Net.Mail
   - MailMessage
   - SmtpClient

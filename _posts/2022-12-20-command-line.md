@@ -5,7 +5,7 @@ published: yes
 tags:
   - C#
   - CommandLineParser
-  - .net
+  - .NET
   - CLI
   - arguments
   - help generation

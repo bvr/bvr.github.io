@@ -4,6 +4,7 @@ title: Generate table
 published: yes
 tags:
   - C#
+  - .NET
   - Table
 ---
 When building output tables from a data model, it usually require separation of layout generation (column headers, table dimensions) and getting the data. Say we have following class 

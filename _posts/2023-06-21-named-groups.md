@@ -4,11 +4,12 @@ title: Named groups in C# regex
 published: yes
 tags:
   - C#
+  - .NET
   - regex
   - named group
   - IgnoreCase
 ---
-I like feature for named group captures as I used in [post about ispell parsing]({% post_url 2023-05-06-ispell-nouns %}). Recently I worked on a program in C# and was wondering if this is supported by .net Regex implementation. 
+I like feature for named group captures as I used in [post about ispell parsing]({% post_url 2023-05-06-ispell-nouns %}). Recently I worked on a program in C# and was wondering if this is supported by .NET Regex implementation. 
 
 It turned out it is:
 

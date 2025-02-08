@@ -4,6 +4,7 @@ title: BenchmarkDotNet
 published: yes
 tags:
   - C#
+  - .NET
   - BenchmarkDotNet
   - benchmark
   - Stopwatch

@@ -4,6 +4,7 @@ title: C# documentation comments
 published: yes
 tags:
   - C#
+  - .NET
   - documentation
   - xml
   - Sandcastle
