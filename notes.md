@@ -17,6 +17,7 @@
    - Randall Schwartz interview - https://perladvent.org/2024/2024-12-19.html
    - [Set::Scalar](https://metacpan.org/pod/Set::Scalar)
    - [Mojo::Collection](https://metacpan.org/pod/Mojo::Collection)
+   - [Perl Workflow](https://github.com/perl-workflow/perl-workflow/tree/master/eg/ticket)
  - lunr.js
  - technical writing https://developers.google.com/tech-writing
  - Game Development
@@ -46,6 +47,8 @@
    - https://docs.python.org/3/reference/datamodel.html
    - https://realpython.com/python-testing/
    - https://treyhunner.com/2024/12/lazy-self-installing-python-scripts-with-uv/
+ - F#
+   - https://hamy.xyz/blog/2025-01_ditching-giraffe-for-falco
  - Drawing
    - [Mi-10](https://en.wikipedia.org/wiki/Mil_Mi-10)
    - [S-64 SkyCrane](https://cs.wikipedia.org/wiki/Sikorsky_S-64_Skycrane)
