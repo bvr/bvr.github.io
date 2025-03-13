@@ -11,15 +11,15 @@ tags:
   - Form
   - Field
 ---
-Recently I worked on a code to extract form fields from PDF files. Using [iText][1] library and C# it can be done quite easily.
+Recently I worked on a code to extract form fields from PDF files. These fields are fillable and have options for validation to help users to provide valid data. The data are stored within the PDF file and can be extracted from them using various libraries. I selected [iText][1] library because I used it before in [comments extraction]({% post_url 2023-08-04-pdf-extract-comments %}) and it worked nicely. It turned out to be quite easy.
 
-First, let's create a small storage [record class]({% post_url 2023-02-03-records %}):
+Let's create a small [record class]({% post_url 2023-02-03-records %}) to store the fields and related data.
 
 ```c#
 public record class FormField(string Name, string Value, string[] States);
 ```
 
-Next, a static method to get all form fields, their values and if it is some kind of combobox, also all states available: 
+Following class container has a static method to get all form fields from supplied PDF, their values and if it is some kind of combobox, also all states available.
 
 ```c#
 using iText.Kernel.Pdf;
