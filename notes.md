@@ -38,6 +38,7 @@
    - Elm
      - [All Elm Games](https://github.com/rofrol/elm-games/blob/master/README.md)
  - C#
+   - [LinqPad](https://www.linqpad.net/)
    - explore ThreadLocal as in [Fixing Random, part 2](https://ericlippert.com/2019/02/04/fixing-random-part-2/)
    - https://learn.microsoft.com/en-us/dotnet/api/system.linq.iorderedenumerable-1?view=net-7.0
    - dynamic dispatch as described in https://ericlippert.com/2015/05/07/wizards-and-warriors-part-four/
