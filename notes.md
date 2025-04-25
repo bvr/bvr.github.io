@@ -18,6 +18,7 @@
    - [Set::Scalar](https://metacpan.org/pod/Set::Scalar)
    - [Mojo::Collection](https://metacpan.org/pod/Mojo::Collection)
    - [Perl Workflow](https://github.com/perl-workflow/perl-workflow/tree/master/eg/ticket)
+   - [Future in Perl](https://theweeklychallenge.org/blog/future-in-perl/)
  - lunr.js
  - technical writing https://developers.google.com/tech-writing
  - Game Development
@@ -79,14 +80,14 @@ Created with https://favicon.io/favicon-generator/
 
 ## Some cut out from the original template
 
-<div class="fixed bg-slate-700 bg-opacity-5 transition duration-200 ease-in-out inset-0 z-10 pointer-events-auto md:hidden left-0 top-0 w-full h-full hidden menu-overlay"></div>
+<div class=fixed bg-slate-700 bg-opacity-5 transition duration-200 ease-in-out inset-0 z-10 pointer-events-auto md:hidden left-0 top-0 w-full h-full hidden menu-overlay></div>
 
-<button aria-label="Toggle Sidebar" class="md:hidden absolute top-3 left-3 z-10 menu-trigger p-1 rounded text-slate-800 dark:text-slate-50 hover:bg-slate-100">
-    <svg class="h-6 w-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z"/>
-        <line x1="4" y1="6" x2="20" y2="6"/>
-        <line x1="4" y1="12" x2="20" y2="12"/>
-        <line x1="4" y1="18" x2="16" y2="18"/>
+<button aria-label=Toggle Sidebar class=md:hidden absolute top-3 left-3 z-10 menu-trigger p-1 rounded text-slate-800 dark:text-slate-50 hover:bg-slate-100>
+    <svg class=h-6 w-6 viewBox=0 0 24 24 stroke-width=2 stroke=currentcolor fill=none stroke-linecap=round stroke-linejoin=round>
+        <path stroke=none d=M0 0h24v24H0z/>
+        <line x1=4 y1=6 x2=20 y2=6/>
+        <line x1=4 y1=12 x2=20 y2=12/>
+        <line x1=4 y1=18 x2=16 y2=18/>
     </svg>
 </button>
 
