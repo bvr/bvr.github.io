@@ -1,115 +1,96 @@
 ---
 layout: post
-title: Title
-published: no
+title: Automating CAFTA
+published: yes
 tags:
-  - tag
+  - autohotkey
+  - Windows 10
+  - keyboard
+  - ahk
 ---
-Great question — **AutoHotkey (AHK)** is very handy for automating desktop apps, especially when you can't access a COM or API directly.
+The **AutoHotkey (AHK)** is very handy for automating desktop apps. I generally prefer when the application provides an API or command-line means to perform a task, but if there is no other option you must rely on the user interface to do them.
 
-When it comes to **timing**, the key is to **wait for the right window, control, or process state** before sending keystrokes or clicks. Here's a solid breakdown:
+Recently I needed to use [CAFTA][1] to print fault trees designed by local Safety team to PDF in order to provide them to customer. Initially I looked for an API for the task, but even the vendor of the tool confirmed there is nothing we can use for this task.
 
----
+Here are some techniques used in the script.
 
-### ✅ **1. Basic AutoHotkey Example**
+## Get the parameters
+
+The autohotkey script perform an one-off task, so I needed to supply it with parameters. I am using v1 of the tool and the parameters are acquired this way
 
 ```ahk
-Run, C:\Path\To\App.exe
-WinWait, App Title
-WinActivate, App Title
-
-; Wait a bit just to be safe
-Sleep, 1000
-
-; Send some keystrokes
-Send, {Alt}f ; Open File menu
-Send, o      ; Choose "Open"
-Sleep, 500
-Send, C:\Path\To\File.fts{Enter}
+program = %1%
+input = %2%
+MsgBox, Parameters:`n1: %program%`n2: %input%
 ```
 
----
+The script is called like this
 
-### ⏱️ **2. Timing Techniques in AHK**
-
-#### **A. `Sleep`**
-- Pauses the script for N milliseconds.
-```ahk
-Sleep, 500 ; wait 0.5 seconds
+```
+"c:\Program Files\AutoHotkey\AutoHotkey.exe" script.ahk "c:\Program Files\EPRI Phoenix\Phoenix Architect 2.1\CAFTA.exe" "input.txt"
 ```
 
-#### **B. `WinWait`, `WinWaitActive`**
-- Waits until a window is created/active.
+## Run the application and wait for the main window
+
+Here is the code to launch the specified program, wait for its main window to show up and activate it. The method for waiting for a window is rather handy and I am using to check that we are ready to send the keystrokes.
+
 ```ahk
-WinWait, CAFTA
+Run, %program%
+WinWait, CAFTA, ,10        ; wait maximum 10s
 WinActivate, CAFTA
 ```
 
-#### **C. `PixelSearch`, `ImageSearch`**
-- Wait for a certain pixel or image on the screen to appear:
+## Ribbon and dialogs
+
+With older versions of Windows, it was a standard to provide a menu with underlined accelerators, so it was easy to directly see what keyboard combination you can use. Things like `Alt+F`, `O` could get you to `File`/`Open` entry. These days we have to use the ribbons, much more stupid way to navigate the application. Fortunately ribbon still supports keyboard access, you can learn what the keys are by holding `Alt`:
+
+![CAFTA Ribbon](/img/cafta-ribbon.png)
+
+Launching an entry from the ribbon is as easy as 
+
 ```ahk
-ImageSearch, x, y, 0, 0, 1920, 1080, *n image.png
-if (ErrorLevel = 0)
-{
-   Click, %x%, %y%
-}
+Send,!HF     ; Home/Fault Tree
 ```
 
-#### **D. `Process, Wait`**
-- Wait for a process to start or stop.
+`HF` is simply pressing `H` and `F` keys, `!` stands for `Alt`. Here are few things available:
+
+| Shortcut   | Meaning |
+| ---------- | ------- |
+| `+`        | Shift   |
+| `^`        | Ctrl    |
+| `!`        | Alt     |
+| `{Tab}`    | Tab     |
+| `{Enter}`  | Enter   |
+| `{F4}`     | F4      |
+
+Navigation along a dialog box is similar:
+
 ```ahk
-Process, Wait, CAFTA.exe
+Send,{Tab}{Tab}{Enter}{Tab}5{Tab}5{Enter}
 ```
 
-#### **E. Loops with `IfWinExist`**
-To check a condition repeatedly:
+## Waiting for a dialog to show up and disappear
+
+At some point it is useful to wait for a dialog and then wait until the printing process is done. Here is my solution:
+
 ```ahk
+ToolTip, Waiting for Printing ...
 Loop
 {
-    IfWinExist, CAFTA
+    IfWinExist, Printing
+        break
+    Sleep, 100
+}    
+
+; Wait until printing exits
+ToolTip, Print ...
+Loop
+{
+    IfWinNotExist, Printing
         break
     Sleep, 100
 }
 ```
 
----
 
-### 🔄 **3. Example: Wait for CAFTA to Load and Open File**
-
-```ahk
-Run, C:\Program Files\CAFTA\CAFTA.exe
-WinWaitActive, CAFTA
-
-; Wait an extra second in case the UI is slow
-Sleep, 1000
-
-; Simulate pressing Alt+F, then O to open a file
-Send, !f
-Sleep, 300
-Send, o
-Sleep, 300
-
-; Paste file path and hit Enter
-Send, C:\Projects\FaultTrees\example.fts{Enter}
-```
-
----
-
-### 📌 **Tips**
-- Add **sound or tooltips** for debugging:
-```ahk
-SoundBeep
-ToolTip, Waiting for CAFTA...
-```
-
-- Use **Window Spy** (comes with AutoHotkey) to get:
-  - Exact window titles
-  - Control names (if using `ControlSend`, `ControlClick`)
-
----
-
-If you're working with a specific app like **CAFTA**, you can also:
-- Record your actions with **Pulover’s Macro Creator** (AHK GUI recorder)
-- Or ask me to help write a tailored script if you describe what the app workflow looks like (e.g. launch → wait → import file → export report).
-
-Want to build a real example together?
+[1]: https://polestartechnicalservices.com/cafta-software/
