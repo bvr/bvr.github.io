@@ -18,6 +18,7 @@
    - [Set::Scalar](https://metacpan.org/pod/Set::Scalar)
    - [Mojo::Collection](https://metacpan.org/pod/Mojo::Collection)
    - [Perl Workflow](https://github.com/perl-workflow/perl-workflow/tree/master/eg/ticket)
+   - [Perl CVE](https://theweeklychallenge.org/blog/cve-in-perl/)
  - lunr.js
  - technical writing https://developers.google.com/tech-writing
  - Game Development
