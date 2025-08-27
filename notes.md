@@ -45,6 +45,8 @@
    - https://learn.microsoft.com/en-us/dotnet/api/system.linq.iorderedenumerable-1?view=net-7.0
    - dynamic dispatch as described in https://ericlippert.com/2015/05/07/wizards-and-warriors-part-four/
    - [SharpLab](https://sharplab.io/#v2:CYLg1APgAgTAjAWAFBQAwAIpwCwG5nJQDMmM6AwugN7Lp3q33GZwBsLRAPAJYB2ALgD50AcQCm/AEoBDXgHMxACj790AMwBOAewC2AGnQr0/LQaMBnfmIAO6ALzo4ASkZ0aSep/VaNygYft1bR1cAM4HE1DudDAHSxsnBg8vFKw4TAB2Q1DXdABfZDygA===)
+   - [Native AOT](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/?tabs=windows%2Cnet8)
+   - [Deployment](https://learn.microsoft.com/en-us/dotnet/core/deploying/)
  - python
    - [itertools](https://docs.python.org/3/library/itertools.html)
    - [types annotations](https://realpython.com/preview/python-type-self/)
