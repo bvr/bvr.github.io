@@ -1,7 +1,7 @@
 
 class Program
 {
-    public static SafeUsage()
+    public static void SafeUsage()
     {
         // Assume Database class from earlier, built on top of Dapper
         string connStr = "Server=.;Database=MyApp;Trusted_Connection=True;";
@@ -52,5 +52,40 @@ class Program
             db.Rollback();
             throw;
         }
+    }
+
+    public static void UnitOfWorkUsage()
+    {
+        using var db = new Database("System.Data.SqlClient", connStr);
+
+        // simple query (short-lived connection)
+        var customers = db.Query<Customer>("SELECT * FROM Customers");
+
+        // transaction with unit-of-work
+        db.RunInTransaction(() =>
+        {
+            db.Execute("UPDATE Accounts SET Balance = Balance - @amt WHERE Id = @id",
+                    new { id = 1, amt = 500 });
+
+            db.Execute("UPDATE Accounts SET Balance = Balance + @amt WHERE Id = @id",
+                    new { id = 2, amt = 500 });
+
+            db.Execute("INSERT INTO Transfers (FromAccount, ToAccount, Amount) VALUES (@from, @to, @amt)",
+                    new { from = 1, to = 2, amt = 500 });
+        });
+
+        // returning value from a transaction
+        var transferId = db.RunInTransaction(() =>
+        {
+            db.Execute("UPDATE Accounts SET Balance = Balance - @amt WHERE Id = @id",
+                    new { id = 1, amt = 200 });
+
+            db.Execute("UPDATE Accounts SET Balance = Balance + @amt WHERE Id = @id",
+                    new { id = 3, amt = 200 });
+
+            return db.QuerySingle<int>(
+                "SELECT CAST(SCOPE_IDENTITY() as int) FROM Transfers WHERE FromAccount = @from AND ToAccount = @to ORDER BY Id DESC",
+                new { from = 1, to = 3 });
+        });        
     }
 }

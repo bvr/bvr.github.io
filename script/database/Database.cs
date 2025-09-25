@@ -16,14 +16,14 @@ public class Database : IDisposable
     {
         if (_transaction != null)
         {
-            // In transaction: keep the same connection
+            // In transaction: use persistent connection
             if (_connection == null)
                 throw new InvalidOperationException("Transaction connection missing.");
             return _connection;
         }
         else
         {
-            // Non-transaction: open, use, dispose immediately
+            // Non-transaction: short-lived connection
             var factory = DbProviderFactories.GetFactory(_providerName);
             var conn = factory.CreateConnection()!;
             conn.ConnectionString = _connectionString;
@@ -51,7 +51,7 @@ public class Database : IDisposable
         return conn.Execute(sql, param);
     }
 
-    // Transactions
+    // --- Transaction API ---
     public void BeginTransaction()
     {
         if (_transaction != null)
@@ -82,6 +82,38 @@ public class Database : IDisposable
         _transaction = null;
         _connection?.Dispose();
         _connection = null;
+    }
+
+    // --- Unit of Work Helpers ---
+    public void RunInTransaction(Action action)
+    {
+        BeginTransaction();
+        try
+        {
+            action();
+            Commit();
+        }
+        catch
+        {
+            Rollback();
+            throw;
+        }
+    }
+
+    public T RunInTransaction<T>(Func<T> func)
+    {
+        BeginTransaction();
+        try
+        {
+            var result = func();
+            Commit();
+            return result;
+        }
+        catch
+        {
+            Rollback();
+            throw;
+        }
     }
 
     public void Dispose() => CleanupTransaction();
