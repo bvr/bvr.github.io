@@ -1,4 +1,9 @@
 
+using System;
+using System.Collections.Generic;
+using System.Data.Common;
+using Dapper;
+
 public class Database : IDisposable
 {
     private readonly string _providerName;
@@ -12,18 +17,19 @@ public class Database : IDisposable
         _connectionString = connectionString;
     }
 
+    // Open a connection
     private DbConnection GetConnection()
     {
         if (_transaction != null)
         {
-            // In transaction: use persistent connection
+            // When inside a transaction, use the persistent connection
             if (_connection == null)
                 throw new InvalidOperationException("Transaction connection missing.");
             return _connection;
         }
         else
         {
-            // Non-transaction: short-lived connection
+            // For non-transaction queries, open a short-lived connection
             var factory = DbProviderFactories.GetFactory(_providerName);
             var conn = factory.CreateConnection()!;
             conn.ConnectionString = _connectionString;
@@ -32,7 +38,7 @@ public class Database : IDisposable
         }
     }
 
-    // Dapper helpers
+    // --- Dapper helpers ---
     public IEnumerable<T> Query<T>(string sql, object? param = null)
     {
         if (_transaction != null)
@@ -40,6 +46,15 @@ public class Database : IDisposable
 
         using var conn = GetConnection();
         return conn.Query<T>(sql, param);
+    }
+
+    public T? QuerySingleOrDefault<T>(string sql, object? param = null)
+    {
+        if (_transaction != null)
+            return _connection!.QuerySingleOrDefault<T>(sql, param, _transaction);
+
+        using var conn = GetConnection();
+        return conn.QuerySingleOrDefault<T>(sql, param);
     }
 
     public int Execute(string sql, object? param = null)
@@ -51,7 +66,7 @@ public class Database : IDisposable
         return conn.Execute(sql, param);
     }
 
-    // --- Transaction API ---
+    // --- Transaction management ---
     public void BeginTransaction()
     {
         if (_transaction != null)
@@ -84,7 +99,7 @@ public class Database : IDisposable
         _connection = null;
     }
 
-    // --- Unit of Work Helpers ---
+    // --- Unit of Work helpers ---
     public void RunInTransaction(Action action)
     {
         BeginTransaction();

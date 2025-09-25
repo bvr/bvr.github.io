@@ -56,6 +56,7 @@ class Program
 
     public static void UnitOfWorkUsage()
     {
+        string connStr = "Server=.;Database=MyApp;Trusted_Connection=True;";
         using var db = new Database("System.Data.SqlClient", connStr);
 
         // simple query (short-lived connection)
