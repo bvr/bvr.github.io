@@ -87,6 +87,6 @@ class Program
             return db.QuerySingle<int>(
                 "SELECT CAST(SCOPE_IDENTITY() as int) FROM Transfers WHERE FromAccount = @from AND ToAccount = @to ORDER BY Id DESC",
                 new { from = 1, to = 3 });
-        });        
+        });
     }
 }
