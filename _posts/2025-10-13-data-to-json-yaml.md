@@ -18,10 +18,10 @@ my $data = [
             {   name    => 'srs01.md',
                 trace => [
                     {   name => 'SRS_001',
-                        tags => {allocation => 'SW'},
+                        tags => {allocation => ['SW']},
                     },
                     {   name => 'SRS_002',
-                        tags => {allocation => 'HW'}
+                        tags => {allocation => ['HW']}
                     }
                 ]
             }
@@ -32,7 +32,7 @@ my $data = [
             {   name    => 'srd01.md',
                 trace => [
                     {   name   => 'SRD_001',
-                        source => 'SRS_001',
+                        source => ['SRS_001'],
                     }
                 ]
             }
@@ -65,13 +65,17 @@ The coder is setup to be output ASCII output (`ascii`), nicely format it (`prett
                {
                   "name" : "SRS_001",
                   "tags" : {
-                     "allocation" : "SW"
+                     "allocation" : [
+                        "SW"
+                     ]
                   }
                },
                {
                   "name" : "SRS_002",
                   "tags" : {
-                     "allocation" : "HW"
+                     "allocation" : [
+                        "HW"
+                     ]
                   }
                }
             ]
@@ -86,7 +90,9 @@ The coder is setup to be output ASCII output (`ascii`), nicely format it (`prett
             "trace" : [
                {
                   "name" : "SRD_001",
-                  "source" : "SRS_001"
+                  "source" : [
+                     "SRS_001"
+                  ]
                }
             ]
          }
@@ -113,16 +119,19 @@ The result is somewhat more concise and nicer, perhaps:
       trace:
         - name: SRS_001
           tags:
-            allocation: SW
+            allocation:
+              - SW
         - name: SRS_002
           tags:
-            allocation: HW
+            allocation:
+              - HW
 - doctype: SRD
   elements:
     - name: srd01.md
       trace:
         - name: SRD_001
-          source: SRS_001
+          source:
+            - SRS_001
 ```
 
 [1]: https://yaml.org/

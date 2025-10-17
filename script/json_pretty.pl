@@ -6,13 +6,13 @@ use YAML;
 my $data = [
     {   doctype  => 'SRS',
         elements => [
-            {   name    => 'srs01.md',
+            {   name  => 'srs01.md',
                 trace => [
                     {   name => 'SRS_001',
-                        tags => {allocation => 'SW'},
+                        tags => {allocation => ['SW']},
                     },
                     {   name => 'SRS_002',
-                        tags => {allocation => 'HW'}
+                        tags => {allocation => ['HW']}
                     }
                 ]
             }
@@ -20,10 +20,10 @@ my $data = [
     },
     {   doctype  => 'SRD',
         elements => [
-            {   name    => 'srd01.md',
+            {   name  => 'srd01.md',
                 trace => [
                     {   name   => 'SRD_001',
-                        source => 'SRS_001',
+                        source => ['SRS_001'],
                     }
                 ]
             }
