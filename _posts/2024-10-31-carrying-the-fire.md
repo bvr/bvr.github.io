@@ -14,7 +14,7 @@ I recently read a book [Carrying the Fire: An Astronaut's Journeys by Michael Co
 
 > Of course, Apollo was the god who carried the fiery sun across the sky in a chariot, but beyond that -- how would you carry fire? Carefully, that's how, with lots of planning and at considerable risk. It is a delicate cargo, as valuable as moon rocks, and the carrier must constantly be on his toes lest it spill. I carried the fire for six years and now I would like to tell you about it, simply and directly as a test pilot must, for the trip deserves the telling.  -- Michael Collins
 
-![Carrying the Fire book cover](/img/collins-carrying-the-fire.png)
+![Carrying the Fire book cover](/img/collins-carrying-the-fire.jpg)
 
 I really enjoyed this book, mostly for great detail and personal take on how to become an astronaut when there was a very little idea of what will be required. The first US flight to space took place on May 5, 1961. Alan Shepard in Freedom 7 Mercury capsule powered by Redstone booster reached altitude of 187 kilometers. Michael Collins joined NASA two years later as part of third group of astronauts.
 

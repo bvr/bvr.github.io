@@ -9,7 +9,7 @@ tags:
 ---
 Another Christmas book - [Project Hail Mary by Andy Weir][1]. A nice sci-fi from near future that really lives up to the science part of the term. 
 
-![Project Hail Mary](/img/project-hail-mary.png)
+![Project Hail Mary](/img/project-hail-mary.jpg)
 
 A man with amnesia wakes up in a small room with a robot that takes care of him, but refuses to let him to other room until he recollects his name. He is trying to figure out who he is, realizing he has some physics knowledge, thinks in imperial units, but cannot get much else. Except for the robot, only other things in the room are two bunks with corpses in them.
 

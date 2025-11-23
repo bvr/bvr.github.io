@@ -10,7 +10,7 @@ tags:
 ---
 I got [this book][1] as a Christmas gift and finished it within few days. I don't have too much to compare against as it is just my second book from Jack Reacher universe. The other was [No Plan B][2] which caught my eye on an airport and I liked the style.
 
-![The Secret](/img/the-secret.png)
+![The Secret](/img/the-secret.jpg)
 
 The narrative follows several people. There are two sisters that go after scientists connected to twenty years old secret project. There is Secretary of Defense, Charles Stamoran, who tries to protect the scientists and establishes a task force to find the murderers. The task force, put together from Army, CIA, FBI, and Treasury. They are trying to figure out the motives, connect the dots and protect those remaining.
 
