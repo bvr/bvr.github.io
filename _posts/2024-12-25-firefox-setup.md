@@ -24,7 +24,7 @@ One downside is that the original tabs are still visible when you install the ex
 
  - Go to `about:config` in the browser, set `toolkit.legacyUserProfileCustomizations.stylesheets` to `True`
  - Go to `about:support`, under `Profile Folder` select `Open Folder`
- - In the folder, create `chrome` directory, create file `userChrome.css` with following contents:
+ - In the directory, create `chrome` directory, create file `userChrome.css` with following contents:
 
 ```css
 /* hides the native tabs */
