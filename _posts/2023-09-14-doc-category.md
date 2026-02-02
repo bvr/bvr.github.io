@@ -6,7 +6,7 @@ tags:
   - C#
   - .NET
   - Word
-  - xml
+  - XML
   - System.IO.Packaging
   - System.Xml.XDocument
   - EnumerateFiles

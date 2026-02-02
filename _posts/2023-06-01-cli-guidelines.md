@@ -10,7 +10,7 @@ tags:
   - less
   - help
   - output
-  - xml
+  - XML
 ---
 Here are my notes from [Command Line Interface Guidelines][1] web site. I really like the summary and it opened various interesting points. Will try to incorporate those ideas into my command line programs.
 

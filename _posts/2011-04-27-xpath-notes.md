@@ -3,7 +3,7 @@ layout: post
 title: XPath notes
 published: no
 tags:
-  - xml
+  - XML
   - xpath
   - specification
 ---

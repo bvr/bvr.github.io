@@ -5,8 +5,8 @@ published: yes
 tags:
   - C#
   - .NET
-  - documentation
-  - xml
+  - Documentation
+  - XML
   - Sandcastle
   - Advent of Code
 ---
